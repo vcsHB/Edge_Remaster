@@ -4,13 +4,6 @@ using UnityEngine;
 public enum PlayerSkill
 {
     None = 0,
-    EnergyBall = 1,
-    EnergyBim = 2,
-    SordBoomerang = 3,
-    DataBarier = 4,
-    KnifeSharpening = 5,
-    HighSpeedAttack = 6
-
 }
 
 public class SkillManager : MonoSingleton<SkillManager>
@@ -19,8 +12,9 @@ public class SkillManager : MonoSingleton<SkillManager>
     private List<Skill> _enabledSkillList; //��ų����Ʈ Ȱ��ȭ
     public event Action<PlayerSkill> OnSelectSkillEvent;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         _skills = new Dictionary<Type, Skill>();
         _enabledSkillList = new List<Skill>();
 
@@ -45,30 +39,7 @@ public class SkillManager : MonoSingleton<SkillManager>
         {
             skill.UseSkill();
         }
-        if (Input.GetKeyDown(KeyCode.F1))
-        {
-            GetSkill(PlayerSkill.EnergyBall).UseSkill();
-        }
-        if (Input.GetKeyDown(KeyCode.F2))
-        {
-            GetSkill(PlayerSkill.EnergyBim).UseSkill();
-        }
-        if (Input.GetKeyDown(KeyCode.F3))
-        {
-            GetSkill(PlayerSkill.SordBoomerang).UseSkill();
-        }
-        if (Input.GetKeyDown(KeyCode.F4))
-        {
-            GetSkill(PlayerSkill.DataBarier).UseSkill();
-        }
-        if (Input.GetKeyDown(KeyCode.F5))
-        {
-            GetSkill(PlayerSkill.KnifeSharpening).UseSkill();
-        }
-        if (Input.GetKeyDown(KeyCode.F6))
-        {
-            GetSkill(PlayerSkill.HighSpeedAttack).UseSkill();
-        }
+        
     }
 
     public T GetSkill<T>() where T : Skill

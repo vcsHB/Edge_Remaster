@@ -30,9 +30,9 @@ namespace Agents.Players.Combat
         {
             base.Attack(damage, knockbackPower);
             Vector2 direction = _aim.Position - (Vector2)transform.position;
-            Projectile bullet = PoolManager.Instance.Pop(PoolingType.PlayerProjectile) as Projectile;
-            bullet.transform.position = transform.position;
-            bullet.transform.up = direction.normalized;
+            // Projectile bullet = PoolManager.Instance.Pop(PoolingType.PlayerProjectile) as Projectile;
+            // bullet.transform.position = transform.position;
+            // bullet.transform.up = direction.normalized;
 
         }
     }

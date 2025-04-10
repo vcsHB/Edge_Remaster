@@ -1,9 +1,6 @@
 ﻿using System;
-using System.IO;
-using SoundManage;
 using UnityEditor;
 using UnityEngine;
-using AudioType = SoundManage.AudioType;
 
 public partial class UtilityWindow
 {
