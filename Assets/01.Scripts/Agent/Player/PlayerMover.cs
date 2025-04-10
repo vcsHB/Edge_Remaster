@@ -47,7 +47,7 @@ namespace Agents.Players
 
         public bool SetMoveTarget(Vector2 direction)
         {
-            if(!canMove) return false;
+            if (!canMove) return false;
             if (_isMoving) return false;
             if (!isEdgeMove) return false;
             SetPreviousPos(transform.position);
@@ -73,7 +73,7 @@ namespace Agents.Players
 
         private void FixedUpdate()
         {
-            if(!canMove) return;
+            if (!canMove) return;
             if (!isEdgeMove)
             {
                 Velocity = _moveDirection * _player.PlayerStatus.moveSpeed.GetValue();
@@ -142,6 +142,11 @@ namespace Agents.Players
         public void StopImmediately()
         {
             _rigidCompo.linearVelocity = Vector2.zero;
+        }
+
+        public void SetVelocity(Vector2 powerDirection)
+        {
+            _rigidCompo.linearVelocity = powerDirection;
         }
     }
 }
