@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 648074043280125587}
   - component: {fileID: 6001760392167196438}
   - component: {fileID: 5870451535683963995}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 261360084371094100}
   - component: {fileID: 6691730223814170475}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 506549548887313494}
   - component: {fileID: 4223660728173223136}
   - component: {fileID: 8784938293617892317}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: MovePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
