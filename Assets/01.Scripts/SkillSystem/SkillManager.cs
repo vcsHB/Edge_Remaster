@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 public enum PlayerSkill
 {
@@ -39,7 +40,6 @@ public class SkillManager : MonoSingleton<SkillManager>
         {
             skill.UseSkill();
         }
-        
     }
 
     public T GetSkill<T>() where T : Skill
