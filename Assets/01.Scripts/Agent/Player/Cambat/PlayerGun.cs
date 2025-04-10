@@ -1,4 +1,5 @@
 using Combat;
+using Combat.CombatObjects.ProjectileManage;
 using ObjectPooling;
 using UnityEngine;
 namespace Agents.Players.Combat
@@ -29,7 +30,7 @@ namespace Agents.Players.Combat
         {
             base.Attack(damage, knockbackPower);
             Vector2 direction = _aim.Position - (Vector2)transform.position;
-            Bullet bullet = PoolManager.Instance.Pop(PoolingType.PlayerProjectile) as Bullet;
+            Projectile bullet = PoolManager.Instance.Pop(PoolingType.PlayerProjectile) as Projectile;
             bullet.transform.position = transform.position;
             bullet.transform.up = direction.normalized;
 

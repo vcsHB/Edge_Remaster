@@ -5,35 +5,49 @@ using UnityEngine;
 public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T _instance = null;
-    private static bool isDestroyed = false;
+    private static bool IsDestroyed = false;
 
     public static T Instance
     {
         get
         {
-            if(isDestroyed)
+            if(IsDestroyed)
             {
                 _instance = null;
             }
             if(_instance == null)
             {
-                _instance = GameObject.FindFirstObjectByType<T>();
+                _instance = FindFirstObjectByType<T>();
                 if(_instance == null)
                 {
-                    Debug.LogError($"{typeof(T).Name} singletone is not exist");
+                    Debug.LogError($"{typeof(T).Name} singleton is not exist");
                 }
                 else
                 {
-                    isDestroyed = false;
+                    IsDestroyed = false;
                 }
             }
             return _instance;
         }
     }
-    public static bool IsDestroyed => isDestroyed;
 
     private void OnDestroy()
     {
-        isDestroyed = true;
+        IsDestroyed = true;
     }
+    
+    protected virtual void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this as T;
+            //DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            ///Destroy(gameObject);
+        }
+    }
+    
+    
 }
