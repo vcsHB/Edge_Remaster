@@ -1,5 +1,4 @@
 using System.Collections;
-using Managers;
 using ObjectManage;
 using UnityEngine;
 namespace Agents.Players.FSM
@@ -40,7 +39,7 @@ namespace Agents.Players.FSM
             _mover.StopImmediately();
             _limiter.SetLimit();
             _stateMachine.ChangeState("Idle");
-            ScoreManager.Instance.SetEndNoLimit();
+            //ScoreManager.Instance.SetEndNoLimit();
         }
     }
 }

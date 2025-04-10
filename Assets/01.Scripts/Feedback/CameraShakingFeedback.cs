@@ -1,4 +1,4 @@
-using Managers;
+using CameraControllers;
 using UnityEngine;
 namespace FeedbackSystem
 {
@@ -6,10 +6,15 @@ namespace FeedbackSystem
     {
         [SerializeField] private float _power;
         [SerializeField] private float _duration;
+        private CameraShakeController _cameraShakeController;
 
+        private void Awake()
+        {
+            _cameraShakeController = CameraManager.Instance.GetCompo<CameraShakeController>();
+        }
         public override void CreateFeedback()
         {
-            CameraManager.Instance.Shake(_power, _duration);
+            _cameraShakeController.Shake(_power, _duration);
         }
 
         public override void FinishFeedback()
