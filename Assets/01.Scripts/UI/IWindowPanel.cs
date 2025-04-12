@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UIManage
+namespace UI
 {
     public interface IWindowPanel 
     {

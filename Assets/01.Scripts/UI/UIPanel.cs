@@ -1,7 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 
-namespace UIManage
+namespace UI
 {
 
     public class UIPanel : MonoBehaviour, IWindowPanel
