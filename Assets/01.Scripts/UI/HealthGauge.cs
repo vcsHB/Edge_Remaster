@@ -1,4 +1,5 @@
 using Agents;
+using Combat;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,12 +14,12 @@ namespace UIManage
         [SerializeField] private float _changeDuration = 0.1f;
         private void Awake()
         {
-            _owner.OnHealthValueChangedEvent += HandleGaugeRefresh;
+            _owner.OnHealthChangedValueEvent += HandleGaugeRefresh;
         }
 
         private void OnDestroy()
         {
-            _owner.OnHealthValueChangedEvent -= HandleGaugeRefresh;
+            _owner.OnHealthChangedValueEvent -= HandleGaugeRefresh;
         }
 
         private void HandleGaugeRefresh(float current, float max)

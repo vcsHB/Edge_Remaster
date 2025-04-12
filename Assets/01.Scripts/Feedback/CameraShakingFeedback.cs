@@ -8,7 +8,7 @@ namespace FeedbackSystem
         [SerializeField] private float _duration;
         private CameraShakeController _cameraShakeController;
 
-        private void Awake()
+        private void Start()
         {
             _cameraShakeController = CameraManager.Instance.GetCompo<CameraShakeController>();
         }

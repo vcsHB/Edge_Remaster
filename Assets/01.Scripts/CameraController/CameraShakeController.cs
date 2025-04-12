@@ -28,6 +28,11 @@ namespace CameraControllers
             Shake(20f, 0.07f);
         }
 
+        public void Shake(float power)
+        {
+            Shake(power, 0.1f);
+        }
+
         public void Shake(float power, float duration)
         {
             if (_isShaking) return;
