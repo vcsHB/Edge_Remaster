@@ -4,7 +4,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UIManage
+namespace UI.InGame
 {
 
     public class HealthGauge : MonoBehaviour

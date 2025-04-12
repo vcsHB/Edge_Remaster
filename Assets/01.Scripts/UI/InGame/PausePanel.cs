@@ -1,16 +1,29 @@
 using UnityEngine;
 
-public class PausePanel : MonoBehaviour
+namespace UI.InGame
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    public class PausePanel : UIPanel, IWindowTogglable
     {
+        public void Toggle()
+        {
+            if (_isActive)
+                Close();
+            else
+                Open();
+        }
+
+        public override void Open()
+        {
+            base.Open();
         
+        }
+
+        public override void Close()
+        {
+            base.Close();
+
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
