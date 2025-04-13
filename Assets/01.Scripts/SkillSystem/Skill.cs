@@ -1,56 +1,61 @@
 using Agents.Players;
 using UnityEngine;
 
-//ÄðÅ¸ÀÓÀÌ ¸îÃÊ³²¾Ò´ÂÁö¸¦ ¾Ë·ÁÁÖ´Â µ¨¸®°ÔÀÌÆ®¸¦ ¸¸µé¾ú´Ù.
-public delegate void CooldownInfoEvent(float current, float total);
 
-public abstract class Skill : MonoBehaviour
+namespace SkillSystem
 {
 
-    public bool skillEnabled = false; //ÀÌ ½ºÅ³ÀÌ È°¼ºÈ­µÇ¾ú´Â°¡?
-    [SerializeField] protected float _cooldown; //½ºÅ³ÀÇ ÄðÅ¸ÀÓ
-    [SerializeField] protected bool _isAutoSkill; //ÀÚµ¿¹ßµ¿ ½ºÅ³ÀÌ³Ä?
+    public delegate void CooldownInfoEvent(float current, float total);
 
-    [HideInInspector] public Player player;
-    protected float _cooldownTimer;
-    public event CooldownInfoEvent OnCooldownEvent;
-
-    public LayerMask whatIsEnemy;
-
-    public void UnlockSkill()
+    public abstract class Skill : MonoBehaviour
     {
-        if (skillEnabled) return;
 
-        skillEnabled = true;
-        if (_isAutoSkill)
+        public bool skillEnabled = false; //ï¿½ï¿½ ï¿½ï¿½Å³ï¿½ï¿½ È°ï¿½ï¿½È­ï¿½Ç¾ï¿½ï¿½Â°ï¿½?
+        [SerializeField] protected float _cooldown; //ï¿½ï¿½Å³ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½
+        [SerializeField] protected bool _isAutoSkill; //ï¿½Úµï¿½ï¿½ßµï¿½ ï¿½ï¿½Å³ï¿½Ì³ï¿½?
+
+        [HideInInspector] public Player player;
+        protected float _cooldownTimer;
+        public event CooldownInfoEvent OnCooldownEvent;
+
+        public LayerMask whatIsEnemy;
+
+        public void UnlockSkill()
         {
-            SkillManager.Instance.AddEnableSkill(this);
-        }
-    }
+            if (skillEnabled) return;
 
-    protected virtual void Start()
-    {
-        player = GameObject.Find("Player").GetComponent<Player>();  
-    }
-
-    protected virtual void Update()
-    {
-        if (_cooldownTimer > 0)
-        {
-            _cooldownTimer -= Time.deltaTime;
-            if (_cooldownTimer <= 0) // 0º¸´Ù ÀÛ´Ù¸é
+            skillEnabled = true;
+            if (_isAutoSkill)
             {
-                _cooldownTimer = 0;
+                SkillManager.Instance.AddEnableSkill(this);
             }
-            OnCooldownEvent?.Invoke(_cooldownTimer, _cooldown);
+        }
+
+        protected virtual void Start()
+        {
+            player = GameObject.Find("Player").GetComponent<Player>();
+        }
+
+        protected virtual void Update()
+        {
+            if (_cooldownTimer > 0)
+            {
+                _cooldownTimer -= Time.deltaTime;
+                if (_cooldownTimer <= 0) // 0ï¿½ï¿½ï¿½ï¿½ ï¿½Û´Ù¸ï¿½
+                {
+                    _cooldownTimer = 0;
+                }
+                OnCooldownEvent?.Invoke(_cooldownTimer, _cooldown);
+            }
+        }
+
+        public virtual bool UseSkill()
+        {
+            if (_cooldownTimer > 0 || skillEnabled == false) return false;
+
+            _cooldownTimer = _cooldown;
+            return true;
         }
     }
 
-    public virtual bool UseSkill()
-    {
-        if (_cooldownTimer > 0 || skillEnabled == false) return false;
-
-        _cooldownTimer = _cooldown;
-        return true;
-    }
 }

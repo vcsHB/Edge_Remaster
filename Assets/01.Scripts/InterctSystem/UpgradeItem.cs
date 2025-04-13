@@ -1,3 +1,4 @@
+using SkillSystem;
 using UnityEngine;
 namespace InteractSystem
 {

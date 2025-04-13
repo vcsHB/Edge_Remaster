@@ -9,8 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8b1d57ea5852da4db5cc1b0ac77c0b2, type: 3}
-  m_Name: table
+  m_Script: {fileID: 11500000, guid: 775241e3c999a5545afb47e3bed94378, type: 3}
+  m_Name: Effect_ads
   m_EditorClassIdentifier: 
-  list:
-  - {fileID: 11400000, guid: 286732e20d87a7f40b01e2565139e2f0, type: 2}
+  code: ads
+  type: 0
+  targetSkill: 0
+  upgradeType: 0
+  isFloat: 1
+  floatValue: 0
+  intValue: 0
+  selectFieldIndex: 0
+  selectMethodIndex: 0
+  callParams: 

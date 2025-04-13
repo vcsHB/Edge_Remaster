@@ -1,27 +1,32 @@
 using System;
 using UnityEngine;
 
-
-[CreateAssetMenu(menuName = "SO/Items/PowerUp/Effect/UnLockSkill")]
-public class UnLockSkillEffectSO : PowerUpEffectSO
+namespace SkillSystem
 {
-    public PlayerSkill unLockSkill;
 
-    public override void UseEffect()
+
+    [CreateAssetMenu(menuName = "SO/Items/PowerUp/Effect/UnLockSkill")]
+    public class UnLockSkillEffectSO : PowerUpEffectSO
     {
-        Skill skill = SkillManager.Instance.GetSkill(unLockSkill);
-        skill.UnlockSkill();
-        SkillManager.Instance.SelectSkill(unLockSkill);
+        public PlayerSkill unLockSkill;
+
+        public override void UseEffect()
+        {
+            Skill skill = SkillManager.Instance.GetSkill(unLockSkill);
+            skill.UnlockSkill();
+            SkillManager.Instance.SelectSkill(unLockSkill);
+        }
+
+        public override bool CanUpgradeEffect()
+        {
+            Skill skill = SkillManager.Instance.GetSkill(unLockSkill);
+            return skill.skillEnabled == false;
+        }
+
+        private void OnValidate()
+        {
+            type = EffectType.SkillUnlock;
+        }
     }
 
-    public override bool CanUpgradeEffect()
-    {
-        Skill skill = SkillManager.Instance.GetSkill(unLockSkill);
-        return skill.skillEnabled == false;
-    }
-
-    private void OnValidate()
-    {
-        type = EffectType.SkillUnlock;
-    }
 }
