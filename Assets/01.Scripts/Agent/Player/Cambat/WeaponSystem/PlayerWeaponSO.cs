@@ -14,7 +14,7 @@ namespace Agents.Players.Combat
 
         internal void SetId(int newId)
         {
-            
+            id = newId;
         }
     }
 }

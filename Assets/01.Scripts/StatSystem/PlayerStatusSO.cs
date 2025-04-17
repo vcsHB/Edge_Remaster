@@ -1,22 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
 using UnityEngine;
 namespace StatSystem
 {
-    public enum StatType
-    {
-        Health,
-        AttackDamage,
-        MoveSpeed,
-        Defense,
-        AttackSpeed,
-        EdgeSlideSpeed,
-        EdgeMoveCooltime,
-        NoLimitDuration,
-        FeverFillMultiple,
-        ScoreBonus
-    }
+   
 
 
     [CreateAssetMenu(menuName = "SO/Status/PlayerStatus")]
@@ -24,7 +9,6 @@ namespace StatSystem
     {
 
 
-        public Dictionary<StatType, Stat> statDictionary = new Dictionary<StatType, Stat>();
         public Stat edgeSlideSpeed;
         public Stat edgeMoveCooltime;
         public Stat noLimitDuration;
@@ -48,13 +32,9 @@ namespace StatSystem
             }
         }
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
-            statDictionary.Add(StatType.Health, health);
-            statDictionary.Add(StatType.AttackDamage, attackDamage);
-            statDictionary.Add(StatType.MoveSpeed, moveSpeed);
-            statDictionary.Add(StatType.Defense, defense);
-            statDictionary.Add(StatType.AttackSpeed, attackSpeed);
+            base.OnEnable();
             statDictionary.Add(StatType.EdgeSlideSpeed, edgeSlideSpeed);
             statDictionary.Add(StatType.EdgeMoveCooltime, edgeMoveCooltime);
             statDictionary.Add(StatType.NoLimitDuration, noLimitDuration);

@@ -1,10 +1,7 @@
-using Combat;
-using Combat.CombatObjects.ProjectileManage;
-using ObjectPooling;
 using UnityEngine;
 namespace Agents.Players.Combat
 {
-    public class PlayerGun : PlayerWeapon
+    public class PlayerShooter : PlayerWeapon
     {
         [SerializeField] private float _attackCooltime = 0.4f;
         [SerializeField] private PlayerAim _aim;
@@ -23,9 +20,8 @@ namespace Agents.Players.Combat
                 float damage = _player.PlayerStatus.attackDamage.GetValue();
                 Attack(damage, 10f);
             }
-
-
         }
+
         public override void Attack(float damage, float knockbackPower)
         {
             base.Attack(damage, knockbackPower);
