@@ -1,4 +1,5 @@
 using Agents.Players;
+using Core;
 using UnityEngine;
 
 
@@ -33,7 +34,7 @@ namespace SkillSystem
 
         protected virtual void Start()
         {
-            player = GameObject.Find("Player").GetComponent<Player>();
+            player = PlayerManager.Instance.Player;
         }
 
         protected virtual void Update()
