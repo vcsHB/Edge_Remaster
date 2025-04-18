@@ -1,16 +1,23 @@
+using Combat.CombatObjects.ProjectileManage;
 using UnityEngine;
 namespace Agents.Players.Combat
 {
     public class PlayerShooter : PlayerWeapon
     {
         [SerializeField] private float _attackCooltime = 0.4f;
-        [SerializeField] private PlayerAim _aim;
+        private ProjectileShooter _shooter;
+
         private float _currentTime;
 
-
-
-        private void Update()
+        protected void Awake()
         {
+            _shooter = GetComponentInChildren<ProjectileShooter>();
+        }
+
+
+        protected override void Update()
+        {
+            base.Update();
             if (!_isActive) return;
             _currentTime += Time.deltaTime;
 
@@ -25,11 +32,8 @@ namespace Agents.Players.Combat
         public override void Attack(float damage, float knockbackPower)
         {
             base.Attack(damage, knockbackPower);
-            Vector2 direction = _aim.Position - (Vector2)transform.position;
-            // Projectile bullet = PoolManager.Instance.Pop(PoolingType.PlayerProjectile) as Projectile;
-            // bullet.transform.position = transform.position;
-            // bullet.transform.up = direction.normalized;
-
+            _shooter.SetDirection(AimDirection);
+            _shooter.FireProjectile();
         }
     }
 }
