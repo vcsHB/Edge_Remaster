@@ -20,6 +20,7 @@ namespace Agents.Players.Combat
 
             _currentWeapon = Instantiate(_currentWeaponSO.weaponPrefab, transform);
             _currentWeapon.Initialize(_player);
+            _currentWeapon.SetEnabled();
         }
 
         public void AfterInit() { }
