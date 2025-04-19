@@ -17,4 +17,4 @@ MonoBehaviour:
   description: 
   weaponIcon: {fileID: 0}
   personalColor: {r: 0.39215684, g: 1, b: 0.88953537, a: 1}
-  weaponPrefab: {fileID: 0}
+  weaponPrefab: {fileID: 6862175892440121152, guid: baf0ed50b79fb7546ab9587cabe28825, type: 3}

@@ -10,7 +10,6 @@ namespace Agents.Players.Combat
 
         [SerializeField] private PlayerWeaponSO _currentWeaponSO;
         [SerializeField] private PlayerWeapon _currentWeapon;
-        [SerializeField] private Transform _weaponHandleTrm;
         [SerializeField] private float _weaponDistance = 1.3f;
 
 
@@ -23,13 +22,8 @@ namespace Agents.Players.Combat
             _currentWeapon.Initialize(_player);
         }
 
-        public void AfterInit()
-        {
-        }
-
-        public void Dispose()
-        {
-        }
+        public void AfterInit() { }
+        public void Dispose() { }
 
 
 
@@ -38,8 +32,6 @@ namespace Agents.Players.Combat
             Vector2 mousePos = _player.PlayerInput.MousePosition;
             Vector2 direction = mousePos - (Vector2)transform.position;
             direction.Normalize();
-
-            _weaponHandleTrm.localPosition = direction * _weaponDistance;
         }
 
         #region Obsolete Functions

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 namespace StatSystem
 {
@@ -52,6 +53,14 @@ namespace StatSystem
             statDictionary.Add(StatType.MoveSpeed, moveSpeed);
             statDictionary.Add(StatType.Defense, defense);
             statDictionary.Add(StatType.AttackSpeed, attackSpeed);
+        }
+
+        private void CloneAllStatus()
+        {
+            foreach (Stat stat in statDictionary.Values)
+            {
+                stat.Clone();
+            }
         }
     }
 }

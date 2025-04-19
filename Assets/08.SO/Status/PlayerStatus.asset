@@ -12,33 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d677c5a539ff8645bd010a11427fa07, type: 3}
   m_Name: PlayerStatus
   m_EditorClassIdentifier: 
-  health:
-    baseValue: 100
-    modifier: []
-  attackDamage:
-    baseValue: 10
-    modifier: []
-  moveSpeed:
-    baseValue: 0
-    modifier: []
-  defense:
-    baseValue: 0
-    modifier: []
-  attackSpeed:
-    baseValue: 0
-    modifier: []
-  edgeSlideSpeed:
-    baseValue: 0.6
-    modifier: []
-  edgeMoveCooltime:
-    baseValue: 0.05
-    modifier: []
-  noLimitDuration:
-    baseValue: 10
-    modifier: []
-  feverFillMultiple:
-    baseValue: 0
-    modifier: []
-  scoreBonus:
-    baseValue: 0
-    modifier: []
+  health: {fileID: 11400000, guid: c6b83659a9d5a4245b74d5abaab8a67a, type: 2}
+  attackDamage: {fileID: 11400000, guid: f5a9bf156f2b5364c8a2864596a9b716, type: 2}
+  moveSpeed: {fileID: 0}
+  defense: {fileID: 0}
+  attackSpeed: {fileID: 0}
+  edgeSlideSpeed: {fileID: 11400000, guid: 9cf476ed2e1c03e428224423054ecfc7, type: 2}
+  edgeMoveCooltime: {fileID: 11400000, guid: 426103921acc03a4db3776f962167d73, type: 2}
+  noLimitDuration: {fileID: 0}
+  feverFillMultiple: {fileID: 0}
+  scoreBonus: {fileID: 0}

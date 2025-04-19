@@ -26,6 +26,11 @@ namespace StatSystem
         private bool _isValueChanged = true;
         private float _cashedValue;
 
+        private void OnEnable()
+        {
+            _isValueChanged = true;
+        }
+
 
         public float GetValue()
         {

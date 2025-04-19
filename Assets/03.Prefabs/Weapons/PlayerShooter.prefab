@@ -53,7 +53,6 @@ MonoBehaviour:
       m_Calls: []
   _normalDamage: 0
   _attackCooltime: 0.4
-  _aim: {fileID: 0}
 --- !u!1 &6206672762279368069
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac6748655a90bb3448fb46d7fec7dbca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectilePoolType: 0
+  _projectilePoolType: 1
   _projectileData:
     direction: {x: 0, y: 0}
     speed: 50
