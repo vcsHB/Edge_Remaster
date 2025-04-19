@@ -1,6 +1,7 @@
 using Agents.Players.FSM;
 using Combat;
 using InputManage;
+using ObjectManage;
 using StatSystem;
 using UnityEngine;
 namespace Agents.Players
@@ -12,11 +13,13 @@ namespace Agents.Players
         public PlayerStateMachine StateMachine => _stateMachine;
         [field: SerializeField] public PlayerStatusSO PlayerStatus { get; private set; }
         public Health HealthCompo { get; private set; }
+        public PlayerMover MovementCompo { get; private set; }
 
         protected override void Awake()
         {
             base.Awake();
             PlayerStatus = Instantiate(PlayerStatus);
+            MovementCompo = GetCompo<PlayerMover>();
             HealthCompo = GetComponent<Health>();
             HealthCompo.Initialize(PlayerStatus.health.GetValue());
             _stateMachine = new PlayerStateMachine(this);
@@ -26,6 +29,11 @@ namespace Agents.Players
         private void Update()
         {
             _stateMachine.UpdateState();
+        }
+
+        public void ForceMoveToPoint(MovePoint movePoint, float duration)
+        {
+            MovementCompo.ForceMoveToPosition(movePoint, duration);
         }
 
     }

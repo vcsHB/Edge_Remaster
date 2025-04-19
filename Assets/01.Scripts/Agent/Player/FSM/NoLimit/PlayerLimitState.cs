@@ -35,7 +35,6 @@ namespace Agents.Players.FSM
                 _mover.SetMovement(currentTime / _backDuration);
                 yield return null;
             }
-            _mover.SetEdgeMode(true);
             _mover.StopImmediately();
             _limiter.SetLimit();
             _stateMachine.ChangeState("Idle");

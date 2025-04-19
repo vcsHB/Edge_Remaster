@@ -13,7 +13,6 @@ namespace Agents.Players.FSM
         public override void Enter()
         {
             base.Enter();
-            _mover.SetEdgeMode(false);
             _limiter.SetUnLimit();
             _stateMachine.ChangeState("NoLimitIdle");
             _attackController.SelectWeapon(1);
