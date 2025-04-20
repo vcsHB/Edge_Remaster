@@ -53,6 +53,7 @@ namespace Combat.CombatObjects.ProjectileManage
 
             InitComponents();
         }
+
         #region Essential Setting Functions
 
         private void InitComponents()
@@ -149,10 +150,10 @@ namespace Combat.CombatObjects.ProjectileManage
         internal void HandleDestroy()
         {
             _isActive = false;
-            OnDestroyEvent?.Invoke();
             VFXPlayer vfx = PoolManager.Instance.Pop(_destroyVFXType) as VFXPlayer;
             vfx.transform.position = transform.position;
             vfx.Play();
+            OnDestroyEvent?.Invoke();
             PoolManager.Instance.Push(this);
             //Destroy(gameObject);
         }
@@ -187,10 +188,7 @@ namespace Combat.CombatObjects.ProjectileManage
             Gizmos.DrawLine(transform.position, transform.position + (Vector3)Velocity);
         }
 
-        public void ApplyDamage(float damage)
-        {
-            throw new NotImplementedException();
-        }
+        
 #endif
     }
 
