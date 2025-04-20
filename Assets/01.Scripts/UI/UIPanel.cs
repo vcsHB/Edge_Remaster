@@ -34,7 +34,9 @@ namespace UI
 
         public void SetActiveCanvasGroup(bool value)
         {
-            _canvasGroup.DOFade(value ? 1f : 0f, _duration).SetUpdate(_useUnscaledTime).Complete(_isActive = value);
+            Tween tween = _canvasGroup.DOFade(value ? 1f : 0f, _duration)
+                .SetUpdate(_useUnscaledTime).OnComplete(() => _isActive = value);
+
             SetInteractable(value);
         }
 
