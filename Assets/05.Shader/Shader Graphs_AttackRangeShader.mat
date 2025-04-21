@@ -57,7 +57,9 @@ Material:
     - _OutlineWidth: 0.019
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _WaveSpeed: 2
+    - _WaveAmount: 6
+    - _WaveReduceScale: 1.47
+    - _WaveSpeed: -2.31
     m_Colors:
     - _Color: {r: 1.9645017, g: 0.087470084, b: 0.9355677, a: 0}
     - _GridTiling: {r: 1, g: 1, b: 0, a: 0}
