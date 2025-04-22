@@ -7,6 +7,7 @@ namespace Agents.Enemies
         [SerializeField] private float _moveSpeed;
         protected Rigidbody2D _rigid;
         protected Vector2 _moveDirection; // normalized
+        public Vector2 Velocity => _rigid.linearVelocity;
 
         public void Initialize(Agent agent) { }
         public void AfterInit() { }

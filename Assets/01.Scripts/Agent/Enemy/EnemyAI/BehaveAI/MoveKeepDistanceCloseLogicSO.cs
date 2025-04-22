@@ -1,10 +1,11 @@
-using NUnit.Framework;
 using UnityEngine;
 namespace Agents.Enemies.AI
 {
     [CreateAssetMenu(menuName = "SO/EnemyAI/Movement/KeepDistanceCloseLogic")]
     public class MoveKeepDistanceCloseLogicSO : MoveLogicSO
     {
+        [SerializeField] private float _chaseMinOffset = 0f;
+        [SerializeField] private float _chaseMaxOffset = 1f;
         [SerializeField] private float _ignoreDistance = 0.4f;
         [SerializeField] private Color _ignoreDistanceColor;
         [SerializeField] private Color _detectGizmosColor;
@@ -15,7 +16,10 @@ namespace Agents.Enemies.AI
 
         public override void UpdateMove()
         {
-            _mover.SetMovement(_detectData.targetDirection, _moveSpeed);
+            Vector2 direction =
+                _mover.Velocity.normalized * Random.Range(_chaseMinOffset, _chaseMaxOffset) 
+                + _detectData.targetDirection.normalized;
+            _mover.SetMovement(direction, _moveSpeed);
             CheckArrive();
         }
         public override void EndMove()
@@ -26,7 +30,6 @@ namespace Agents.Enemies.AI
         {
             if (_detectData.distanceToTarget <= _ignoreDistance)
             {
-                Debug.Log("도착");
                 Arrive();
             }
         }
