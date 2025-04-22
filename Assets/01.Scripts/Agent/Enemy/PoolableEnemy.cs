@@ -10,8 +10,10 @@ namespace Agents.Enemies
         public GameObject PoolObject => gameObject;
       
         [field: SerializeField]  public EnemyTypeEnum EnemyType { get; set; }
-        public virtual void OnGenerated()
+
+        public override void OnGenerated()
         {
+            base.OnGenerated();
             OnSpawnEvent?.Invoke();
         }
     }

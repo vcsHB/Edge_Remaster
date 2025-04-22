@@ -2,25 +2,24 @@ using System;
 using UnityEngine;
 namespace Agents.Enemies.AI
 {
-
-    // Must be implemented in child objects
+    public struct DetectData
+    {
+        public bool isTargeted;
+        public Vector2 targetPos;
+        public Vector2 targetDirection;
+        public float distanceToTarget;
+    }
     public abstract class EnemyAILogicSO : ScriptableObject
     {
-        public event Action<bool> OnDetectTarget;
-        
-        [SerializeField] protected float _detectRadius;
-        [SerializeField] protected LayerMask _targetLayer;
-        protected Transform _targetTrm;
-        protected Enemy _owner;
-        protected Transform _ownerTrm;
-        public void InitializeOwner(Enemy enemy)
-        {
-            _owner = enemy;
-            _ownerTrm = _owner.transform;
-        }
-        public abstract Transform GetTarget();
+        [SerializeField] protected LayerMask _whatIsTarget;
 
-        protected abstract void DetectTarget();
+        public event Action<DetectData> OnDetectEvent;
+        protected Transform _ownerTrm;
+        public void InitializeOwner(Transform transform)
+        {
+            _ownerTrm = transform;
+        }
+        public abstract DetectData DetectTarget();
 
         public EnemyAILogicSO Clone() => Instantiate(this);
     }

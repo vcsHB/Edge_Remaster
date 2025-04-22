@@ -18,6 +18,7 @@ namespace Agents.Enemies.FSM
         public override void Update()
         {
             base.Update();
+            _mover.SetMovement(_enemyAI.TargetDirection);
         }
 
         public override void Exit()

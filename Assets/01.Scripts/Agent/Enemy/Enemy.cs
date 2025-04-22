@@ -9,6 +9,7 @@ namespace Agents.Enemies
         public int EnemyLevel { get; protected set; }
         public event Action<Enemy> OnDieEvent;
         public event Action<int> OnLevelSetEvent;
+        public event Action OnGeneratedEvent;
         public Health HealthCompo { get; protected set; }
         protected EnemyStateMachine _stateMachine;
 
@@ -42,6 +43,10 @@ namespace Agents.Enemies
         {
             EnemyLevel = level;
             OnLevelSetEvent?.Invoke(level);
+        }
+        public virtual void OnGenerated()
+        {
+            OnGeneratedEvent?.Invoke();
         }
     }
 

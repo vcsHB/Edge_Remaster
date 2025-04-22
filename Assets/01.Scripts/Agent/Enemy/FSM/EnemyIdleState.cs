@@ -1,4 +1,5 @@
-    using UnityEngine;
+using System;
+using UnityEngine;
 namespace Agents.Enemies.FSM
 {
 
@@ -8,10 +9,23 @@ namespace Agents.Enemies.FSM
         {
         }
 
+
         public override void Enter()
         {
             base.Enter();
             _mover.StopImmediately();
+        }
+        public override void Update()
+        {
+            base.Update();
+            if(_enemyAI.IsTargeted)
+                _stateMachine.ChangeState("Move");
+        }
+
+        public override void Exit()
+        {
+            base.Exit();
+
         }
     }
 }
