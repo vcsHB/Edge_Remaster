@@ -9,7 +9,7 @@ namespace Agents.Enemies.AI
         public Vector2 targetDirection;
         public float distanceToTarget;
     }
-    public abstract class EnemyAILogicSO : ScriptableObject
+    public abstract class DetectLogicSO : ScriptableObject
     {
         [SerializeField] protected LayerMask _whatIsTarget;
 
@@ -21,6 +21,10 @@ namespace Agents.Enemies.AI
         }
         public abstract DetectData DetectTarget();
 
-        public EnemyAILogicSO Clone() => Instantiate(this);
+        public DetectLogicSO Clone() => Instantiate(this);
+        protected void InvokeDetectEvent(DetectData data)
+        {
+            OnDetectEvent?.Invoke(data);
+        }
     }
 }

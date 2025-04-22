@@ -26,7 +26,7 @@ namespace Agents.Enemies.FSM
         public void UpdateState()
         {
             CurrentState.Update();
-            Debug.Log(CurrentState);
+            //Debug.Log(CurrentState);
         }
 
         public void AddState(string id, string typeName, int animParam)

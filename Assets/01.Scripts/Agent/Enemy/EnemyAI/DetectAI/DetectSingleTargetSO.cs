@@ -2,8 +2,8 @@ using Agents.Enemies.AI;
 using UnityEngine;
 namespace Agnets.Enemies.AI
 {
-    [CreateAssetMenu(menuName ="SO/EnemyAI/DetectSingleTarget")]
-    public class DetectSingleTargetSO : EnemyAILogicSO
+    [CreateAssetMenu(menuName = "SO/EnemyAI/Detect/DetectSingleTarget")]
+    public class DetectSingleTargetSO : DetectLogicSO
     {
         [SerializeField] private float _detectRadius = 0.4f;
         public override DetectData DetectTarget()
@@ -16,23 +16,27 @@ namespace Agnets.Enemies.AI
             {
                 Transform targetTrm = target.transform;
                 Vector2 direction = targetTrm.position - _ownerTrm.position;
-                return new DetectData()
+                DetectData data = new DetectData()
                 {
                     isTargeted = true,
                     targetPos = targetTrm.position,
                     targetDirection = direction,
                     distanceToTarget = direction.magnitude
                 };
+                InvokeDetectEvent(data);
+                return data;
             }
             else
             {
-                return new DetectData()
+                DetectData data = new DetectData()
                 {
                     isTargeted = false,
                     targetPos = Vector2.zero,
                     targetDirection = Vector2.zero,
                     distanceToTarget = Mathf.Infinity
                 };
+                InvokeDetectEvent(data);
+                return data;
             }
         }
     }

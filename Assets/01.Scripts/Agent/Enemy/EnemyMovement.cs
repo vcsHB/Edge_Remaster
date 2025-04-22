@@ -22,7 +22,12 @@ namespace Agents.Enemies
         {
             _moveDirection = direction.normalized;
             _rigid.linearVelocity = _moveDirection * _moveSpeed;
-            
+        }
+
+        public void SetMovement(Vector2 direction, float magnification)
+        {
+             _moveDirection = direction.normalized;
+            _rigid.linearVelocity = _moveDirection * _moveSpeed * magnification;
         }
 
         public void StopImmediately()

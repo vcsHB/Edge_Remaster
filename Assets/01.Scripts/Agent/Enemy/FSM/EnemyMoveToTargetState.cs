@@ -1,7 +1,8 @@
+using System;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 namespace Agents.Enemies.FSM
 {
-
     public class EnemyMoveToTargetState : EnemyState
     {
 
@@ -12,18 +13,30 @@ namespace Agents.Enemies.FSM
         public override void Enter()
         {
             base.Enter();
+            _enemyAI.StartMove();
+            _enemyAI.MoveLogic.OnArriveEvent += HandleArrive;
 
         }
 
         public override void Update()
         {
             base.Update();
-            _mover.SetMovement(_enemyAI.TargetDirection);
+            _enemyAI.UpdateMove();
         }
 
         public override void Exit()
         {
             base.Exit();
+            _enemyAI.EndMove();
+            _enemyAI.MoveLogic.OnArriveEvent -= HandleArrive;
+
+        }
+
+
+        private void HandleArrive()
+        {
+            _mover.StopImmediately();
+            _stateMachine.ChangeState("Idle");
         }
     }
 }
