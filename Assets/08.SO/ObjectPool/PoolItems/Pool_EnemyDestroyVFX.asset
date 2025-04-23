@@ -16,4 +16,4 @@ MonoBehaviour:
   poolingName: EnemyDestroyVFX
   description: 
   poolCount: 10
-  prefabObject: {fileID: 0}
+  prefabObject: {fileID: 1702219607404046299, guid: 7d68beb4adfd43747b74cf375c6c3f51, type: 3}
