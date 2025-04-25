@@ -16,5 +16,7 @@ namespace Agents.Enemies
             base.OnGenerated();
             OnSpawnEvent?.Invoke();
         }
+
+        
     }
 }
