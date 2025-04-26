@@ -132,10 +132,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 106d389fd10e22b468eed5ccf53c0237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collectAmount: 0
-  _minColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  _maxColor: {r: 0, g: 1, b: 1, a: 1}
-  _followSpeed: 0
+  _collectAmount: 1
+  _minColor: {r: 0.9960785, g: 0.78823537, b: 0, a: 1}
+  _maxColor: {r: 0, g: 0.8183856, b: 1, a: 1}
+  _followSpeed: 10
   _collectorDetectRadius: 15
   _collectorGainRadius: 1.2
   _collectTarget:
