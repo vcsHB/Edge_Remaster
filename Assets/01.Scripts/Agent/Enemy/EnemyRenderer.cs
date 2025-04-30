@@ -6,6 +6,8 @@ namespace Agents.Enemies
 
     public class EnemyRenderer : MonoBehaviour, IAgentComponent
     {
+        [SerializeField] Color _deadColor;
+        private Color _defaultColor;
         protected Animator _animator;
         private SpriteRenderer _spriteRenderer;
         [SerializeField] protected float _dissolveDuration = 2f;
@@ -14,6 +16,7 @@ namespace Agents.Enemies
         {
             _animator = GetComponent<Animator>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            _defaultColor = _spriteRenderer.color;
         }
 
         public void Initialize(Agent agent)
@@ -26,6 +29,11 @@ namespace Agents.Enemies
 
         public void Dispose()
         {
+        }
+
+        public void SetDeadColor(bool value)
+        {
+            _spriteRenderer.color = value ? _deadColor : _defaultColor;
         }
 
         public void SetDissolveLevel(float dissolveLevel)

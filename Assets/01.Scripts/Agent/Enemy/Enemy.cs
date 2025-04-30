@@ -16,12 +16,14 @@ namespace Agents.Enemies
         public event Action OnGeneratedEvent;
         public Health HealthCompo { get; protected set; }
         protected EnemyStateMachine _stateMachine;
+        private EnemyRenderer _enemyRenderer;
 
         protected override void Awake()
         {
             base.Awake();
             HealthCompo = GetComponent<Health>();
             HealthCompo.OnDieEvent.AddListener(HandleEnemyDie);
+            _enemyRenderer = GetCompo<EnemyRenderer>();
             InitState();
         }
 
@@ -40,6 +42,7 @@ namespace Agents.Enemies
         
         protected virtual void HandleEnemyDie()
         {
+            _enemyRenderer.SetDeadColor(true);
             VFXPlayer vfx = PoolManager.Instance.Pop(_destroyVFXType) as VFXPlayer;
             vfx.transform.position = transform.position;
             _stateMachine.ChangeState("Dead");
@@ -55,7 +58,8 @@ namespace Agents.Enemies
         public virtual void OnGenerated()
         {
             _stateMachine.ChangeState("Idle");
-            GetCompo<EnemyRenderer>().SetDissolveLevel(1f);
+            _enemyRenderer.SetDeadColor(false);
+            _enemyRenderer.SetDissolveLevel(1f);
             OnGeneratedEvent?.Invoke();
         }
     }

@@ -2775,6 +2775,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a1d19214e988ec4283c944171846162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _deadColor: {r: 0.4117647, g: 0.4117647, b: 0.4117647, a: 1}
+  _dissolveDuration: 2
 --- !u!95 &789334609
 Animator:
   serializedVersion: 7
@@ -6591,7 +6593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1674499931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6610,8 +6612,8 @@ MonoBehaviour:
   OnWaveCompleteEvent:
     m_PersistentCalls:
       m_Calls: []
-  waveList: {fileID: 0}
-  _defaultSpawnPoint: {fileID: 0}
+  waveList: {fileID: 11400000, guid: fb937a46c883d974e9f73f91607d73b9, type: 2}
+  _defaultSpawnPoint: {fileID: 1674499932}
   _amountMultiplier: 1
   _levelMultiplier: 1
   _currentWave: 0
@@ -8161,7 +8163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2115802199
 Transform:
   m_ObjectHideFlags: 0
