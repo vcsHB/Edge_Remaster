@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Agents.Enemies;
 using UnityEngine;
@@ -52,7 +53,13 @@ namespace Combat.WaveSystem
             IPoolingEnemy item = Pop(type);
             item.PoolObject.transform.position = position;
             item.PoolObject.transform.rotation = rotation;
+            item.OnEnemyReturnToPoolEvent += HandleReturnEnemy;
             return item;
+        }
+
+        private void HandleReturnEnemy(IPoolingEnemy enemy)
+        {
+            Push(enemy);
         }
 
         public void Push(IPoolingEnemy obj, bool resetParent = false)

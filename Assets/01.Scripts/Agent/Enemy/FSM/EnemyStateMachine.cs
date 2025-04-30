@@ -19,6 +19,7 @@ namespace Agents.Enemies.FSM
         {
             AddState("Idle", "EnemyIdle", 1);
             AddState("Move", "EnemyMoveToTarget", 1);
+            AddState("Dead", "EnemyDead", 1);
             CurrentState = _stateDictionary[startState];
 
         }

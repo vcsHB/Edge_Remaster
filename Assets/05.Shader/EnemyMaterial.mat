@@ -46,7 +46,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BlinkLevel: 0
-    - _DissolveLevel: 0.722
+    - _DissolveLevel: 1
     - _DissolveNoiseScale: 9
     - _OutlineWidth: 0.018
     m_Colors:

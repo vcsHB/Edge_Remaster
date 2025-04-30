@@ -1,3 +1,4 @@
+using System;
 using Combat.WaveSystem;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,8 +11,13 @@ namespace Agents.Enemies
         public GameObject PoolObject => gameObject;
 
         [field: SerializeField] public EnemyTypeEnum EnemyType { get; set; }
+        public Action<IPoolingEnemy> OnEnemyReturnToPoolEvent { get; set; }
 
-       
+        internal void HandleReturnToPool()
+        {
+            //PoolManager.Instance.Push(this);
+
+        }
 
         public override void OnGenerated()
         {

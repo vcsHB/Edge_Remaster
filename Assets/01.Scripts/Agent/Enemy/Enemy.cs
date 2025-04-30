@@ -37,11 +37,12 @@ namespace Agents.Enemies
             _stateMachine.UpdateState();
         }
 
-
+        
         protected virtual void HandleEnemyDie()
         {
             VFXPlayer vfx = PoolManager.Instance.Pop(_destroyVFXType) as VFXPlayer;
             vfx.transform.position = transform.position;
+            _stateMachine.ChangeState("Dead");
             vfx.Play();
             OnDieEvent?.Invoke(this);
         }
@@ -53,6 +54,8 @@ namespace Agents.Enemies
         }
         public virtual void OnGenerated()
         {
+            _stateMachine.ChangeState("Idle");
+            GetCompo<EnemyRenderer>().SetDissolveLevel(1f);
             OnGeneratedEvent?.Invoke();
         }
     }
