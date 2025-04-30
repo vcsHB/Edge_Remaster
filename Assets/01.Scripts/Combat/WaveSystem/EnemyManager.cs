@@ -43,6 +43,7 @@ namespace Combat.WaveSystem
             }
 
             IPoolingEnemy item = _pools[type].Pop();
+            item.PoolObject.SetActive(true);
             item.OnGenerated();
             _generatedObjects.Add(item);
             return item;
@@ -67,6 +68,7 @@ namespace Combat.WaveSystem
             if (resetParent)
                 obj.PoolObject.transform.SetParent(transform);
             _pools[obj.EnemyType].Push(obj);
+            obj.PoolObject.SetActive(false);
             _generatedObjects.Remove(obj);
         }
 

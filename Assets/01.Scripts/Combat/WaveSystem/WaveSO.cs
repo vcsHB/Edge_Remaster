@@ -23,5 +23,6 @@ namespace Combat.WaveSystem
     public class WaveSO : ScriptableObject
     {
         public SpawnGroup[] spawnGroups;
+        public float waveTerm;
     }
 }

@@ -15,13 +15,13 @@ namespace Agents.Enemies
 
         internal void HandleReturnToPool()
         {
-            //PoolManager.Instance.Push(this);
-
+            OnEnemyReturnToPoolEvent?.Invoke(this);
         }
 
         public override void OnGenerated()
         {
             base.OnGenerated();
+            HealthCompo.Revive();
             OnSpawnEvent?.Invoke();
         }
 

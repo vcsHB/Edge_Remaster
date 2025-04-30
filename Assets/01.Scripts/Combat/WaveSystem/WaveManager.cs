@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Agents.Enemies;
 using Core.MapConrtrolSystem;
+using ObjectManage;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,14 +17,17 @@ namespace Combat.WaveSystem
         [SerializeField] private Transform _defaultSpawnPoint;
 
         [Header("Wave Detail Setting")] // Difficulty adjuster.
+        [SerializeField] private float _waveStartDelay = 5f;
         [SerializeField] private float _amountMultiplier = 1f;
-        [SerializeField] private float _levelMultiplier = 1f; 
+        [SerializeField] private float _levelMultiplier = 1f;
         // It may need to be modified later depending on the direction of the game.
         private EnemyManager _enemyManager;
         private MapController _mapController;
-        private List<Enemy> _enemyList;
+        private List<IPoolingEnemy> _enemyList = new();
 
-        [SerializeField] private int _currentWave;
+        [SerializeField] private int _currentWaveIndex;
+        [SerializeField] private int _waveLevel = 0;
+        private Coroutine _waveCoroutine;
 
         private void Awake()
         {
@@ -30,14 +35,60 @@ namespace Combat.WaveSystem
             _mapController = FindAnyObjectByType<MapController>();
         }
 
-        public void StartNextWave()
+        private void Start()
         {
-
+            _waveCoroutine = StartCoroutine(WaveCoroutine());
         }
 
-        private void SpawnEnemys(WaveSO wave)
+        private IEnumerator WaveCoroutine()
         {
-            StartCoroutine(SpawnEnemysCoroutine(wave));
+            yield return new WaitForSeconds(_waveStartDelay);
+
+            while (true)
+            {
+                _currentWaveIndex = 0;  // Loop Control
+                while (_currentWaveIndex < waveList.waves.Length)
+                {
+                    WaveSO currentWave = waveList.waves[_currentWaveIndex]; // Wave Spawn Sycle
+                    OnWaveStartEvent?.Invoke();
+                    // foreach (SpawnGroup group in currentWave.spawnGroups)
+                    // {
+                    //     WaitForSeconds waitForGroup = new WaitForSeconds(group.nextSpawnGroupTerm);
+                    //     int enemyCount = group.amount + _waveLevel * 2; // Level to Spawn amount 
+                    //     WaitForSeconds waitForSecond = new WaitForSeconds(group.spawnTerm);
+                    //     for (int i = 0; i < enemyCount; i++)
+                    //     {
+
+                    //         PoolableEnemy enemy = _enemyManager.Pop(group.enemy) as PoolableEnemy;
+                    //         enemy.OnEnemyReturnToPoolEvent += HandleEnemyDie;
+                    //         _enemyList.Add(enemy);
+                    //         Vector2 randomPos = (Vector2)_defaultSpawnPoint.position + (Random.insideUnitCircle * group.spawnRandomizeRadius);
+
+                    //         VFXPlayer vfxPlayer = PoolManager.Instance.Pop(ObjectPooling.PoolingType.EnemyGenerateVFX) as VFXPlayer;
+                    //         vfxPlayer.transform.position = randomPos;
+                    //         vfxPlayer.Play();
+
+                    //         yield return waitForSecond;
+                    //     }
+                    //     yield return waitForGroup;
+                    // }
+
+                    yield return SpawnEnemys(currentWave);
+                    yield return new WaitUntil(() => _enemyList.Count == 0); // Wait for AllKill
+                    OnWaveCompleteEvent?.Invoke();
+                    yield return new WaitForSeconds(currentWave.waveTerm);
+
+                    _currentWaveIndex++;
+                }
+                _waveLevel++;
+            }
+        }
+
+
+
+        private Coroutine SpawnEnemys(WaveSO wave)
+        {
+            return StartCoroutine(SpawnEnemysCoroutine(wave));
         }
 
         private IEnumerator SpawnEnemysCoroutine(WaveSO wave)
@@ -59,7 +110,7 @@ namespace Combat.WaveSystem
                     SpawnParallelType(group);
                     break;
                 case SpawnType.Boss:
-
+                    // not yet
                     break;
             }
         }
@@ -88,11 +139,15 @@ namespace Combat.WaveSystem
         private void GenerateEnemy(EnemyTypeEnum enemyType, Vector2 position)
         {
             PoolableEnemy enemy = _enemyManager.Pop(enemyType, position, Quaternion.identity) as PoolableEnemy;
-            enemy.OnDieEvent += HandleEnemyDie;
+            enemy.OnEnemyReturnToPoolEvent += HandleEnemyDie;
             _enemyList.Add(enemy);
+
+            VFXPlayer vfxPlayer = PoolManager.Instance.Pop(ObjectPooling.PoolingType.EnemyGenerateVFX) as VFXPlayer;
+            vfxPlayer.transform.position = position;
+            vfxPlayer.Play();
         }
 
-        private void HandleEnemyDie(Enemy enemy)
+        private void HandleEnemyDie(IPoolingEnemy enemy)
         {
             _enemyList.Remove(enemy);
             if (enemy is PoolableEnemy poolEnemy)

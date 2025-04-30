@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ca0c73e66220c841bdba840bb5757ad, type: 3}
   m_Name: Enemy_Shooter
   m_EditorClassIdentifier: 
-  prefabObject: {fileID: 0}
+  prefabObject: {fileID: 3892850790884931890, guid: 11b310094662ff74db591c9e92507cd0, type: 3}
   type: 0
   poolCount: 4
