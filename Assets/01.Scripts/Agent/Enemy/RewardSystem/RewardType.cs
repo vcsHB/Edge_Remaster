@@ -2,7 +2,7 @@ namespace RewardSystem
 {
     public enum RewardType
     {
-        Coin,
+        Crystal,
         SkillMatery,
         
     }

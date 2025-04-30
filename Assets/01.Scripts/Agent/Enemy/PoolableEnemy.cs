@@ -8,8 +8,10 @@ namespace Agents.Enemies
     {
         public UnityEvent OnSpawnEvent;
         public GameObject PoolObject => gameObject;
-      
-        [field: SerializeField]  public EnemyTypeEnum EnemyType { get; set; }
+
+        [field: SerializeField] public EnemyTypeEnum EnemyType { get; set; }
+
+       
 
         public override void OnGenerated()
         {
@@ -17,6 +19,8 @@ namespace Agents.Enemies
             OnSpawnEvent?.Invoke();
         }
 
-        
+
+
+
     }
 }

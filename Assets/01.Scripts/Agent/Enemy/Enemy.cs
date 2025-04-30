@@ -1,11 +1,15 @@
 using System;
 using Agents.Enemies.FSM;
 using Combat;
+using ObjectManage;
+using ObjectPooling;
+using UnityEngine;
 
 namespace Agents.Enemies
 {
     public class Enemy : Agent
     {
+        [SerializeField] protected PoolingType _destroyVFXType;
         public int EnemyLevel { get; protected set; }
         public event Action<Enemy> OnDieEvent;
         public event Action<int> OnLevelSetEvent;
@@ -36,6 +40,9 @@ namespace Agents.Enemies
 
         protected virtual void HandleEnemyDie()
         {
+            VFXPlayer vfx = PoolManager.Instance.Pop(_destroyVFXType) as VFXPlayer;
+            vfx.transform.position = transform.position;
+            vfx.Play();
             OnDieEvent?.Invoke(this);
         }
 
