@@ -19,9 +19,10 @@ namespace RewardSystem
         }
         public void DropReward()
         {
-            int totalCrystal = _enemy.EnemyLevel * _rewardData.GetCrystalAmount();
+            int totalCrystal = (_enemy.EnemyLevel + 1) * _rewardData.GetCrystalAmount();
             int splitAmount = Random.Range(2, _dropSplitAmountRandomize);
             int splitedCrystal = totalCrystal / splitAmount;
+            print(splitedCrystal);
             for (int i = 0; i < splitAmount; i++)
             {
                 Crystal crystal = PoolManager.Instance.Pop(ObjectPooling.PoolingType.CrystalObject) as Crystal;

@@ -51,27 +51,6 @@ namespace Combat.WaveSystem
                 {
                     WaveSO currentWave = waveList.waves[_currentWaveIndex]; // Wave Spawn Sycle
                     OnWaveStartEvent?.Invoke();
-                    // foreach (SpawnGroup group in currentWave.spawnGroups)
-                    // {
-                    //     WaitForSeconds waitForGroup = new WaitForSeconds(group.nextSpawnGroupTerm);
-                    //     int enemyCount = group.amount + _waveLevel * 2; // Level to Spawn amount 
-                    //     WaitForSeconds waitForSecond = new WaitForSeconds(group.spawnTerm);
-                    //     for (int i = 0; i < enemyCount; i++)
-                    //     {
-
-                    //         PoolableEnemy enemy = _enemyManager.Pop(group.enemy) as PoolableEnemy;
-                    //         enemy.OnEnemyReturnToPoolEvent += HandleEnemyDie;
-                    //         _enemyList.Add(enemy);
-                    //         Vector2 randomPos = (Vector2)_defaultSpawnPoint.position + (Random.insideUnitCircle * group.spawnRandomizeRadius);
-
-                    //         VFXPlayer vfxPlayer = PoolManager.Instance.Pop(ObjectPooling.PoolingType.EnemyGenerateVFX) as VFXPlayer;
-                    //         vfxPlayer.transform.position = randomPos;
-                    //         vfxPlayer.Play();
-
-                    //         yield return waitForSecond;
-                    //     }
-                    //     yield return waitForGroup;
-                    // }
 
                     yield return SpawnEnemys(currentWave);
                     yield return new WaitUntil(() => _enemyList.Count == 0); // Wait for AllKill
@@ -117,8 +96,10 @@ namespace Combat.WaveSystem
 
         private void SpawnParallelType(SpawnGroup group)
         {
-            for (int i = 0; i < group.amount; i++)
+            int amount = group.amount + _waveLevel;
+            for (int i = 0; i < amount; i++)
             {
+                print("Parallel");
                 Vector2 position = (Vector2)_defaultSpawnPoint.position + (Random.insideUnitCircle * group.spawnRandomizeRadius);
                 GenerateEnemy(group.enemy, position);
 

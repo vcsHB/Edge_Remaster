@@ -21,7 +21,7 @@ namespace Agents.Enemies
         public override void OnGenerated()
         {
             base.OnGenerated();
-            HealthCompo.Revive();
+            HealthCompo.ResetHealth();
             OnSpawnEvent?.Invoke();
         }
 

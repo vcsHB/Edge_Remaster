@@ -16,7 +16,7 @@ MonoBehaviour:
   - spawnType: 1
     enemy: 0
     amount: 5
-    spawnTerm: 0.1
+    spawnTerm: 0.02
     spawnRandomizeRadius: 5
     nextSpawnGroupTerm: 0
-  waveTerm: 0
+  waveTerm: 1

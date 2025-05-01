@@ -16,9 +16,11 @@ MonoBehaviour:
   attackDamage: {fileID: 11400000, guid: f5a9bf156f2b5364c8a2864596a9b716, type: 2}
   moveSpeed: {fileID: 0}
   defense: {fileID: 0}
-  attackSpeed: {fileID: 0}
+  attackSpeed: {fileID: 11400000, guid: e8bd33bd7b2bdfb4daf5f59e8f971423, type: 2}
   edgeSlideSpeed: {fileID: 11400000, guid: 9cf476ed2e1c03e428224423054ecfc7, type: 2}
   edgeMoveCooltime: {fileID: 11400000, guid: 426103921acc03a4db3776f962167d73, type: 2}
-  noLimitDuration: {fileID: 0}
-  feverFillMultiple: {fileID: 0}
-  scoreBonus: {fileID: 0}
+  objectDamage: {fileID: 11400000, guid: 1776b69c28fa4dc4e84e2814dec8b24e, type: 2}
+  objectAttackSpeed: {fileID: 11400000, guid: ff13bfca2c8ddeb4290e1d55c0d593cb, type: 2}
+  objectHealth: {fileID: 11400000, guid: abdf15efc29119944a96ca9dabff9d94, type: 2}
+  bonusCrystal: {fileID: 11400000, guid: e288747c0f7d99e4dbee344cf0891cad, type: 2}
+  bonusPolygon: {fileID: 11400000, guid: e68386f7a3d8cb240a2a33ecc924e540, type: 2}

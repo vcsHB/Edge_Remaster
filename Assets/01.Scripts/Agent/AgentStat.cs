@@ -5,12 +5,6 @@ namespace Agents
     public class AgentStat : MonoBehaviour, IAgentComponent
     {
         [field: SerializeField] public StatusSO Status { get; protected set; }
-
-
-        private void Awake()
-        {
-            Status = Instantiate(Status);
-        }
         public void AfterInit() { }
 
         public void Dispose() { }
@@ -35,14 +29,12 @@ namespace Agents
 
         public float GetBaseValue(StatType statType)
             => GetStat(statType).BaseValue;
+            
+        public void CloneStatus()
+        {
+            Status = Instantiate(Status);
+            Status.CloneAllStatus();
+        }
 
-
-
-        // public void AddModifier(StatType statType, object key, float value)
-        //     => GetStat(statType).AddBuffDebuff(key, value);
-
-
-        // public void RemoveModifier(StatType statType, object key)
-        //     => GetStat(statType).RemovedBuffDebuff(key);
     }
 }

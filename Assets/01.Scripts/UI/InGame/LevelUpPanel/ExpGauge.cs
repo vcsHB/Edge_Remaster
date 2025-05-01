@@ -8,9 +8,9 @@ namespace UI.InGame
     public class ExpGauge : MonoBehaviour
     {
         [SerializeField] private Image _fillImage;
-        [SerializeField] private LevelController _ownerController;
+        [SerializeField] private LevelManager _ownerController;
         private void Awake() {
-            _ownerController.OnExpChangedEvent += HandleExpChange;
+            _ownerController.OnCrystalChangedEvent += HandleExpChange;
         }
 
         private void HandleExpChange(int current, int max)

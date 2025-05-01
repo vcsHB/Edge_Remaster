@@ -11,35 +11,22 @@ namespace StatSystem
 
         public Stat edgeSlideSpeed;
         public Stat edgeMoveCooltime;
-        public Stat noLimitDuration;
-
-        public Stat feverFillMultiple;
-        public Stat scoreBonus;
-
-        public void AddModifier(StatType targetStat, int increaseValue)
-        {
-            if(statDictionary.TryGetValue(targetStat, out Stat stat))
-            {
-                stat.AddModifier(increaseValue);
-            }
-        }
-
-        public void RemoveModifier(StatType targetStat, int increaseValue)
-        {
-            if(statDictionary.TryGetValue(targetStat, out Stat stat))
-            {
-                stat.RemoveModifier(increaseValue);
-            }
-        }
+        public Stat objectDamage;
+        public Stat objectAttackSpeed;
+        public Stat objectHealth;
+        public Stat bonusCrystal;
+        public Stat bonusPolygon;
 
         protected override void OnEnable()
         {
             base.OnEnable();
             statDictionary.Add(StatType.EdgeSlideSpeed, edgeSlideSpeed);
             statDictionary.Add(StatType.EdgeMoveCooltime, edgeMoveCooltime);
-            statDictionary.Add(StatType.NoLimitDuration, noLimitDuration);
-            statDictionary.Add(StatType.FeverFillMultiple, feverFillMultiple);
-            statDictionary.Add(StatType.ScoreBonus, scoreBonus);
+            statDictionary.Add(StatType.ObjectAttackDamage, objectDamage);
+            statDictionary.Add(StatType.ObjectAttackSpeed, objectAttackSpeed);
+            statDictionary.Add(StatType.ObjectHealth, objectHealth);
+            statDictionary.Add(StatType.BonusCrystal, bonusCrystal);
+            statDictionary.Add(StatType.BonusPolygon, bonusPolygon);
         }
     }
 }

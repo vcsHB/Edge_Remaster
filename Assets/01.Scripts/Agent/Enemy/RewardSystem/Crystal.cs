@@ -2,6 +2,7 @@ using ObjectPooling;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Events;
+using LevelSystem;
 
 namespace RewardSystem
 {
@@ -18,6 +19,7 @@ namespace RewardSystem
         [SerializeField] private Color _minColor = Color.yellow;
         [SerializeField] private Color _maxColor = Color.cyan;
         [Header("Follow Settings")]
+        [SerializeField] private float _rotationSpeedMultiplier = 3f;
         [SerializeField] private float _followSpeed;
         private float _defaultFollowSpeed;
         [SerializeField] private float _speedIncreaseRate;
@@ -56,7 +58,7 @@ namespace RewardSystem
         {
             transform.position = position;
             Vector2 randomDirection = direction.normalized * UnityEngine.Random.Range(_explosionMinPower, _explosionMaxPower);
-            print(randomDirection);
+            _visualTrm.up = -direction;
             transform.DOMove(
                 position + randomDirection,
                 _explosionDuration).SetEase(Ease.OutExpo).OnComplete(() => _canFollow = true);
@@ -70,6 +72,8 @@ namespace RewardSystem
             if (_targetTrm == null) return;
             Vector3 direction = _targetTrm.position - transform.position;
             _followSpeed += _speedIncreaseRate * Time.deltaTime;
+            float rotation = _followSpeed * _rotationSpeedMultiplier;
+            _visualTrm.up = new Vector2(Mathf.Cos(rotation), Mathf.Sin(rotation));
             transform.position += direction.normalized * _followSpeed * Time.fixedDeltaTime;
         }
 
@@ -88,8 +92,9 @@ namespace RewardSystem
 
         private void HandleCollected()
         {
-            OnCollectedEvent?.Invoke(); 
+            OnCollectedEvent?.Invoke();
             PoolManager.Instance.Push(this);
+            LevelManager.Instance.AddCrystal(_collectAmount);
         }
 
         public void ResetItem()

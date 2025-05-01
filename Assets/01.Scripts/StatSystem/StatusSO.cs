@@ -12,9 +12,12 @@ namespace StatSystem
         AttackSpeed,
         EdgeSlideSpeed,
         EdgeMoveCooltime,
-        NoLimitDuration,
-        FeverFillMultiple,
-        ScoreBonus
+        ObjectAttackDamage,
+        ObjectAttackSpeed,
+        ObjectHealth,
+        BonusCrystal,
+        BonusPolygon,
+        
     }
     [CreateAssetMenu(menuName = "SO/Status/Status")]
     public class StatusSO : ScriptableObject
@@ -55,10 +58,11 @@ namespace StatSystem
             statDictionary.Add(StatType.AttackSpeed, attackSpeed);
         }
 
-        private void CloneAllStatus()
+        public void CloneAllStatus()
         {
             foreach (Stat stat in statDictionary.Values)
             {
+                if(stat == null) continue;
                 stat.Clone();
             }
         }

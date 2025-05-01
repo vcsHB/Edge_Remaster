@@ -10,7 +10,7 @@ namespace Agents.Enemies
     public class Enemy : Agent
     {
         [SerializeField] protected PoolingType _destroyVFXType;
-        public int EnemyLevel { get; protected set; }
+        [field: SerializeField] public int EnemyLevel { get; protected set; }
         public event Action<Enemy> OnDieEvent;
         public event Action<int> OnLevelSetEvent;
         public event Action OnGeneratedEvent;
@@ -39,7 +39,7 @@ namespace Agents.Enemies
             _stateMachine.UpdateState();
         }
 
-        
+
         protected virtual void HandleEnemyDie()
         {
             _enemyRenderer.SetDeadColor(true);

@@ -10,6 +10,7 @@ namespace SkillSystem
     {
         public int id;
         public string code;
+        public int maxLevel;
         public PlayerSkill shouldBeUnlock;
         public string title;
         [TextArea] public string description;

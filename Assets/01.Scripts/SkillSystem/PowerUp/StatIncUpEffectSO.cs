@@ -9,7 +9,7 @@ namespace SkillSystem
     public class StatIncUpEffectSO : PowerUpEffectSO
     {
         public StatType targetStat;
-        public int increaseValue;
+        public float increaseValue;
 
         public override void UseEffect()
         {

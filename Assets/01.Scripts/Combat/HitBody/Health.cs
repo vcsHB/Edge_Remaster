@@ -61,7 +61,7 @@ namespace Combat
         public void ResetHealth()
         {
             SetMaxHealth();
-            _isDie = true;
+            _isDie = false;
         }
 
         private void CheckDie()

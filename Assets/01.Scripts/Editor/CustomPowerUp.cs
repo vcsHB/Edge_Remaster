@@ -7,6 +7,8 @@ public class CustomPowerUp : Editor
 {
     private SerializedProperty idProp;
     private SerializedProperty codeProp;
+    private SerializedProperty maxLevelProp;
+
     private SerializedProperty shouldBeUnlockProp;
     private SerializedProperty titleProp;
     private SerializedProperty descProp;
@@ -19,10 +21,11 @@ public class CustomPowerUp : Editor
 
     private void OnEnable()
     {
-        //왜했는지 기억나니? 텍스트 입력에 포커스 
         GUIUtility.keyboardControl = 0;
         idProp = serializedObject.FindProperty("id");
         codeProp = serializedObject.FindProperty("code");
+        maxLevelProp = serializedObject.FindProperty("maxLevel");
+
         shouldBeUnlockProp = serializedObject.FindProperty("shouldBeUnlock");
         titleProp = serializedObject.FindProperty("title");
         descProp = serializedObject.FindProperty("description");
@@ -93,6 +96,7 @@ public class CustomPowerUp : Editor
 
                 EditorGUILayout.PropertyField(shouldBeUnlockProp);
                 EditorGUILayout.PropertyField(titleProp);
+                EditorGUILayout.PropertyField(maxLevelProp);
             }
             EditorGUILayout.EndVertical();
         }
