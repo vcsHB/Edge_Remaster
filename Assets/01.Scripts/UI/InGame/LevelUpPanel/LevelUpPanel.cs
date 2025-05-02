@@ -4,6 +4,7 @@ using SkillSystem;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Rendering;
+using Core;
 
 namespace UI.InGame
 {
@@ -30,15 +31,20 @@ namespace UI.InGame
         {
             _canvasGroup = GetComponent<CanvasGroup>();
             _rectTrm = transform as RectTransform;
-            _slots = GetComponents<UpgradeContentSlot>().ToList();
+            _slots = _contentTrm.GetComponentsInChildren<UpgradeContentSlot>().ToList();
             for (int i = 0; i < _slots.Count; i++)
             {
+                _slots[i].Initialize(i);
                 _slots[i].OnSelectedEvent += HandleSelected;
             }
         }
 
-        private void HandleSelected()
+        private void HandleSelected(int id)
         {
+            for (int i = 0; i < _slots.Count; i++)
+            {
+                _slots[i].SetSelect(i == id);
+            }
             Close();
         }
 
@@ -50,6 +56,7 @@ namespace UI.InGame
         public void Open()
         {
             _canvasGroup.alpha = 1f;
+            TimeManager.AddTimeScaleRecord(0f);
             SetPanelInteractable(true);
             _rectTrm.DOSizeDelta(
                 new Vector2(_rectTrm.sizeDelta.x, _activeHeight), _activeDuration)
@@ -60,13 +67,30 @@ namespace UI.InGame
 
         public void Close()
         {
+            // Sequence sequence = DOTween.Sequence();
+            // sequence.SetUpdate(true);
+            // sequence.AppendInterval(_closeDelay);
+            // sequence.Append(
+            //     _rectTrm.DOSizeDelta(new Vector2(_rectTrm.sizeDelta.x, 0f), _activeDuration)
+            //     .SetUpdate(_useUnscaledTime)
+            //     .OnComplete(() =>
+            //     {
+            //         SetPanelInteractable(false);
+            //         _canvasGroup.alpha = 0f;
+            //         TimeManager.RemoveTimeScaleRecord();
+
+            //     }));
+
 
             _rectTrm.DOSizeDelta(new Vector2(_rectTrm.sizeDelta.x, 0f), _activeDuration)
+                .SetEase(Ease.InExpo)
                 .SetUpdate(_useUnscaledTime)
                 .OnComplete(() =>
                 {
                     SetPanelInteractable(false);
                     _canvasGroup.alpha = 0f;
+                    TimeManager.RemoveTimeScaleRecord();
+
                 });
 
         }
@@ -80,13 +104,14 @@ namespace UI.InGame
                 Debug.LogError("Error!, Must Have 3 Item at Least");
                 return;
             }
-            if (_slots.Count < amount)
+            if (_slots.Count <= amount)
             {
                 int lackAmount = amount - _slots.Count;
                 for (int i = 0; i < lackAmount; i++)
                 {
-                    UpgradeContentSlot newSlot = Instantiate(_slotPrefab, transform);
+                    UpgradeContentSlot newSlot = Instantiate(_slotPrefab, _contentTrm);
                     newSlot.OnSelectedEvent += HandleSelected;
+                    newSlot.Initialize(_slots.Count);
                     _slots.Add(newSlot);
                 }
             }
