@@ -1,13 +1,14 @@
 using System;
-using Combat;
 using SkillSystem;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 namespace UI.InGame
 {
     public class UpgradeContentSlot : MonoBehaviour
     {
+        public UnityEvent OnSelectedSerializedEvent;
         public event Action<int> OnSelectedEvent;
         public int Id => _indexId;
         private int _indexId;
@@ -49,6 +50,7 @@ namespace UI.InGame
         {
             PowerUp.effectList.ForEach(effect => effect.UseEffect());
             OnSelectedEvent?.Invoke(_indexId);
+            OnSelectedSerializedEvent?.Invoke();
         }
 
         private void UpdateUI()

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabObject: {fileID: 3892850790884931890, guid: 11b310094662ff74db591c9e92507cd0, type: 3}
   type: 0
-  poolCount: 4
+  poolCount: 30
