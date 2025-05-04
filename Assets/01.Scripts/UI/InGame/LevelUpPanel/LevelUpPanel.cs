@@ -67,21 +67,6 @@ namespace UI.InGame
 
         public void Close()
         {
-            // Sequence sequence = DOTween.Sequence();
-            // sequence.SetUpdate(true);
-            // sequence.AppendInterval(_closeDelay);
-            // sequence.Append(
-            //     _rectTrm.DOSizeDelta(new Vector2(_rectTrm.sizeDelta.x, 0f), _activeDuration)
-            //     .SetUpdate(_useUnscaledTime)
-            //     .OnComplete(() =>
-            //     {
-            //         SetPanelInteractable(false);
-            //         _canvasGroup.alpha = 0f;
-            //         TimeManager.RemoveTimeScaleRecord();
-
-            //     }));
-
-
             _rectTrm.DOSizeDelta(new Vector2(_rectTrm.sizeDelta.x, 0f), _activeDuration)
                 .SetEase(Ease.InExpo)
                 .SetUpdate(_useUnscaledTime)
@@ -92,7 +77,6 @@ namespace UI.InGame
                     TimeManager.RemoveTimeScaleRecord();
 
                 });
-
         }
 
         private void SetUpPowerUpCards(int amount)
