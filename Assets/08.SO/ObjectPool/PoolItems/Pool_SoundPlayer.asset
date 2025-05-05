@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enumName: SoundPlayer
   poolingName: SoundPlayer
-  description: 
+  description: Sound Pooling Object
   poolCount: 10
-  prefabObject: {fileID: 0}
+  prefabObject: {fileID: 8542154392308303680, guid: a2821fd6273559642af655bbfcda1d2c, type: 3}

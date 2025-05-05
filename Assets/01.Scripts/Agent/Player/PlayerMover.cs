@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using ObjectManage;
 using UnityEngine;
 using UnityEngine.Events;
@@ -18,7 +19,6 @@ namespace Agents.Players
         private Rigidbody2D _rigidCompo;
 
         // Move
-        public bool isEdgeMove;
         private bool _isMoving = false;
         private Vector2 _previousPosition;
         private MovePoint _targetPoint;
@@ -49,7 +49,6 @@ namespace Agents.Players
         {
             if (!canMove) return false;
             if (_isMoving) return false;
-            if (!isEdgeMove) return false;
             SetPreviousPos(transform.position);
             RaycastHit2D hit = Physics2D.Raycast((Vector2)transform.position + 2f * direction.normalized, direction, _moveTargetDetectLength, _moveTargetLayer);
 
@@ -74,13 +73,13 @@ namespace Agents.Players
         private void FixedUpdate()
         {
             if (!canMove) return;
-            if (!isEdgeMove)
-            {
-                Velocity = _moveDirection * _player.PlayerStatus.moveSpeed.GetValue();
-                _rigidCompo.linearVelocity = Velocity;
+            // if (!isEdgeMove)
+            // {
+            //     Velocity = _moveDirection * _player.PlayerStatus.moveSpeed.GetValue();
+            //     _rigidCompo.linearVelocity = Velocity;
 
-                OnMovement?.Invoke(Velocity);
-            }
+            //     OnMovement?.Invoke(Velocity);
+            // }
         }
 
 
@@ -114,12 +113,23 @@ namespace Agents.Players
             _targetPoint = newPoint;
         }
         #endregion
-
-        public void SetEdgeMode(bool value)
+        public void ForceMoveToPosition(MovePoint movePoint, float duration)
         {
-            isEdgeMove = value;
+            StartCoroutine(ForceMoveToPositionCoroutine(movePoint, duration));
         }
-
+        private IEnumerator ForceMoveToPositionCoroutine(MovePoint movePoint, float duration)
+        {
+            SetPreviousPos(_player.transform.position);
+            SetMovePoint(movePoint);
+            StopImmediately();
+            float currentTime = 0f;
+            while (currentTime <= duration)
+            {
+                currentTime += Time.deltaTime;
+                SetMovement(currentTime / duration);
+                yield return null;
+            }
+        }
 
         public MovePoint GetNearMovePoint()
         {

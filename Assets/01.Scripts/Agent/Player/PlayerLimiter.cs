@@ -31,7 +31,7 @@ namespace Agents.Players
             _player.PlayerStatus.defense.AddModifier(200f);
             _player.PlayerStatus.attackDamage.AddModifier(200f);
             _player.PlayerStatus.attackSpeed.AddModifier(2f);
-            _noLimitDuration = _player.PlayerStatus.noLimitDuration.GetValue();
+            //_noLimitDuration = _player.PlayerStatus.noLimitDuration.GetValue();
             _currentTime = 0f;
 
         }

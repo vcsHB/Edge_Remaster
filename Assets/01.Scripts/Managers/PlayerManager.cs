@@ -1,4 +1,5 @@
 using Agents.Players;
+using ObjectManage;
 using UnityEngine;
 namespace Core
 {
@@ -9,6 +10,9 @@ namespace Core
         [field:SerializeField] public Player Player {get; private set;}
 
         
-
+        public void ForceMovePlayer(MovePoint movePoint, float duration)
+        {
+            Player.ForceMoveToPoint(movePoint, duration);
+        }
     }
 }

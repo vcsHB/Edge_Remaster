@@ -58,6 +58,12 @@ namespace Combat
             OnReviveEvent?.Invoke();
         }
 
+        public void ResetHealth()
+        {
+            SetMaxHealth();
+            _isDie = false;
+        }
+
         private void CheckDie()
         {
             if(_isDie) return;

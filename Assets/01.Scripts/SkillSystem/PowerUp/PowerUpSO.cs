@@ -2,30 +2,35 @@
 using System.Linq;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "SO/Items/PowerUp/Data")]
-public class PowerUpSO : ScriptableObject
+namespace SkillSystem
 {
-    public int id;
-    public string code;
-    public PlayerSkill shouldBeUnlock;
-    public string title;
-    [TextArea] public string description;
-    public Sprite icon;
 
-    public List<PowerUpEffectSO> effectList;
-
-    public bool CheckCanUpgrade()
+    [CreateAssetMenu(menuName = "SO/Items/PowerUp/Data")]
+    public class PowerUpSO : ScriptableObject
     {
-        if (shouldBeUnlock != PlayerSkill.None)
+        public int id;
+        public string code;
+        public int maxLevel;
+        public PlayerSkill shouldBeUnlock;
+        public string title;
+        [TextArea] public string description;
+        public Sprite icon;
+
+        public List<PowerUpEffectSO> effectList;
+
+        public bool CheckCanUpgrade()
         {
-            Skill skill = SkillManager.Instance.GetSkill(shouldBeUnlock);
-            if (skill.skillEnabled == false) return false;
+            if (shouldBeUnlock != PlayerSkill.None)
+            {
+                Skill skill = SkillManager.Instance.GetSkill(shouldBeUnlock);
+                if (skill.skillEnabled == false) return false;
+            }
+
+            if (effectList.Any(e => e.CanUpgradeEffect() == false))
+                return false;
+
+            return true;
         }
 
-        if (effectList.Any(e => e.CanUpgradeEffect() == false)) 
-            return false;
-
-        return true;
     }
-
 }

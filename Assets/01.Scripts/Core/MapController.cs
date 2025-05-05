@@ -60,9 +60,9 @@ namespace Core.MapConrtrolSystem
 
         }
 
-        public Vector2 GetRandomPointPosition()
+        public MovePoint GetRandomPoint()
         {
-            return _points[Random.Range(0, _points.Length)].transform.position;
+            return _points[Random.Range(0, _points.Length)];
         }
 
     }
