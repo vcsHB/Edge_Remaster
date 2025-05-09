@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Core.EventSystem;
 using UnityEngine;
 
 namespace Agents
@@ -10,9 +11,10 @@ namespace Agents
     {
 
         private Dictionary<Type, IAgentComponent> _components = new Dictionary<Type, IAgentComponent>();
-
+        [field: SerializeField] public GameEventChannelSO EventChannel { get; set; }
         protected virtual void Awake()
         {
+            EventChannel = Instantiate(EventChannel);
             AddComponentToDictionary();
             ComponentInitialize();
             AfterInit();

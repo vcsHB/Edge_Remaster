@@ -18,7 +18,7 @@ namespace Agents.Enemies.AI.Ability
             _pathData = _avoidPathFinder.FindPath(_ownerTrm.position, _detectData.targetPos);
             if(_pathData == null) return;
             
-
+            
         }
     }
 }

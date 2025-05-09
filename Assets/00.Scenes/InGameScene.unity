@@ -2633,6 +2633,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 424531906}
+  - component: {fileID: 424531907}
   m_Layer: 0
   m_Name: TimeBreaker
   m_TagString: Untagged
@@ -2657,6 +2658,42 @@ Transform:
   - {fileID: 1429843968}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &424531907
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424531905}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
 --- !u!1001 &479844388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30476,6 +30513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80d79cae8050ea0408e559c2382918e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <EventChannel>k__BackingField: {fileID: 11400000, guid: 8407f407714a20247aa8d0c3384f9a73, type: 2}
   <PlayerInput>k__BackingField: {fileID: 11400000, guid: b24ab240d3078af4cb0f6ee35d4f7fdd, type: 2}
 --- !u!4 &4560371070325943269
 Transform:
