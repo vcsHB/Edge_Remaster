@@ -18,6 +18,7 @@ namespace Agents.Enemies
         protected EnemyStateMachine _stateMachine;
         private EnemyRenderer _enemyRenderer;
         private Collider2D _collider;
+        public bool IsDead { get; protected set; }
 
         protected override void Awake()
         {
@@ -49,6 +50,7 @@ namespace Agents.Enemies
             _collider.enabled = false;
             vfx.transform.position = transform.position;
             _stateMachine.ChangeState("Dead");
+            IsDead = true;
             vfx.Play();
             OnDieEvent?.Invoke(this);
         }
@@ -62,6 +64,7 @@ namespace Agents.Enemies
         {
             _stateMachine.ChangeState("Idle");
             _collider.enabled = true;
+            IsDead = false;
             _enemyRenderer.SetDeadColor(false);
             _enemyRenderer.SetDissolveLevel(1f);
             OnGeneratedEvent?.Invoke();

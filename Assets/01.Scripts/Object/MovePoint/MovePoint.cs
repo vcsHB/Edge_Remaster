@@ -1,11 +1,14 @@
 using Combat;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 namespace ObjectManage
 {
 
     public class MovePoint : MonoBehaviour
     {
+        public UnityEvent OnEnterEvent;
+        public UnityEvent OnExitEvent;
         private Collider2D _collider;
         [SerializeField] private bool _isActive = true;
         [SerializeField] private TextMeshPro _leftTimeText;
@@ -31,10 +34,10 @@ namespace ObjectManage
 
         private void Update()
         {
-            if(_isActive) return;
-            _currentTime += Time.deltaTime; 
+            if (_isActive) return;
+            _currentTime += Time.deltaTime;
             UpdateText();
-            if(_currentTime >= _reviveCooltime)
+            if (_currentTime >= _reviveCooltime)
             {
                 HandleRevive();
             }
@@ -67,12 +70,14 @@ namespace ObjectManage
         {
             //_collider.enabled = false;
             //_healthCompo.isResist = false;
+            OnExitEvent?.Invoke();
         }
 
         public void Exit()
         {
             //_collider.enabled = true;
             //_healthCompo.isResist = true;
+            OnExitEvent?.Invoke();
         }
 
 

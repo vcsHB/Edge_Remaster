@@ -7,6 +7,7 @@ namespace Agents.Enemies
 
     public class EnemyAI : MonoBehaviour, IAgentComponent
     {
+        [SerializeField] protected ComabtLogicSO _combatLogic;
         [SerializeField] protected DetectLogicSO _detectLogic;
         [SerializeField] protected MoveLogicSO _moveLogic;
         public MoveLogicSO MoveLogic => _moveLogic;
@@ -26,9 +27,10 @@ namespace Agents.Enemies
         protected MoveData _moveData;
 
         protected Enemy _owner;
-        public void Initialize(Agent agent)
+        public virtual void Initialize(Agent agent)
         {
             _owner = agent as Enemy;
+            //_combatLogic = _combatLogic.Clone();
             _detectLogic = _detectLogic.Clone();
             _moveLogic = _moveLogic.Clone();
             _detectLogic.InitializeOwner(_owner.transform);
@@ -38,7 +40,7 @@ namespace Agents.Enemies
             //_enemyMovement = agent.GetCompo<EnemyMovement>();
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             _detectData = _detectLogic.DetectTarget();
         }

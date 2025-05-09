@@ -15,7 +15,7 @@ namespace Agents.Enemies.AI
 
         public event Action<DetectData> OnDetectEvent;
         protected Transform _ownerTrm;
-        public void InitializeOwner(Transform transform)
+        public virtual void InitializeOwner(Transform transform)
         {
             _ownerTrm = transform;
         }
