@@ -56,6 +56,11 @@ namespace Agents.Enemies
         public void AfterInit() { }
         public void Dispose() { }
 
+        public void ChangeDetectLogic(MoveLogicSO newMoveLogic)
+        {
+            // Dev After
+        }
+
         public void StartMove()
         {
             _moveLogic.StartMove();

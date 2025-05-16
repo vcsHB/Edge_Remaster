@@ -332,7 +332,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb1e206c7d1ccc4c84ff3b76cc8ed91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <EventChannel>k__BackingField: {fileID: 11400000, guid: 27735232c352ec64a9da84c7e86635e6, type: 2}
   _destroyVFXType: 4
+  <EnemyLevel>k__BackingField: 0
   OnSpawnEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -362,6 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0aee7bc5f0231a408e185ad550e5cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _combatLogic: {fileID: 0}
   _detectLogic: {fileID: 11400000, guid: f197d83852059424c91125911e0a3f9d, type: 2}
   _moveLogic: {fileID: 11400000, guid: 2013e482ed6f7f44080a382eb0813986, type: 2}
 --- !u!114 &8989212851522425658
