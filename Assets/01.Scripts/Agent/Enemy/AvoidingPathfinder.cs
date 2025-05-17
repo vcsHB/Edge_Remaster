@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Core.attribute;
 using UnityEngine;
 
 namespace Agents.Enemies.AI.PathFinder
@@ -17,8 +18,9 @@ namespace Agents.Enemies.AI.PathFinder
         public LayerMask bulletMask;
 
         [Header("Debug Settings")]
-        public Transform _startPointTrm;
-        public Transform _endPointTrm;
+        [SerializeField] private bool _useDebugMode;
+        [ShowIf(nameof(_useDebugMode)), SerializeField] private Transform _startPointTrm;
+        [ShowIf(nameof(_useDebugMode)), SerializeField] private Transform _endPointTrm;
 
         private Stack<Vector2> pathStack = new();
         private HashSet<Vector2> visited = new();
