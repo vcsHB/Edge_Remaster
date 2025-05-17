@@ -37,21 +37,37 @@ namespace Agents
             _components.Values.ToList().ForEach(compo => compo.AfterInit());
         }
 
-        public T GetCompo<T>(bool isDerived = false) where T : class
+        public T GetCompo<T>(bool allowDerived = false) where T : class
         {
-            if (_components.TryGetValue(typeof(T), out IAgentComponent compo))
+            Type targetType = typeof(T);
+
+            // 1. Exact type matching cache lookup
+            if (_components.TryGetValue(targetType, out IAgentComponent cached))
             {
-                return compo as T;
+                return cached as T;
             }
 
-            if (!isDerived) return default;
+            // 2.Try GetComponentInChildren if it doesn't exist
+            T found = GetComponentInChildren<T>();
+            if (found is IAgentComponent agentComponent)
+            {
+                _components[targetType] = agentComponent;
+                return found;
+            }
 
-            Type findType = _components.Keys.FirstOrDefault(x => x.IsSubclassOf(typeof(T)));
-            if (findType != null)
-                return _components[findType] as T;
+            // 3. Search for child classes when inheritance type is allowed
+            if (allowDerived)
+            {
+                Type derivedKey = _components.Keys.FirstOrDefault(k => k.IsSubclassOf(targetType));
+                if (derivedKey != null && _components[derivedKey] is T derivedCompo)
+                {
+                    return derivedCompo;
+                }
+            }
 
-            return default(T);
+            return default;
         }
+
     }
 
 }

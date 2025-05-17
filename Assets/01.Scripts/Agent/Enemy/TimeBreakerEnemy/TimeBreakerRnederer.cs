@@ -3,16 +3,11 @@ using UnityEngine.Events;
 namespace Agents.Enemies
 {
 
-    public class TimeBreakerRnederer : MonoBehaviour, IAgentComponent
+    public class TimeBreakerRnederer : EnemyRenderer
     {
         [SerializeField] private TrailRenderer _trailRenderer;
         public UnityEvent OnTimeBreakStartEvent;
         public UnityEvent OnTimeBreakEndEvent;
-
-        public void Initialize(Agent agent) { }
-        public void AfterInit() { }
-
-        public void Dispose() { }
 
         public void StartTimeBreak()
         {

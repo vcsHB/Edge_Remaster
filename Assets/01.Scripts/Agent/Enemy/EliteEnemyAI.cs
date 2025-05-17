@@ -7,6 +7,7 @@ namespace Agents.Enemies
     public class EliteEnemyAI : EnemyAI
     {
         public event Action<float, float> OnCooltimeUpdateEvent;// <current, max>
+        public event Action OnAbilityCompleteEvent;
         [Header("EliteEnemy AI Setting")]
         [SerializeField] private AbilityLogicSO[] _abilitys;
         [SerializeField] private bool _canDuplication; // condition of : Use A Skill -> Use A Skill
@@ -30,6 +31,7 @@ namespace Agents.Enemies
         {
             SelectNextAbility();
             _isAbilityComplete = true;
+            OnAbilityCompleteEvent?.Invoke();
 
         }
 

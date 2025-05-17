@@ -8,7 +8,7 @@ namespace Agents.Enemies.AI.Ability
     [CreateAssetMenu(menuName = "SO/EnemyAI/Avility/TimeBreak")]
     public class TimeBreakAbilityLogicSO : AbilityLogicSO
     {
-        [SerializeField] private float _newTimeSet;
+        [SerializeField] private float _newTimeSet = 0.2f;
 
         [Header("TimeBreak MoveAbility Settings")]
         [SerializeField] private float _moveDuration = 0.15f;
@@ -28,7 +28,7 @@ namespace Agents.Enemies.AI.Ability
             _pathData = _avoidPathFinder.FindPath(_ownerTrm.position, _detectData.targetPos);
             if (_pathData == null) return;
 
-            TimeManager.AddTimeScaleRecord(0.1f);
+            TimeManager.AddTimeScaleRecord(_newTimeSet);
             _timeBreakerMover.MoveToPoints(
                 _pathData, _moveDuration,
                 _moveTermDuration, _movementEase, InvokeAbilityComplete);

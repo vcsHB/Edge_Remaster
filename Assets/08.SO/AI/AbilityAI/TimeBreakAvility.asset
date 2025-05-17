@@ -12,4 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415709a6549934e4c862d6b6292a5715, type: 3}
   m_Name: TimeBreakAvility
   m_EditorClassIdentifier: 
-  _newTimeSet: 0
+  useCooltime: 15
+  displayData:
+    AbilityRank: 2
+    abilityName: "\uC2DC\uAC04 \uB3C4\uC57D"
+    abilityDescription: "\uCC28\uC6D0\uC801 \uD55C\uACC4\uB97C \uC77C\uC2DC\uC801\uC73C\uB85C
+      \uBC97\uC5B4\uB09C\uB2E4."
+  _newTimeSet: 0.1
+  _moveDuration: 0.15
+  _moveTermDuration: 0.1
+  _movementEase: 2

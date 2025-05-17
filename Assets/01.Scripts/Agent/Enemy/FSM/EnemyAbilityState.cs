@@ -11,10 +11,10 @@ namespace Agents.Enemies.FSM
         public override void Enter()
         {
             base.Enter();
-            //_eliteAI.AbilitySO.HandleUseAbility(HandleMoveComplete);
+            _eliteAI.OnAbilityCompleteEvent += HandleAbilityComplete;
         }
 
-        private void HandleMoveComplete()
+        protected virtual void HandleAbilityComplete()
         {
             // State Change.
             _stateMachine.ChangeState("Idle");

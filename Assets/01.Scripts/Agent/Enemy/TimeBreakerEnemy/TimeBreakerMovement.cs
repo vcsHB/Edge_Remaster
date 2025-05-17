@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Agents.Enemies
 {
 
-    public class TimeBreakerMovement : MonoBehaviour
+    public class TimeBreakerMovement : EnemyMovement
     {
         [SerializeField] private bool _useUnscaledTime = true;
 
