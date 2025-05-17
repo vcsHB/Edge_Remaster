@@ -1,11 +1,10 @@
-using System;
 using UnityEngine;
 namespace Agents.Enemies.FSM
 {
 
-    public class TimeBreakingState : EliteEnemyState
+    public class EnemyAbilityState : EliteEnemyState
     {
-        public TimeBreakingState(Enemy owner, EnemyStateMachine stateMachine, int animationParam) : base(owner, stateMachine, animationParam)
+        public EnemyAbilityState(Enemy owner, EnemyStateMachine stateMachine, int animationParam) : base(owner, stateMachine, animationParam)
         {
         }
 

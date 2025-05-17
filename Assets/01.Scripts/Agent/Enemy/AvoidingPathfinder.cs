@@ -8,7 +8,7 @@ namespace Agents.Enemies.AI.PathFinder
     public class AvoidingPathfinder : MonoBehaviour
     {
         [Header("Detection Settings")]
-        public float maxDetectDistance = 10f; // 감지용 거리 (충분히 길게 설정)
+        public float maxDetectDistance = 10f;
         [Header("Path Settings")]
         public float stepDistance = 0.5f;
         [SerializeField] float _avoidOffset = 0.7f;
@@ -24,7 +24,7 @@ namespace Agents.Enemies.AI.PathFinder
         private HashSet<Vector2> visited = new();
 
         /// <summary>
-        /// DFS + 우회 회피 경로 탐색
+        /// DFS + Avoid PathFinding
         /// </summary>
         private bool FindPathRecursive(Vector2 current, Vector2 target, int depth, float stepDistance, Vector2? lastDirection = null)
         {
@@ -49,7 +49,7 @@ namespace Agents.Enemies.AI.PathFinder
 
                 if (FindPathRecursive(next, target, depth + 1, stepDistance, direction))
                 {
-                    // 직전 방향과 지금 방향이 다르면 꺾인 지점 -> 기록
+                    // Different prev Direction, current Direction -> Point Break
                     if (lastDirection == null || Vector2.Angle(direction, lastDirection.Value) > 1f)
                     {
                         pathStack.Push(current);
@@ -59,10 +59,6 @@ namespace Agents.Enemies.AI.PathFinder
             }
             else
             {
-                // Vector2 normal = hit.normal;
-                // Vector2 perp = Vector2.Perpendicular(normal).normalized;
-                // Vector2 rightAvoid = current + perp * avoidOffset + direction * stepDistance;
-                // Vector2 leftAvoid = current - perp * avoidOffset + direction * stepDistance;
                 Vector2 perp = Vector2.Perpendicular(direction).normalized;
                 Vector2 rightAvoid = current + perp * _avoidOffset + direction * stepDistance;
                 Vector2 leftAvoid = current - perp * _avoidOffset + direction * stepDistance;
@@ -72,12 +68,12 @@ namespace Agents.Enemies.AI.PathFinder
 
                 if (FindPathRecursive(first, target, depth + 1, stepDistance * 0.9f, direction))
                 {
-                    pathStack.Push(current); // 회피 시도 지점 -> 무조건 기록
+                    pathStack.Push(current); // Try to Avoid
                     return true;
                 }
                 if (FindPathRecursive(second, target, depth + 1, stepDistance * 0.9f, direction))
                 {
-                    pathStack.Push(current); // 회피 시도 지점 -> 무조건 기록
+                    pathStack.Push(current); // Try to Avoid
                     return true;
                 }
             }
@@ -90,21 +86,21 @@ namespace Agents.Enemies.AI.PathFinder
             pathStack.Clear();
             visited.Clear();
 
-            // 시작 단계에서는 최대 거리 (예: 1f)로 시작하고 점점 짧아지게 처리
-            bool success = FindPathRecursive(start, target, 0, 1f);  // 초기 stepDistance 1f로 시작
+            // At the start stage, we start with the maximum distance (e.g. 1f)
+            bool success = FindPathRecursive(start, target, 0, 1f);  // start to stepDistance 1f
             if (!success)
             {
-                Debug.LogWarning("❌ 경로 탐색 실패: 피할 수 없는 탄막 또는 막힘");
+                Debug.LogWarning("[!] Paht Finding Failed");
                 return null;
             }
 
             return pathStack.Reverse().ToArray();
         }
 
-        private void LateUpdate()
-        {
-            DebugFindPath();
-        }
+        // private void LateUpdate()
+        // {
+        //     DebugFindPath();
+        // }
 
         [ContextMenu("DebugFind")]
         private void DebugFindPath()
@@ -113,7 +109,7 @@ namespace Agents.Enemies.AI.PathFinder
 
             if (points == null || points.Length < 2)
             {
-                Debug.LogWarning("❌ 경로 없음 — 피할 수 없는 상황 또는 오류");
+                Debug.LogWarning("[!] Can't Find Path");
                 return;
             }
 
@@ -123,7 +119,7 @@ namespace Agents.Enemies.AI.PathFinder
                 Debug.DrawLine(points[i - 1], points[i], Color.red, Time.deltaTime);
             }
 
-            Debug.Log($"✅ 경로 시각화 완료: {points.Length} 포인트");
+            Debug.Log($"[O] Draw Complete: {points.Length} Points");
         }
 
     }

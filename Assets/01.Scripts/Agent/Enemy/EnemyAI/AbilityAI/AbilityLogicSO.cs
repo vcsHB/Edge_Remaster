@@ -1,14 +1,31 @@
 using System;
 using UnityEngine;
+
 namespace Agents.Enemies.AI
 {
-    public struct AbilityData
-    { // Duration? Damage?
-        Action OnAbilityCompleteEvent;
+    public enum AbilityRank
+    {
+        LowRisk,
+        NormalRisk,
+        HyperRisk,
+        FetalRisk
+    }
+    [System.Serializable]
+    public class AilityDisplayData
+    {
+        public AbilityRank AbilityRank;
+        public string abilityName;
+        public string abilityDescription;
     }
     public abstract class AbilityLogicSO : ScriptableObject
     {
-        public Action OnUseAbilityEvent;
+        public event Action OnUseAbilityEvent;
+        public event Action OnAbilityCompleteEvent;
+
+        public float useCooltime;
+        public AilityDisplayData displayData;
+
+
         protected DetectData _detectData;
 
         protected Enemy _owner;
@@ -29,13 +46,20 @@ namespace Agents.Enemies.AI
         {
             _detectData = detectData;
         }
-        public virtual void HandleUseAbility(Action OnCompleteEvent = null)
+        public virtual bool HandleUseAbility(Action OnCompleteEvent = null)
         {
+            if (!_detectData.isTargeted) return false;
             UseAbility();
+            OnAbilityCompleteEvent += OnCompleteEvent;
             OnUseAbilityEvent?.Invoke();
+            return true;
         }
 
-        protected abstract void UseAbility(Action OnCompleteEvent = null);
+        protected abstract void UseAbility();
+        protected void InvokeAbilityComplete()
+        {
+            OnAbilityCompleteEvent?.Invoke();
+        }
 
 
         public AbilityLogicSO Clone() => Instantiate(this);

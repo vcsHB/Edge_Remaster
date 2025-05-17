@@ -2709,9 +2709,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _combatLogic: {fileID: 0}
-  _detectLogic: {fileID: 0}
-  _moveLogic: {fileID: 0}
-  _abilitySO: {fileID: 0}
+  _detectLogic: {fileID: 11400000, guid: f197d83852059424c91125911e0a3f9d, type: 2}
+  _moveLogic: {fileID: 11400000, guid: 4cc20ff5db5f51a43acf820b41778478, type: 2}
+  _abilitySO: {fileID: 11400000, guid: 920f4e55a4311dd49a01cd4fc77bb31d, type: 2}
 --- !u!1001 &479844388
 PrefabInstance:
   m_ObjectHideFlags: 0
