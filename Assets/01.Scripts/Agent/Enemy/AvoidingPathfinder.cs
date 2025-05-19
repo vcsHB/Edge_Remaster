@@ -104,6 +104,21 @@ namespace Agents.Enemies.AI.PathFinder
         //     DebugFindPath();
         // }
 
+        public void DrawDebugPathLine(Vector2[] points)
+        {
+            if (points == null || points.Length < 2)
+            {
+                Debug.LogWarning("[!] Can't Find Path");
+                return;
+            }
+
+            for (int i = 1; i < points.Length; i++)
+            {
+                //print(points[i - 1]);
+                Debug.DrawLine(points[i - 1], points[i], Color.red, Time.deltaTime);
+            }
+        }
+
         [ContextMenu("DebugFind")]
         private void DebugFindPath()
         {

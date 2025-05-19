@@ -6,6 +6,7 @@ namespace Agents.Enemies.FSM
     {
         public TimeBreakMoveState(Enemy owner, EnemyStateMachine stateMachine, int animationParam) : base(owner, stateMachine, animationParam)
         {
+            _canUseAbilityState = true;
         }
 
         public override void Enter()

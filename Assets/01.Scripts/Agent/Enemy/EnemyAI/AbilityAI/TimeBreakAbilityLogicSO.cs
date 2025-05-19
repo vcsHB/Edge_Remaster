@@ -21,13 +21,22 @@ namespace Agents.Enemies.AI.Ability
         {
             base.InitializeOwner(owner);
             _timeBreakerMover = owner.GetCompo<TimeBreakerMovement>();
+            _avoidPathFinder = owner.GetComponentInChildren<AvoidingPathfinder>();
+            OnAbilityCompleteEvent += HandleAbilityComplete;
+        }
+
+        private void OnDestroy()
+        {
+            OnAbilityCompleteEvent -= HandleAbilityComplete;
+
         }
 
         protected override void UseAbility()
         {
             _pathData = _avoidPathFinder.FindPath(_ownerTrm.position, _detectData.targetPos);
+            _avoidPathFinder.DrawDebugPathLine(_pathData);
             if (_pathData == null) return;
-
+            Debug.Log("PathFound");
             TimeManager.AddTimeScaleRecord(_newTimeSet);
             _timeBreakerMover.MoveToPoints(
                 _pathData, _moveDuration,
@@ -35,6 +44,13 @@ namespace Agents.Enemies.AI.Ability
 
         }
 
-       
+        private void HandleAbilityComplete()
+        {
+            TimeManager.RemoveTimeScaleRecord();
+        }
+
+
+
+
     }
 }
