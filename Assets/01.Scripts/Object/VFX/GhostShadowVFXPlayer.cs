@@ -52,7 +52,7 @@ namespace ObjectManage
         }
         public void ResetItem()
         {
-
+            _currentLifeTime = 0f;
         }
     }
 

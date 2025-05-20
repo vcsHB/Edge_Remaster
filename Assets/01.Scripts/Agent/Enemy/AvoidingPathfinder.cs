@@ -89,14 +89,14 @@ namespace Agents.Enemies.AI.PathFinder
             visited.Clear();
 
             // At the start stage, we start with the maximum distance (e.g. 1f)
-            bool success = FindPathRecursive(start, target, 0, 1f);  // start to stepDistance 1f
+            bool success = FindPathRecursive(start, target, 0, stepDistance);  // start to stepDistance 1f
             if (!success)
             {
                 Debug.LogWarning("[!] Paht Finding Failed");
                 return null;
             }
 
-            return pathStack.Reverse().ToArray();
+            return pathStack.ToArray();
         }
 
         // private void LateUpdate()

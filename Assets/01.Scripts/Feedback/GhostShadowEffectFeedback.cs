@@ -14,10 +14,13 @@ namespace FeedbackSystem
         [SerializeField] private float _generateTerm = 0.4f;
         [SerializeField] private float _shadowLifeTime = 0.1f;
         private Coroutine _effectCoroutine;
+        private bool _isFrameGenerate;
 
         public override void CreateFeedback()
         {
+            _isFrameGenerate = Mathf.Approximately(_generateTerm, 0f);
             _effectCoroutine = StartCoroutine(PlayEffectCoroutine());
+
         }
 
         private IEnumerator PlayEffectCoroutine()
@@ -29,17 +32,14 @@ namespace FeedbackSystem
                 currentTime += Time.deltaTime;
                 currentGenerateTime += Time.deltaTime;
                 //float ratio = currentTime / _duration;
-                if (currentGenerateTime > _generateTerm)
+                if (_isFrameGenerate)
+                {
+                    GenerateGhostEffect();
+                }
+                else if (currentGenerateTime > _generateTerm)
                 {
                     currentGenerateTime = 0f;
-                    GhostShadowVFXPlayer effect = PoolManager.Instance.Pop(PoolingType.GhostShadowVFX, transform.position, Quaternion.identity) as GhostShadowVFXPlayer;
-                    effect.Initialize(
-                        transform.position,
-                        _shadowLifeTime,
-                        _colorGradient,
-                        _ownerRenderer.sprite
-                    );
-                    effect.Play();
+                    GenerateGhostEffect();
 
                 }
                 yield return null;
@@ -53,6 +53,18 @@ namespace FeedbackSystem
             if (_effectCoroutine == null) return;
             StopCoroutine(_effectCoroutine);
             _effectCoroutine = null;
+        }
+
+        private void GenerateGhostEffect()
+        {
+            GhostShadowVFXPlayer effect = PoolManager.Instance.Pop(PoolingType.GhostShadowVFX, transform.position, Quaternion.identity) as GhostShadowVFXPlayer;
+            effect.Initialize(
+                transform.position,
+                _shadowLifeTime,
+                _colorGradient,
+                _ownerRenderer.sprite
+            );
+            effect.Play();
         }
     }
 }

@@ -23,6 +23,8 @@ namespace FeedbackSystem
 
         public override void FinishFeedback()
         {
+            _colorAdjuestmentController.EndEffectSchedule();
+
         }
     }
 }

@@ -11605,7 +11605,7 @@ ParticleSystem:
     flipU: 0
     flipV: 0
   VelocityModule:
-    enabled: 1
+    enabled: 0
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -14958,8 +14958,9 @@ GameObject:
   - component: {fileID: 3020568804378146577}
   - component: {fileID: 3229239226112573096}
   - component: {fileID: 8616398441905243175}
+  - component: {fileID: 7927300394529761657}
   m_Layer: 7
-  m_Name: TimeBreackFeedback
+  m_Name: TimeBreakFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15035,9 +15036,25 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 5
     m_NumAlphaKeys: 3
-  _duration: 3
-  _generateTerm: 0.03
-  _shadowLifeTime: 0.1
+  _duration: 5
+  _generateTerm: 0.002
+  _shadowLifeTime: 0.04
+--- !u!114 &7927300394529761657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5368643238299336056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5444aa8d44b768a44bec8287826edb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _effectHueValue: -31
+  _effectSaturationValue: -29
+  _duration: 5
+  _tweenDuration: 0.02
 --- !u!1 &5623146320396212070
 GameObject:
   m_ObjectHideFlags: 0
@@ -15209,6 +15226,33 @@ MonoBehaviour:
         - m_Target: {fileID: 3229239226112573096}
           m_TargetAssemblyTypeName: FeedbackSystem.FeedbackPlayer, Assembly-CSharp
           m_MethodName: CreateFeedback
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 8218131495260064769}
+          m_TargetAssemblyTypeName: FeedbackSystem.FeedbackPlayer, Assembly-CSharp
+          m_MethodName: CreateFeedback
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    OnAbilityEndEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3229239226112573096}
+          m_TargetAssemblyTypeName: FeedbackSystem.FeedbackPlayer, Assembly-CSharp
+          m_MethodName: StopFeedback
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -15451,12 +15495,28 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9118487494081735808, guid: d541d79a96acb124ca5e58f175001295, type: 3}
+      propertyPath: _castRadius
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118487494081735808, guid: d541d79a96acb124ca5e58f175001295, type: 3}
+      propertyPath: _avoidOffset
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118487494081735808, guid: d541d79a96acb124ca5e58f175001295, type: 3}
+      propertyPath: stepDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118487494081735808, guid: d541d79a96acb124ca5e58f175001295, type: 3}
       propertyPath: _useDebugMode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9118487494081735808, guid: d541d79a96acb124ca5e58f175001295, type: 3}
       propertyPath: bulletMask.m_Bits
       value: 2048
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118487494081735808, guid: d541d79a96acb124ca5e58f175001295, type: 3}
+      propertyPath: maxDetectDistance
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

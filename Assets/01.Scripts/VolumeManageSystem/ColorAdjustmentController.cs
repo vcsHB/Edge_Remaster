@@ -37,7 +37,7 @@ namespace Core.VolumeControlSystem
             StartCoroutine(ColorAdjustmentEffectCoroutine(hue, saturation, duration));
         }
 
-#region  Effect Schedule Manage
+        #region  Effect Schedule Manage
         public void StartEffectSchedule(float hue, float saturation, float tweenDuration, float duration)
         {
             if (_isColorAdjustmentTweening) return;
@@ -47,6 +47,7 @@ namespace Core.VolumeControlSystem
         {
             if (_currentSceduleRoutine == null) return;
             StopCoroutine(_currentSceduleRoutine);
+            SetColorAdjustment(_defaultHueLevel, _defaultSaturationLevel);
             _isColorAdjustmentTweening = false;
         }
 
@@ -60,7 +61,7 @@ namespace Core.VolumeControlSystem
             _currentSceduleRoutine = null;
         }
 
-#endregion
+        #endregion
 
         private IEnumerator ColorAdjustmentEffectCoroutine(float hue, float saturation, float duration)
         {

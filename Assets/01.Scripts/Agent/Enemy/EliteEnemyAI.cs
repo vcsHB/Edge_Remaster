@@ -9,6 +9,7 @@ namespace Agents.Enemies
     {
         public AbilityLogicSO abilitySO;
         public UnityEvent OnAbilityStartEvent;
+        public UnityEvent OnAbilityEndEvent;
 
     }
     public class EliteEnemyAI : EnemyAI
@@ -39,6 +40,7 @@ namespace Agents.Enemies
 
         private void HandleAbilityCompelete()
         {
+            _abilitys[_currentAbilityIndex].OnAbilityEndEvent?.Invoke();
             SelectNextAbility();
             _isAbilityComplete = true;
             OnAbilityCompleteEvent?.Invoke();
