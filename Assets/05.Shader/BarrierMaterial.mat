@@ -55,14 +55,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BarrierDissolveLevel: 0.606
+    - _BarrierDissolveLevel: 1
     - _BlinkLevel: 0
     - _BlinkWaveScale: 0.444
     - _BlinkWaveSpeed: 3.49
     - _BreakEndLevel: 0
     - _BreakEndPoint: 0
     - _BreakScale: 0.06
-    - _BreakStartLevel: 0.7
+    - _BreakStartLevel: 0.9
     - _CrackAlpha: 0.37
     - _EdgeCircleWidth: 0.01
     - _HitPointScale: 0.17
@@ -71,8 +71,8 @@ Material:
     - _NoiseScale: 4.23
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ReduceLevel: 0.88
-    - _SpherizeStrength: 7.3
+    - _ReduceLevel: 2.77
+    - _SpherizeStrength: 0.004
     - _SquareEdgeWidth: 0.007
     - _SquareSize: 0.173
     - _WaveTiling: -0.1
@@ -81,6 +81,6 @@ Material:
     - _Color: {r: 6.376406, g: 1.6241783, b: 2.5354793, a: 1}
     - _HitBlinkColor: {r: 9.51876, g: 0.98779476, b: 1.2111174, a: 0}
     - _HitPosition: {r: -0.14, g: -4, b: 0, a: 0}
-    - _Tiling: {r: 4, g: 4, b: 0, a: 0}
+    - _Tiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

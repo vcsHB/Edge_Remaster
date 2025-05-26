@@ -11,6 +11,7 @@ namespace Combat.CombatObjects
         private readonly int _barrierDissolveLevel = Shader.PropertyToID("_BarrierDissolveLevel");
 
         [SerializeField] private float _blinkEffectDuration = 0.2f;
+        [SerializeField] private float _barrierMinDurabilityLevel = 0.4f;
         private Coroutine _currentEffectCoroutine;
         private Material _mateiral;
 
@@ -57,7 +58,7 @@ namespace Combat.CombatObjects
         public void HandleBarrierDurabilityChange(float current, float max)
         {
             float ratio = current / max;
-            SetDissolveLevel(Mathf.Clamp(ratio, 0.3f, 1f));
+            SetDissolveLevel(Mathf.Lerp(_barrierMinDurabilityLevel, 1f, ratio));
         }
 
         public void SetDissolveLevel(float value)

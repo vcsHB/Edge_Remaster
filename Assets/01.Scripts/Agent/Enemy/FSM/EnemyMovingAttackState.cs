@@ -7,5 +7,11 @@ namespace Agents.Enemies.FSM
         public EnemyMovingAttackState(Enemy owner, EnemyStateMachine stateMachine, int animationParam) : base(owner, stateMachine, animationParam)
         {
         }
+
+        public override void Update()
+        {
+            base.Update();
+            _enemyAI.UpdateAttack();
+        }
     }
 }

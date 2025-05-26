@@ -253,7 +253,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -2135585597343286014, guid: 4b2a04fdbe0ef4d8da8f90eaca817cd1, type: 3}
-  m_Color: {r: 0.003921569, g: 0.9921569, b: 0.9450981, a: 1}
+  m_Color: {r: 0, g: 0.509434, b: 0.4851752, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -311,6 +311,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 897743e774e7bf84cbb6f829094c292b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _isActive: 1
   _leftTimeText: {fileID: 5870451535683963995}
   _reviveCooltime: 30

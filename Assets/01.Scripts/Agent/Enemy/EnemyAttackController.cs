@@ -8,7 +8,7 @@ namespace Agnets.Enemies
     {
         public UnityEvent OnAttackEvent;
         protected Enemy _owner;
-        [SerializeField] private float _attackCooltime;
+        [SerializeField] private float _attackCooltime = 0.3f;
         protected float _lastAttackTime;
         
         public virtual void HandleAttack()

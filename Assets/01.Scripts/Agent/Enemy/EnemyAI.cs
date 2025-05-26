@@ -69,10 +69,13 @@ namespace Agents.Enemies
         {
             _moveLogic.UpdateMove();
         }
-
         public void EndMove()
         {
             _moveLogic.EndMove();
+        }
+        public void UpdateAttack()
+        {
+            _combatLogic.UpdateLogic();
         }
 
 #if UNITY_EDITOR
@@ -82,6 +85,8 @@ namespace Agents.Enemies
             if (_moveLogic != null)
                 _moveLogic.DrawGizmos();
         }
+
+
 
 #endif
     }

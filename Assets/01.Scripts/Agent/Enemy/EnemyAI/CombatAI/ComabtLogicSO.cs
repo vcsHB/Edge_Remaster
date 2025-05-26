@@ -8,6 +8,8 @@ namespace Agents.Enemies.AI
         protected Enemy _owner;
         protected EnemyAttackController _attackController;
         protected DetectData _targetData;
+        [Header("Cooltime Setting")]
+        [SerializeField] private float _attackCooltime = 0.5f;
 
 
         public void HandleDetect(DetectData detectData)
@@ -18,6 +20,11 @@ namespace Agents.Enemies.AI
         {
             _owner = owner;
             _attackController = _owner.GetCompo<EnemyAttackController>();
+        }
+
+        public virtual void UpdateLogic()
+        {
+            
         }
 
         public ComabtLogicSO Clone() => Instantiate(this);
