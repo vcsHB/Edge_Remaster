@@ -2,6 +2,7 @@ using System.Collections;
 using Core.MapConrtrolSystem;
 using Core.VolumeControlSystem;
 using UIManage.Core;
+using UIManage.InGame;
 using UnityEngine;
 using UnityEngine.Events;
 namespace Core
@@ -10,6 +11,7 @@ namespace Core
     public class GameManager : MonoBehaviour
     {
         public UnityEvent OnPlayerArriveEvent;
+        [SerializeField] private PlayerDiePanel _playerDiePanel;
         private PlayerManager _playerManager;
         private MapController _mapController;
         private UIManager _uiManager;
@@ -23,6 +25,7 @@ namespace Core
             _mapController = FindFirstObjectByType<MapController>();
             _uiManager = FindFirstObjectByType<UIManager>();
             _volumeManager = FindFirstObjectByType<VolumeManager>();
+            _playerManager.Player.OnPlayerDieEvent.AddListener(_playerDiePanel.Open);
         }
 
         private void Start()

@@ -12,6 +12,7 @@ namespace Agents
 
         private Dictionary<Type, IAgentComponent> _components = new Dictionary<Type, IAgentComponent>();
         [field: SerializeField] public GameEventChannelSO EventChannel { get; set; }
+        public bool IsDead { get; protected set; }
         protected virtual void Awake()
         {
             EventChannel = Instantiate(EventChannel);
@@ -20,7 +21,14 @@ namespace Agents
             AfterInit();
 
         }
+        protected virtual void HandleAgentDie()
+        {
+            if (!IsDead)
+            {
+                IsDead = true;
 
+            }
+        }
         private void AddComponentToDictionary()
         {
             GetComponentsInChildren<IAgentComponent>(true)

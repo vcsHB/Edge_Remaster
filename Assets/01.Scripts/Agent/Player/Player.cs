@@ -1,13 +1,16 @@
+using System;
 using Agents.Players.FSM;
 using Combat;
 using InputManage;
 using ObjectManage;
 using StatSystem;
 using UnityEngine;
+using UnityEngine.Events;
 namespace Agents.Players
 {
     public class Player : Agent
     {
+        public UnityEvent OnPlayerDieEvent;
         [field: SerializeField] public PlayerInput PlayerInput { get; private set; }
         private PlayerStateMachine _stateMachine;
         public PlayerStateMachine StateMachine => _stateMachine;
@@ -23,12 +26,18 @@ namespace Agents.Players
             _statCompo.CloneStatus();
             PlayerStatus = _statCompo.Status as PlayerStatusSO;
             PlayerStatus = Instantiate(PlayerStatus);
+            HealthCompo.OnDieEvent.AddListener(HandlePlayerDie);
 
             MovementCompo = GetCompo<PlayerMover>();
             HealthCompo = GetComponent<Health>();
             HealthCompo.Initialize(PlayerStatus.health.GetValue());
             _stateMachine = new PlayerStateMachine(this);
             _stateMachine.Initialize("Idle");
+        }
+
+        private void HandlePlayerDie()
+        {
+            OnPlayerDieEvent?.Invoke();
         }
 
         private void Update()
@@ -40,6 +49,8 @@ namespace Agents.Players
         {
             MovementCompo.ForceMoveToPosition(movePoint, duration);
         }
+
+
 
     }
 }
