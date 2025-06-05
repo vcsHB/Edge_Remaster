@@ -1,7 +1,7 @@
 using System;
 using Core;
 using UnityEngine;
-namespace UI.Common
+namespace UIManage.Common
 {
 
     public class TimeControlPanel : MonoBehaviour

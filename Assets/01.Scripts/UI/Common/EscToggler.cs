@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UI.Common
+namespace UIManage.Common
 {
 
     public class EscToggler : KeyBindPanelController

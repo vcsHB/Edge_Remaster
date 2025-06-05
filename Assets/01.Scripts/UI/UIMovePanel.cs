@@ -1,6 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
-namespace UI
+namespace UIManage
 {
 
 

@@ -2,7 +2,7 @@ using System;
 using LevelSystem;
 using UnityEngine;
 using UnityEngine.UI;
-namespace UI.InGame
+namespace UIManage.InGame
 {
 
     public class ExpGauge : MonoBehaviour

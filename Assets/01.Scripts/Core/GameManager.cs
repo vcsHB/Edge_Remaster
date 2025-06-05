@@ -1,7 +1,7 @@
 using System.Collections;
 using Core.MapConrtrolSystem;
 using Core.VolumeControlSystem;
-using UI.Core;
+using UIManage.Core;
 using UnityEngine;
 using UnityEngine.Events;
 namespace Core

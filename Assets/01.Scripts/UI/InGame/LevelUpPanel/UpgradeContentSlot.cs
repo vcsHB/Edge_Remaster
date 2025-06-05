@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-namespace UI.InGame
+namespace UIManage.InGame
 {
     public class UpgradeContentSlot : MonoBehaviour
     {

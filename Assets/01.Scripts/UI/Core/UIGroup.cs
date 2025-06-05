@@ -1,5 +1,5 @@
 using UnityEngine;
-namespace UI.Core
+namespace UIManage.Core
 {
 
     public class UIGroup : UIPanel
