@@ -18,7 +18,6 @@ namespace Agents.Enemies
         protected EnemyStateMachine _stateMachine;
         private EnemyRenderer _enemyRenderer;
         private Collider2D _collider;
-        public bool IsDead { get; protected set; }
 
         protected override void Awake()
         {

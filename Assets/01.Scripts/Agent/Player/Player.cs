@@ -19,6 +19,7 @@ namespace Agents.Players
         public PlayerMover MovementCompo { get; private set; }
         private AgentStat _statCompo;
 
+
         protected override void Awake()
         {
             base.Awake();
@@ -26,17 +27,18 @@ namespace Agents.Players
             _statCompo.CloneStatus();
             PlayerStatus = _statCompo.Status as PlayerStatusSO;
             PlayerStatus = Instantiate(PlayerStatus);
-            HealthCompo.OnDieEvent.AddListener(HandlePlayerDie);
 
             MovementCompo = GetCompo<PlayerMover>();
             HealthCompo = GetComponent<Health>();
             HealthCompo.Initialize(PlayerStatus.health.GetValue());
+            HealthCompo.OnDieEvent.AddListener(HandlePlayerDie);
             _stateMachine = new PlayerStateMachine(this);
             _stateMachine.Initialize("Idle");
         }
 
         private void HandlePlayerDie()
         {
+            
             OnPlayerDieEvent?.Invoke();
         }
 

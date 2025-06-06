@@ -11,7 +11,7 @@ namespace Agents.Players.Combat
         [SerializeField] private ParticleSystem _attackVFX;
         private float _currentTime;
 
-        private void Update()
+        protected override void Update()
         {
             if (!_isActive) return;
             _currentTime += Time.deltaTime;

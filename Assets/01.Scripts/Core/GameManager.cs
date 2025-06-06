@@ -25,11 +25,11 @@ namespace Core
             _mapController = FindFirstObjectByType<MapController>();
             _uiManager = FindFirstObjectByType<UIManager>();
             _volumeManager = FindFirstObjectByType<VolumeManager>();
-            _playerManager.Player.OnPlayerDieEvent.AddListener(_playerDiePanel.Open);
         }
 
         private void Start()
         {
+            _playerManager.Player.OnPlayerDieEvent.AddListener(_playerDiePanel.Open);
             StartCoroutine(GameStartCutSceneCoroutine());
         }
 
