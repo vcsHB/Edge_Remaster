@@ -11,6 +11,9 @@
         },
         {
             "m_Id": "c52f1fb8c53c439ba7c72b8f43731e4a"
+        },
+        {
+            "m_Id": "5c2f65dbf7f24fe781f9c92f3a98093c"
         }
     ],
     "m_Keywords": [],
@@ -65,6 +68,9 @@
         },
         {
             "m_Id": "942918222c97498289a31a2aee07c47a"
+        },
+        {
+            "m_Id": "63e0aeb243ee4edeae563bbd3fe094c2"
         }
     ],
     "m_GroupDatas": [],
@@ -108,6 +114,20 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "7630b9beb7244047ac2a469ee391b25e"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "63e0aeb243ee4edeae563bbd3fe094c2"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "74055737d035473392d0c22c2a7b9a21"
                 },
                 "m_SlotId": 0
             }
@@ -180,20 +200,6 @@
                     "m_Id": "e37000a210bf4ce18744502eacc1e5f3"
                 },
                 "m_SlotId": 2
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "e37000a210bf4ce18744502eacc1e5f3"
-                },
-                "m_SlotId": 0
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "74055737d035473392d0c22c2a7b9a21"
-                },
-                "m_SlotId": 0
             }
         },
         {
@@ -706,6 +712,36 @@
 }
 
 {
+    "m_SGVersion": 3,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty",
+    "m_ObjectId": "5c2f65dbf7f24fe781f9c92f3a98093c",
+    "m_Guid": {
+        "m_GuidSerialized": "9d0f9c7f-8f38-4586-8487-a64320a4a7ff"
+    },
+    "m_Name": "Color",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Color",
+    "m_DefaultReferenceName": "_Color",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+    },
+    "isMainColor": false,
+    "m_ColorMode": 1
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.TimeNode",
     "m_ObjectId": "5ccb73b416fe4a579868b62faad04a3a",
@@ -769,6 +805,42 @@
         "y": 0.0
     },
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "63e0aeb243ee4edeae563bbd3fe094c2",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -126.41108703613281,
+            "y": 185.32107543945313,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "7733c3965e8e486faa48e535092b6dab"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "5c2f65dbf7f24fe781f9c92f3a98093c"
+    }
 }
 
 {
@@ -951,6 +1023,31 @@
     "m_SupportsLODCrossFade": false,
     "m_CustomEditorGUI": "",
     "m_SupportVFX": false
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
+    "m_ObjectId": "7733c3965e8e486faa48e535092b6dab",
+    "m_Id": 0,
+    "m_DisplayName": "Color",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_Labels": []
 }
 
 {
@@ -1709,6 +1806,9 @@
         },
         {
             "m_Id": "c52f1fb8c53c439ba7c72b8f43731e4a"
+        },
+        {
+            "m_Id": "5c2f65dbf7f24fe781f9c92f3a98093c"
         }
     ]
 }

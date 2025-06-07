@@ -70,7 +70,7 @@ namespace ObjectManage
         {
             //_collider.enabled = false;
             //_healthCompo.isResist = false;
-            OnExitEvent?.Invoke();
+            OnEnterEvent?.Invoke();
         }
 
         public void Exit()
