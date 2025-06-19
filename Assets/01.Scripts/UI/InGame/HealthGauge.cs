@@ -21,6 +21,15 @@ namespace UIManage.InGame
         {
             _owner.OnHealthChangedValueEvent -= HandleGaugeRefresh;
         }
+        public void SetOwner(Health newOwner)
+        {
+            if (_owner != null)
+                _owner.OnHealthChangedValueEvent -= HandleGaugeRefresh;
+            _owner = newOwner;
+            HandleGaugeRefresh(_owner.CurrentHealth, _owner.MaxHealth);
+            _owner.OnHealthChangedValueEvent += HandleGaugeRefresh;
+        }
+
 
         private void HandleGaugeRefresh(float current, float max)
         {

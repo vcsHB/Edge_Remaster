@@ -13,6 +13,9 @@ namespace InputManage
         public event Action<Vector2> OnSelectMoveEvent;
         public event Action OnUseSkill1Event;
         public event Action OnUseSkill2Event;
+
+        public event Action OnBuildDestroyEvent;
+        public event Action OnCancelEvent;
         public Vector2 InputDirection { get; private set; }
         public Vector2 MousePosition { get; private set; }
         public Vector2Int SelectPosition { get; private set; }
