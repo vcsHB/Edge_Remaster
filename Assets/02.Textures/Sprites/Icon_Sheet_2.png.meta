@@ -1,10 +1,43 @@
 fileFormatVersion: 2
-guid: 13b58582ee31d9f449627ce26dc93c28
+guid: f90b7c4a0f5e015439231b4e620fc253
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4566739173651768325
-    second: CenterEmpty_Square_0
+      213: -6420582006838652269
+    second: Icon_Sheet_0
+  - first:
+      213: 5561963255793638635
+    second: Icon_Sheet_1
+  - first:
+      213: 911272308666196985
+    second: Icon_Sheet_2
+  - first:
+      213: -8065676493673794729
+    second: Icon_Sheet_3
+  - first:
+      213: -5105339098002650529
+    second: Icon_Sheet_4
+  - first:
+      213: -113627703654539327
+    second: Icon_Sheet_5
+  - first:
+      213: 1779470574167620957
+    second: Icon_Sheet_6
+  - first:
+      213: 398420243137578190
+    second: Icon_Sheet_7
+  - first:
+      213: 5397013797415296072
+    second: Icon_Sheet_8
+  - first:
+      213: 5148347301039556955
+    second: Icon_Sheet_9
+  - first:
+      213: 1164170468253430717
+    second: Icon_Sheet_10
+  - first:
+      213: -594365941005860481
+    second: Icon_Sheet_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +84,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +105,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 128
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -98,10 +131,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Android
-    maxTextureSize: 128
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,7 +146,51 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CenterEmpty_Square_0
+      name: Icon_Sheet_2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17ce0911704d99c49bdcf5373fe63782
+      internalID: 229175228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_Sheet_2_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd8ca681630de5645887a199f4c8817b
+      internalID: -1999980607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_Sheet_2_2
       rect:
         serializedVersion: 2
         x: 0
@@ -126,10 +203,32 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 504ef533511506f30800000000000000
-      internalID: 4566739173651768325
+      spriteID: 1410567d5cd64ca46baec49ef39ea954
+      internalID: 676244345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_Sheet_2_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7818e9acf40ac624ca608c9688ee1cfa
+      internalID: -1136868096
       vertices: []
       indices: 
       edges: []
@@ -138,7 +237,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0546f532c6fae2f458032aa512c34158
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +247,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CenterEmpty_Square_0: 4566739173651768325
+      Icon_Sheet_2_0: 229175228
+      Icon_Sheet_2_1: -1999980607
+      Icon_Sheet_2_2: 676244345
+      Icon_Sheet_2_3: -1136868096
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

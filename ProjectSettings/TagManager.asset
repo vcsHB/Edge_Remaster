@@ -17,8 +17,8 @@ TagManager:
   - Wall
   - MoveTarget
   - Projectile
-  - 
-  - 
+  - EnemyProjectile
+  - PlayerStructure
   - 
   - 
   - 
