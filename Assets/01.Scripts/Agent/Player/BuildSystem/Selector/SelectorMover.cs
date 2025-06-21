@@ -10,7 +10,7 @@ namespace BuildSystem.SelectorManage
         public event Action OnArriveEvent;
         [SerializeField] private float _selectMoveDuration = 0.07f;
         private bool _isMoving;
-        private bool _canMove;
+        private bool _canMove = true;
         public Vector2Int SelectPosition { get; private set; }
 
         public void SetCanMove(bool value)

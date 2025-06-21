@@ -35,7 +35,7 @@ namespace BuildSystem.SelectorManage.FSM
                     Debug.LogError($"There is problem in SelectorFSM Reflection. Type:{stateEnum}, Error: {error}");
                 }
             }
-
+            CurrentState.Enter();
         }
 
         public void UpdateCurrentState()

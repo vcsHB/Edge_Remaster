@@ -8,13 +8,15 @@ namespace BuildSystem.SelectorManage
     {
         [field: SerializeField] public PlayerInput SelectorInput { get; private set; }
         public SelectorMover MoverCompo { get; private set; }
+        public OptionSelector OptionSelector { get; private set; }
 
         private SelectorStateMachine _stateMachine;
 
         private void Awake()
         {
             MoverCompo = GetComponent<SelectorMover>();
-            
+            OptionSelector = GetComponentInChildren<OptionSelector>();
+
             _stateMachine = new SelectorStateMachine(this);
             _stateMachine.Initialize(SelectorStateEnum.Stay);
         }

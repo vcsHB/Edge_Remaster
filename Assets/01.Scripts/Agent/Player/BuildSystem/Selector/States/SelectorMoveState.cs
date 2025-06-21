@@ -1,4 +1,5 @@
-    using UnityEngine;
+using System;
+using UnityEngine;
 namespace BuildSystem.SelectorManage.FSM
 {
 
@@ -6,8 +7,13 @@ namespace BuildSystem.SelectorManage.FSM
     {
         public SelectorMoveState(GridSelector selector, SelectorStateMachine stateMachine) : base(selector, stateMachine)
         {
+            _mover = selector.MoverCompo;
+            _mover.OnArriveEvent += HandleMoveOver;
         }
 
-        
+        private void HandleMoveOver()
+        {
+            _stateMachine.ChangeState(SelectorStateEnum.Stay);
+        }
     }
 }

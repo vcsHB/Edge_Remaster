@@ -14,16 +14,31 @@ namespace BuildSystem.SelectorManage.FSM
         {
             base.Enter();
             _selector.SelectorInput.OnSelectMoveEvent += HandleMove;
+            _selector.SelectorInput.OnSelectEvent += HandleSelect;
 
         }
 
-        private void HandleArrive()
+
+        public override void Exit()
         {
+            base.Exit();
+            _selector.SelectorInput.OnSelectMoveEvent -= HandleMove;
+            _selector.SelectorInput.OnSelectEvent -= HandleSelect;
+
         }
+
 
         private void HandleMove(Vector2 inputDirection)
         {
-
+            _stateMachine.ChangeState(SelectorStateEnum.Move);
+            _mover.HandleMove(inputDirection);
         }
+
+        private void HandleSelect()
+        {
+            _stateMachine.ChangeState(SelectorStateEnum.Selected);
+            
+        }
+
     }
 }

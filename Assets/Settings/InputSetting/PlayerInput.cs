@@ -14,6 +14,7 @@ namespace InputManage
         public event Action OnUseSkill1Event;
         public event Action OnUseSkill2Event;
 
+        public event Action OnSelectEvent;
         public event Action OnBuildDestroyEvent;
         public event Action OnCancelEvent;
         public Vector2 InputDirection { get; private set; }
@@ -92,14 +93,17 @@ namespace InputManage
 
         public void OnSelect(InputAction.CallbackContext context)
         {
-            throw new NotImplementedException();
+            if (context.performed)
+            {
+                OnSelectEvent?.Invoke();
+            }
         }
 
         public void OnBuildDestroy(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
-
+                OnBuildDestroyEvent?.Invoke();
             }
         }
 
@@ -107,7 +111,7 @@ namespace InputManage
         {
             if (context.performed)
             {
-
+                OnCancelEvent?.Invoke();
             }
         }
     }

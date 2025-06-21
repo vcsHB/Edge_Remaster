@@ -1,10 +1,10 @@
-using UnityEngine;
 namespace BuildSystem.SelectorManage.FSM
 {
 
     public class SelectorState
     {
         protected GridSelector _selector;
+        protected OptionSelector _optionSelector;
         protected SelectorStateMachine _stateMachine;
         protected SelectorMover _mover;
 
@@ -13,6 +13,7 @@ namespace BuildSystem.SelectorManage.FSM
             _selector = selector;
             _stateMachine = stateMachine;
             _mover = selector.MoverCompo;
+            _optionSelector = selector.OptionSelector;
 
         }
         public virtual void Enter()
