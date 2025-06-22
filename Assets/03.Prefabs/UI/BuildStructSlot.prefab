@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 572391736452475401}
   - component: {fileID: 7166396049924270496}
   m_Layer: 0
-  m_Name: Image
+  m_Name: PreviewImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -240,6 +240,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6182cbd42d394714e9269a116f1fd613, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _groupedSlots:
+    TempKey: {x: 0, y: 0}
+    TempValue: {fileID: 0}
+    SerializedKeys: []
+    SerializedValues: []
   OnSelectedEvent:
     m_PersistentCalls:
       m_Calls: []

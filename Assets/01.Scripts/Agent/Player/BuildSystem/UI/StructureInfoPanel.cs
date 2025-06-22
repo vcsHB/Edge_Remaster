@@ -1,7 +1,7 @@
+using BuildSystem.Structures;
 using TMPro;
 using UIManage;
 using UIManage.InGame;
-using Unity.VisualScripting;
 using UnityEngine;
 namespace BuildSystem.UIManage
 {

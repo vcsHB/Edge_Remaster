@@ -1,12 +1,13 @@
-using System.Collections.Generic;
+using UIManage;
 using UnityEngine;
 
 namespace BuildSystem.SelectorManage
 {
-    public class OptionSelector : MonoBehaviour
+    public class OptionSelector : UIPanel
     {
         [SerializeField] private StartSelectionGroup _root;
         [SerializeField] private SelectionSlot _currentSlot;
+
 
 
         private void Start()
@@ -14,7 +15,15 @@ namespace BuildSystem.SelectorManage
             _currentSlot = _root;
             _currentSlot.OnSelect(Vector2Int.zero);
         }
-        
+
+        public override void Open()
+        {
+            base.Open();
+            _currentSlot.OnDeselect(Vector2Int.zero);
+            _currentSlot = _root;
+            _currentSlot.OnSelect(Vector2Int.zero);
+        }
+
         public void Move(Vector2 input)
         {
             if (input == Vector2.zero) return;
@@ -25,6 +34,10 @@ namespace BuildSystem.SelectorManage
                 _currentSlot.OnDeselect(dir);
                 _currentSlot = slot;
                 _currentSlot.OnSelect(dir);
+                if (slot is StructureSelectionSlot buildSelection)
+                {
+                    //buildSelection.Data
+                }
             }
         }
         public static Vector2Int ToDirectionInt(Vector2 input)

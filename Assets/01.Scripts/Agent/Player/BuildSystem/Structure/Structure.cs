@@ -1,6 +1,7 @@
+using System;
 using Combat;
 using UnityEngine;
-namespace BuildSystem
+namespace BuildSystem.Structures
 {
 
     public class Structure : MonoBehaviour
@@ -11,9 +12,13 @@ namespace BuildSystem
 
         protected virtual void Awake()
         {
+            HealthCompo = GetComponent<Health>();
+            HealthCompo.OnDieEvent.AddListener(HandleStructDestroyEvent);
+        }
+
+        private void HandleStructDestroyEvent()
+        {
 
         }
-        
-        
     }
 }

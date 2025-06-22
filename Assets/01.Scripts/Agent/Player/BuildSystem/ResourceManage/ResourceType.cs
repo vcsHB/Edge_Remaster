@@ -4,8 +4,10 @@ namespace BuildSystem.ResourceManage
 
     public enum ResourceType
     {
-        VertextData,
-        MetaData
+        
+        VertexData,
+        MetaData,
+        KetherData
     }
 
 }
