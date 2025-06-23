@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 3298325887396223305}
   - component: {fileID: 2232963720651292771}
   - component: {fileID: 5194297893235913331}
-  - component: {fileID: -3759766923235278274}
+  - component: {fileID: 684325390586573802}
   m_Layer: 0
   m_Name: BuildStructSlot
   m_TagString: Untagged
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-3759766923235278274
+--- !u!114 &684325390586573802
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6557893735151218848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6182cbd42d394714e9269a116f1fd613, type: 3}
+  m_Script: {fileID: 11500000, guid: 60e2b2bfe8cff5d40af04a8c514f25e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _groupedSlots:
@@ -249,3 +249,5 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _selectionImage: {fileID: 2916422843768184214}
+  _iconImage: {fileID: 7166396049924270496}
+  _data: {fileID: 0}

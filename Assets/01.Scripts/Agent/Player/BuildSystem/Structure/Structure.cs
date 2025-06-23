@@ -3,7 +3,7 @@ using Combat;
 using UnityEngine;
 namespace BuildSystem.Structures
 {
-
+    [RequireComponent(typeof(Health))]
     public class Structure : MonoBehaviour
     {
         [field: SerializeField] public StructureDataSO DataSO { get; private set; }

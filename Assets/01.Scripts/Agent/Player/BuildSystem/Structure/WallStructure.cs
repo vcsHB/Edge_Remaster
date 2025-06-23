@@ -2,8 +2,8 @@ using UnityEngine;
 namespace BuildSystem.Structures
 {
 
-    public class WallSructure : Structure
+    public class WallStructure : Structure
     {
-
+        
     }
 }
