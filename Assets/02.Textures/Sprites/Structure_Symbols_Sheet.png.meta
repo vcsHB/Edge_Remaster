@@ -1,0 +1,427 @@
+fileFormatVersion: 2
+guid: 0dfbf34cae327d94eb597cf2e0b9656b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4621458996438516013
+    second: Structure_Symbols_Sheet_0
+  - first:
+      213: -2221387007318408190
+    second: Structure_Symbols_Sheet_1
+  - first:
+      213: 110815988407886999
+    second: Structure_Symbols_Sheet_2
+  - first:
+      213: -3899544977234482757
+    second: Structure_Symbols_Sheet_3
+  - first:
+      213: 3168460388198972630
+    second: Structure_Symbols_Sheet_4
+  - first:
+      213: 7290618875500684
+    second: Structure_Symbols_Sheet_5
+  - first:
+      213: 4466250264177481624
+    second: Structure_Symbols_Sheet_6
+  - first:
+      213: -5555484317840180767
+    second: Structure_Symbols_Sheet_7
+  - first:
+      213: 2191972288709386524
+    second: Structure_Symbols_Sheet_8
+  - first:
+      213: -6029891609067606957
+    second: Structure_Symbols_Sheet_9
+  - first:
+      213: 4973688929496238749
+    second: Structure_Symbols_Sheet_10
+  - first:
+      213: -1324625041413886896
+    second: Structure_Symbols_Sheet_11
+  - first:
+      213: 3860693172922785588
+    second: Structure_Symbols_Sheet_12
+  - first:
+      213: 2999798928193525171
+    second: Structure_Symbols_Sheet_13
+  - first:
+      213: -4001934803946931930
+    second: Structure_Symbols_Sheet_14
+  - first:
+      213: 6817888999672067969
+    second: Structure_Symbols_Sheet_15
+  - first:
+      213: 8778698553495581107
+    second: Structure_Symbols_Sheet_16
+  - first:
+      213: -5691642166766293387
+    second: Structure_Symbols_Sheet_17
+  - first:
+      213: -7035070443485873689
+    second: Structure_Symbols_Sheet_18
+  - first:
+      213: -4435880677068774888
+    second: Structure_Symbols_Sheet_19
+  - first:
+      213: -8024578463615901363
+    second: Structure_Symbols_Sheet_20
+  - first:
+      213: -7955431283801361822
+    second: Structure_Symbols_Sheet_21
+  - first:
+      213: -7708167173294242609
+    second: Structure_Symbols_Sheet_22
+  - first:
+      213: -4664736782923363547
+    second: Structure_Symbols_Sheet_23
+  - first:
+      213: -3279873832423944682
+    second: Structure_Symbols_Sheet_24
+  - first:
+      213: -3113739219519381550
+    second: Structure_Symbols_Sheet_25
+  - first:
+      213: -8727052803696001938
+    second: Structure_Symbols_Sheet_26
+  - first:
+      213: -1085313989907843002
+    second: Structure_Symbols_Sheet_27
+  - first:
+      213: 5295634530958323643
+    second: Structure_Symbols_Sheet_28
+  - first:
+      213: -1849829960996153909
+    second: Structure_Symbols_Sheet_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Structure_Symbols_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3debf3d37874ddfb0800000000000000
+      internalID: -4621458996438516013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Structure_Symbols_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2044e18494c0c21e0800000000000000
+      internalID: -2221387007318408190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Structure_Symbols_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7946c78ed82b98100800000000000000
+      internalID: 110815988407886999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Structure_Symbols_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb9a74ef08802e9c0800000000000000
+      internalID: -3899544977234482757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Structure_Symbols_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dcfe739fe1a8fb20800000000000000
+      internalID: 3168460388198972630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Structure_Symbols_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c88544c77c6e91000800000000000000
+      internalID: 7290618875500684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Structure_Symbols_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8971b4ab3fe4bfd30800000000000000
+      internalID: 4466250264177481624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Structure_Symbols_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e9f1e77274f6e2b0800000000000000
+      internalID: -5555484317840180767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Structure_Symbols_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c11e50ade237b6e10800000000000000
+      internalID: 2191972288709386524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9d54f4adf37135c4b8e3a766cbec0b70
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Structure_Symbols_Sheet_0: -4621458996438516013
+      Structure_Symbols_Sheet_1: -2221387007318408190
+      Structure_Symbols_Sheet_2: 110815988407886999
+      Structure_Symbols_Sheet_3: -3899544977234482757
+      Structure_Symbols_Sheet_4: 3168460388198972630
+      Structure_Symbols_Sheet_5: 7290618875500684
+      Structure_Symbols_Sheet_6: 4466250264177481624
+      Structure_Symbols_Sheet_7: -5555484317840180767
+      Structure_Symbols_Sheet_8: 2191972288709386524
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
