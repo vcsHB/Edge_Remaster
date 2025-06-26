@@ -25644,6 +25644,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 524704129}
+  - component: {fileID: 524704130}
   m_Layer: 13
   m_Name: FirePoint
   m_TagString: Untagged
@@ -25668,6 +25669,26 @@ Transform:
   - {fileID: 2074218848}
   m_Father: {fileID: 443774549}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &524704130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524704128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6748655a90bb3448fb46d7fec7dbca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectilePoolType: 1
+  _projectileData:
+    direction: {x: 0, y: 0}
+    speed: 20
+    lifeTime: 5
+    canPenetrate: 0
+    canDestroy: 0
+    damage: 5
 --- !u!1 &526351650
 GameObject:
   m_ObjectHideFlags: 0
@@ -26728,7 +26749,7 @@ Transform:
   m_GameObject: {fileID: 602937713}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.04, z: 0}
+  m_LocalPosition: {x: -0, y: 0.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26783,7 +26804,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 1.19, y: 1.5}
+  m_Size: {x: 0.68, y: 0.38}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -37689,6 +37710,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 686414037}
+  - component: {fileID: 686414038}
   m_Layer: 13
   m_Name: FirePoint
   m_TagString: Untagged
@@ -37713,6 +37735,26 @@ Transform:
   - {fileID: 581248751}
   m_Father: {fileID: 1744230063}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &686414038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686414036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6748655a90bb3448fb46d7fec7dbca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectilePoolType: 1
+  _projectileData:
+    direction: {x: 0, y: 0}
+    speed: 20
+    lifeTime: 5
+    canPenetrate: 0
+    canDestroy: 0
+    damage: 5
 --- !u!1 &687515267
 GameObject:
   m_ObjectHideFlags: 0
@@ -72387,7 +72429,7 @@ Transform:
   m_GameObject: {fileID: 1919887606}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.47, z: 0}
+  m_LocalPosition: {x: -0, y: 0.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -72442,7 +72484,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 2.13, y: 3.63}
+  m_Size: {x: 1.68, y: 2.11}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
