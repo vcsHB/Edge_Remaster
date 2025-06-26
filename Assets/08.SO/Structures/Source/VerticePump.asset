@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 0
   structurePrefab: {fileID: 0}
-  structureName: 
+  structureName: "\uD38C\uD504"
   description: 
   previewImage: {fileID: 8907951495032731383, guid: b9d3560fcfd16bb44b38c041960de5c2, type: 3}
   maxHealth: 100

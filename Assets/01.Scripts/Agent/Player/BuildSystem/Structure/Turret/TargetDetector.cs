@@ -1,7 +1,7 @@
 using System.Linq;
 using DG.Tweening;
 using UnityEngine;
-namespace BuildSystem.Structures
+namespace BuildSystem.Structures.Turrets
 {
 
     public class TargetDetector : MonoBehaviour

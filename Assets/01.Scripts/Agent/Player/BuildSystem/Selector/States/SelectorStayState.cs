@@ -1,4 +1,5 @@
 using System;
+using BuildSystem.Structures;
 using UnityEngine;
 
 namespace BuildSystem.SelectorManage.FSM
@@ -9,13 +10,23 @@ namespace BuildSystem.SelectorManage.FSM
         public SelectorStayState(GridSelector selector, SelectorStateMachine stateMachine) : base(selector, stateMachine)
         {
         }
+        private bool _canBuildable;
 
         public override void Enter()
         {
             base.Enter();
             _selector.SelectorInput.OnSelectMoveEvent += HandleMove;
-            _selector.SelectorInput.OnSelectEvent += HandleSelect;
+            Structure detectedStructure = _selector.DetectStructure();
+            _canBuildable = detectedStructure == null;
+            if (_canBuildable)
+            {
+                _selector.SelectorInput.OnSelectEvent += HandleGridSelect;
+            }
+            else
+            {
 
+                _infoPanel.SetStructure(detectedStructure);
+            }
         }
 
 
@@ -23,8 +34,12 @@ namespace BuildSystem.SelectorManage.FSM
         {
             base.Exit();
             _selector.SelectorInput.OnSelectMoveEvent -= HandleMove;
-            _selector.SelectorInput.OnSelectEvent -= HandleSelect;
-
+            if (_canBuildable)
+            {
+                _selector.SelectorInput.OnSelectEvent -= HandleGridSelect;
+            }
+            _infoPanel.Close();
+            _optionSelector.Close();
         }
 
 
@@ -34,10 +49,10 @@ namespace BuildSystem.SelectorManage.FSM
             _mover.HandleMove(inputDirection);
         }
 
-        private void HandleSelect()
+        private void HandleGridSelect()
         {
             _stateMachine.ChangeState(SelectorStateEnum.Selected);
-            
+
         }
 
     }

@@ -55,7 +55,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BarrierDissolveLevel: 0.84
+    - _BarrierDissolveLevel: 1
     - _BlinkLevel: 0
     - _BlinkWaveScale: 0.444
     - _BlinkWaveSpeed: 3.49

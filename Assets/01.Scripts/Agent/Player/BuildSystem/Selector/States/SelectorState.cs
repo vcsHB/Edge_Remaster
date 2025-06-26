@@ -1,3 +1,5 @@
+using BuildSystem.UIManage;
+
 namespace BuildSystem.SelectorManage.FSM
 {
 
@@ -5,6 +7,7 @@ namespace BuildSystem.SelectorManage.FSM
     {
         protected GridSelector _selector;
         protected OptionSelector _optionSelector;
+        protected StructureInfoPanel _infoPanel;
         protected SelectorStateMachine _stateMachine;
         protected SelectorMover _mover;
 
@@ -14,6 +17,7 @@ namespace BuildSystem.SelectorManage.FSM
             _stateMachine = stateMachine;
             _mover = selector.MoverCompo;
             _optionSelector = selector.OptionSelector;
+            _infoPanel = selector.InfoPanel;
 
         }
         public virtual void Enter()
