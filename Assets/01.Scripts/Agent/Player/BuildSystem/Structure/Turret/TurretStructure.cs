@@ -5,10 +5,10 @@ namespace BuildSystem.Structures.Turrets
 
     public abstract class TurretStructure : Structure
     {
-        [SerializeField] private TurretHead _mainHead;
-        [SerializeField] private TargetDetector _targetDetector;
-        [SerializeField] private Collider2D _target;
-        [SerializeField] private float _fireTerm = 0.2f;
+        [SerializeField] protected TurretHead _mainHead;
+        [SerializeField] protected TargetDetector _targetDetector;
+        [SerializeField] protected Collider2D _target;
+        [SerializeField] protected float _fireTerm = 0.2f;
         protected float _fireLimitTime;
         protected Vector2 _targetDirection;
         protected bool _isAimAligned;

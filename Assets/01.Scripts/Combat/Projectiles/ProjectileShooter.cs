@@ -1,10 +1,12 @@
 using ObjectPooling;
 using UnityEngine;
+using UnityEngine.Events;
 namespace Combat.CombatObjects.ProjectileManage
 {
 
     public class ProjectileShooter : MonoBehaviour
     {
+        public UnityEvent OnFireEvent;
         [SerializeField] private PoolingType _projectilePoolType;
         [SerializeField] private ProjectileData _projectileData;
 

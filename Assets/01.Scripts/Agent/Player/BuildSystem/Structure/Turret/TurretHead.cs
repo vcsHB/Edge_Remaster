@@ -12,7 +12,7 @@ namespace BuildSystem.Structures.Turrets
             if (direction.sqrMagnitude == 0f)
                 return false;
 
-            float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90f;
+            float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
             float currentAngle = transform.eulerAngles.z;
 
             float angleDiff = Mathf.DeltaAngle(currentAngle, targetAngle);

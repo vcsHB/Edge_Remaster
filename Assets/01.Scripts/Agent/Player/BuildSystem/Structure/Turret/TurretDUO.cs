@@ -10,7 +10,7 @@ namespace BuildSystem.Structures.Turrets
         public override void Fire()
         {
 
-            _projectileShooters[_currentFireIndex].FireProjectile(transform.up);
+            _projectileShooters[_currentFireIndex].FireProjectile(_mainHead.transform.up);
             _currentFireIndex = (_currentFireIndex + 1) % _projectileShooters.Length;
         }
     }
