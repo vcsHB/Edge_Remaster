@@ -7,10 +7,12 @@ namespace BuildSystem.Structures
     public class TurretMONO : TurretStructure
     {
 
-        [SerializeField] private ProjectileShooter[] _projectileShooters;
-        
+        [SerializeField] private ProjectileShooter _projectileShooter;
+
         public override void Fire()
         {
+
+            _projectileShooter.FireProjectile(_mainHead.transform.up);
         }
     }
 }
