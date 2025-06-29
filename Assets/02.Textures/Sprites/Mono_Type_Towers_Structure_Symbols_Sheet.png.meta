@@ -260,9 +260,9 @@ TextureImporter:
       name: Mono_Type_Towers_Structure_Symbols_Sheet_6
       rect:
         serializedVersion: 2
-        x: 81
+        x: 82
         y: 166
-        width: 29
+        width: 28
         height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

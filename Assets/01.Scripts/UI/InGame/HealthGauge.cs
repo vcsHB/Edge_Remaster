@@ -14,12 +14,14 @@ namespace UIManage.InGame
         [SerializeField] private float _changeDuration = 0.1f;
         private void Awake()
         {
-            _owner.OnHealthChangedValueEvent += HandleGaugeRefresh;
+            if (_owner != null)
+                _owner.OnHealthChangedValueEvent += HandleGaugeRefresh;
         }
 
         private void OnDestroy()
         {
-            _owner.OnHealthChangedValueEvent -= HandleGaugeRefresh;
+            if (_owner != null)
+                _owner.OnHealthChangedValueEvent -= HandleGaugeRefresh;
         }
         public void SetOwner(Health newOwner)
         {

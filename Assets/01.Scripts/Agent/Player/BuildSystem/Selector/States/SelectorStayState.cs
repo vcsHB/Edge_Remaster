@@ -11,21 +11,22 @@ namespace BuildSystem.SelectorManage.FSM
         {
         }
         private bool _canBuildable;
+        private Structure _currentStructure;
 
         public override void Enter()
         {
             base.Enter();
             _selector.SelectorInput.OnSelectMoveEvent += HandleMove;
-            Structure detectedStructure = _selector.DetectStructure();
-            _canBuildable = detectedStructure == null;
+            _currentStructure = _selector.DetectStructure();
+            _canBuildable = _currentStructure == null;
             if (_canBuildable)
             {
                 _selector.SelectorInput.OnSelectEvent += HandleGridSelect;
             }
             else
             {
-
-                _infoPanel.SetStructure(detectedStructure);
+                _currentStructure.HandleStructureSelected();
+                _infoPanel.SetStructure(_currentStructure);
             }
         }
 
@@ -37,6 +38,10 @@ namespace BuildSystem.SelectorManage.FSM
             if (_canBuildable)
             {
                 _selector.SelectorInput.OnSelectEvent -= HandleGridSelect;
+            }
+            if (_currentStructure != null)
+            {
+                _currentStructure.HandleStructureUnselected();
             }
             _infoPanel.Close();
             _optionSelector.Close();

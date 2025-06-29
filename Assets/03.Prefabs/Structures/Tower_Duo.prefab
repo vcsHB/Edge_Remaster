@@ -202,7 +202,7 @@ MonoBehaviour:
   _targetLayer:
     serializedVersion: 2
     m_Bits: 128
-  _targetDetectRadius: 15
+  _targetDetectRadius: 9
   _radiusVisualTrm: {fileID: 8719486466750865362}
   _visualEnableDuration: 0.15
 --- !u!1 &1482739494756888835

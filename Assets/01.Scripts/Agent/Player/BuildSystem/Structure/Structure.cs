@@ -20,5 +20,15 @@ namespace BuildSystem.Structures
         {
 
         }
+
+        public virtual void HandleStructureSelected()
+        {
+
+        }
+        
+        public virtual void HandleStructureUnselected()
+        {
+
+        }
     }
 }

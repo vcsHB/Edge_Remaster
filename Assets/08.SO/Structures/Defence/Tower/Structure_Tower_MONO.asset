@@ -17,5 +17,6 @@ MonoBehaviour:
   structureName: "\uBAA8\uB178"
   description: "\uB2E8\uC77C \uD0C0\uAC9F\uC744 \uACF5\uACA9\uD558\uB294 \uAE30\uCD08
     \uBCF4\uC548 \uBC29\uC5B4\uC218\uB2E8\uC785\uB2C8\uB2E4."
-  previewImage: {fileID: 21300000, guid: e16c2356ebb305b4281445fcf656929c, type: 3}
+  previewImage: {fileID: -5555484317840180767, guid: 0dfbf34cae327d94eb597cf2e0b9656b, type: 3}
   maxHealth: 100
+  upgradeList: []

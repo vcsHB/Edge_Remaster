@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Structure_Tower_Cannon
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 0
-  structurePrefab: {fileID: 0}
+  structurePrefab: {fileID: 7739239956009843966, guid: 5ca0e2e068590964cb99a490c5dae024, type: 3}
   structureName: "\uCE90\uB17C"
   description: 
   previewImage: {fileID: 21300000, guid: e16c2356ebb305b4281445fcf656929c, type: 3}
   maxHealth: 100
+  upgradeList: []

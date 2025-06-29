@@ -12,10 +12,12 @@ namespace BuildSystem.Structures
         [TextArea] public string description;
         public Sprite previewImage;
         public float maxHealth = 100;
-        
+
         [Space(10f)]
         [Header("Build Settings")]
         public ResourceData[] requireResources;
+        [Header("Upgrade Setting")]
+        public StructureDataSO[] upgradeList;
 
 
     }

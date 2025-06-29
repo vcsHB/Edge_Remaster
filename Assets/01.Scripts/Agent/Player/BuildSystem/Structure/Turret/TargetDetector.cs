@@ -20,7 +20,7 @@ namespace BuildSystem.Structures.Turrets
 
         public void OpenRangeVisual()
         {
-            _radiusVisualTrm.DOScale(_targetDetectRadius, _visualEnableDuration);
+            _radiusVisualTrm.DOScale(_targetDetectRadius * 2f, _visualEnableDuration);
 
         }
 

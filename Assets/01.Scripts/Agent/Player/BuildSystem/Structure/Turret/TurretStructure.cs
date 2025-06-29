@@ -33,6 +33,18 @@ namespace BuildSystem.Structures.Turrets
 
         }
 
+        public override void HandleStructureSelected()
+        {
+            base.HandleStructureSelected();
+            _targetDetector.OpenRangeVisual();
+        }
+
+        public override void HandleStructureUnselected()
+        {
+            base.HandleStructureUnselected();
+            _targetDetector.CloseRangeVisual();
+        }
+
         public abstract void Fire();
     }
 }
