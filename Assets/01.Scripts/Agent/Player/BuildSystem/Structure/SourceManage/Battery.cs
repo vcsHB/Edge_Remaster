@@ -7,6 +7,7 @@ namespace BuildSystem.Structures
     {
         public event Action<float, float> OnEnergyRestoreEvent;
         public event Action<float, float> OnEnergyUseEvent;
+        public event Action<float> OnEnergyValueChangedEvent;
 
         [SerializeField] private float _maxEnergy;
         [SerializeField] private float _currentEnergy;
@@ -27,6 +28,7 @@ namespace BuildSystem.Structures
 
             _currentEnergy -= amount;
             OnEnergyUseEvent?.Invoke(_currentEnergy, _maxEnergy);
+            OnEnergyValueChangedEvent?.Invoke(_currentEnergy);
             return true;
 
         }
@@ -36,6 +38,7 @@ namespace BuildSystem.Structures
             _currentEnergy += amount;
             _currentEnergy = Mathf.Clamp(_currentEnergy, 0, _maxEnergy);
             OnEnergyRestoreEvent?.Invoke(_currentEnergy, _maxEnergy);
+            OnEnergyValueChangedEvent?.Invoke(_currentEnergy);
         }
     }
 }

@@ -131,9 +131,9 @@ TextureImporter:
         x: 0
         y: 128
         width: 64
-        height: 64
+        height: 39
       alignment: 9
-      pivot: {x: 0.5, y: 0.34}
+      pivot: {x: 0.5, y: 0.59}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -153,9 +153,9 @@ TextureImporter:
         x: 64
         y: 128
         width: 64
-        height: 64
+        height: 38
       alignment: 9
-      pivot: {x: 0.5, y: 0.36}
+      pivot: {x: 0.5, y: 0.69}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,9 +175,9 @@ TextureImporter:
         x: 0
         y: 64
         width: 64
-        height: 64
+        height: 40
       alignment: 9
-      pivot: {x: 0.5, y: 0.33}
+      pivot: {x: 0.5, y: 0.52}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -197,7 +197,7 @@ TextureImporter:
         x: 64
         y: 64
         width: 64
-        height: 64
+        height: 50
       alignment: 9
       pivot: {x: 0.5, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,6 +234,94 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Mono_Type_Towers_Structure_Symbols_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 167
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d7869e051022e8499b1276a6acd0a9b
+      internalID: -1990376956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mono_Type_Towers_Structure_Symbols_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 166
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6584449cad5785f4398fe814d119092d
+      internalID: -1559078554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mono_Type_Towers_Structure_Symbols_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 114
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57b734e7a1d72ca458949e5d5692710a
+      internalID: -1375604217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mono_Type_Towers_Structure_Symbols_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 104
+        width: 34
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6df975f7c4c28b488a9c614bbd86c57
+      internalID: -1547549993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -253,6 +341,10 @@ TextureImporter:
       Mono_Type_Towers_Structure_Symbols_Sheet_2: 5470824867142260687
       Mono_Type_Towers_Structure_Symbols_Sheet_3: -6602755773156180632
       Mono_Type_Towers_Structure_Symbols_Sheet_4: -2676152924911044248
+      Mono_Type_Towers_Structure_Symbols_Sheet_5: -1990376956
+      Mono_Type_Towers_Structure_Symbols_Sheet_6: -1559078554
+      Mono_Type_Towers_Structure_Symbols_Sheet_7: -1375604217
+      Mono_Type_Towers_Structure_Symbols_Sheet_8: -1547549993
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -215,6 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8809347516184054969}
   - component: {fileID: 6087079593902759942}
+  - component: {fileID: 5869919449130677848}
   m_Layer: 13
   m_Name: Visual
   m_TagString: Untagged
@@ -292,6 +293,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5869919449130677848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482739494756888835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c869bd7687177944b07b763ed33716b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _disableColor: {r: 0, g: 0, b: 0, a: 1}
+  _opacity: 0.4
 --- !u!1 &1973977189058663647
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,9 +317,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1072563994837602922}
   - component: {fileID: 8916372883424494689}
-  - component: {fileID: 1986940250923380411}
   - component: {fileID: 1699534781601868094}
   - component: {fileID: 2261170990682832168}
+  - component: {fileID: 5854963190090972199}
   m_Layer: 13
   m_Name: Tower_Duo
   m_TagString: Untagged
@@ -377,20 +392,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
---- !u!114 &1986940250923380411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1973977189058663647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a12ad4a1bde2d144099f1ce4c3ffa9a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxEnergy: 100
-  _currentEnergy: 0
 --- !u!114 &1699534781601868094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,6 +429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <DataSO>k__BackingField: {fileID: 11400000, guid: 7f9b50b5d54a54e449cb3d809a13e5c4, type: 2}
+  _requireEnergy: 25
   _mainHead: {fileID: 197073843300429509}
   _targetDetector: {fileID: 7466019977081527874}
   _target: {fileID: 0}
@@ -435,6 +437,20 @@ MonoBehaviour:
   _projectileShooters:
   - {fileID: 2242903840589190638}
   - {fileID: 4224923784839033127}
+--- !u!114 &5854963190090972199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973977189058663647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a12ad4a1bde2d144099f1ce4c3ffa9a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxEnergy: 100
+  _currentEnergy: 100
 --- !u!1 &1974382438101633222
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,6 +461,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9196227690577653193}
   - component: {fileID: 5395689871033344443}
+  - component: {fileID: 7788501673401063073}
   m_Layer: 13
   m_Name: CannonGaurd
   m_TagString: Untagged
@@ -522,6 +539,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7788501673401063073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974382438101633222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c869bd7687177944b07b763ed33716b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _disableColor: {r: 0, g: 0, b: 0, a: 1}
+  _opacity: 0.4
 --- !u!1 &2314492418563424553
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,6 +717,7 @@ GameObject:
   m_Component:
   - component: {fileID: 565210563364014459}
   - component: {fileID: 3093530575604409417}
+  - component: {fileID: 1547449222049557566}
   m_Layer: 13
   m_Name: Visual
   m_TagString: Untagged
@@ -763,6 +795,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1547449222049557566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4024855719964264902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c869bd7687177944b07b763ed33716b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _disableColor: {r: 0, g: 0, b: 0, a: 1}
+  _opacity: 0.4
 --- !u!1 &6046767274123801179
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,6 +819,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3225011047986209803}
   - component: {fileID: 1725217531197965691}
+  - component: {fileID: 325542473773435929}
   m_Layer: 13
   m_Name: CannonGaurd
   m_TagString: Untagged
@@ -850,6 +897,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &325542473773435929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6046767274123801179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c869bd7687177944b07b763ed33716b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _disableColor: {r: 0, g: 0, b: 0, a: 1}
+  _opacity: 0.4
 --- !u!1 &8135667711736108099
 GameObject:
   m_ObjectHideFlags: 0
