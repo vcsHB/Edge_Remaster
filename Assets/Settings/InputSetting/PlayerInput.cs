@@ -15,6 +15,7 @@ namespace InputManage
         public event Action OnUseSkill2Event;
 
         public event Action OnSelectEvent;
+        public event Action OnUpgradeEvent;
         public event Action OnBuildDestroyEvent;
         public event Action OnCancelEvent;
         public Vector2 InputDirection { get; private set; }

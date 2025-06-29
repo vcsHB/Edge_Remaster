@@ -1,3 +1,4 @@
+using BuildSystem.Structures;
 using UIManage;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace BuildSystem.SelectorManage
     {
         [SerializeField] private StartSelectionGroup _root;
         [SerializeField] private SelectionSlot _currentSlot;
-
+        public StructureDataSO StructureData { get; private set; }
 
 
         private void Start()
@@ -36,8 +37,10 @@ namespace BuildSystem.SelectorManage
                 _currentSlot.OnSelect(dir);
                 if (slot is StructureSelectionSlot buildSelection)
                 {
-                    //buildSelection.Data
+                    StructureData = buildSelection.Data;
                 }
+                else
+                    StructureData = null;
             }
         }
         public static Vector2Int ToDirectionInt(Vector2 input)

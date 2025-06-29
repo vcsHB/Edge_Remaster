@@ -6,6 +6,7 @@ namespace BuildSystem.SelectorManage.FSM
     {
         Stay,
         Move,
-        Selected
+        Selected,
+        Edit
     }
 }

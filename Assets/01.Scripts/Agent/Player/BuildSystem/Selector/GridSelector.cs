@@ -19,6 +19,7 @@ namespace BuildSystem.SelectorManage
 
 
         private SelectorStateMachine _stateMachine;
+        public Structure CurrentSelectedStructure { get; private set; }
 
         private void Awake()
         {
@@ -40,6 +41,11 @@ namespace BuildSystem.SelectorManage
             Collider2D target = Physics2D.OverlapBox(transform.position, _detectArea, 0f, _structureLayer);
             if (target == null) return null;
             return target.GetComponent<Structure>();
+        }
+
+        public void SetStructure(Structure structure)
+        {
+            CurrentSelectedStructure = structure;
         }
     }
 }
