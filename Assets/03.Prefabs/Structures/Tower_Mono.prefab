@@ -5197,6 +5197,7 @@ Transform:
   - {fileID: 5273995834521978306}
   - {fileID: 4429831329414605430}
   - {fileID: 3665453908665252385}
+  - {fileID: 1841486109531548943}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &3624879686516073605
@@ -20170,3 +20171,65 @@ MonoBehaviour:
   _recoilDistance: 0.1
   _retractionEase: 5
   _advanceEase: 4
+--- !u!1001 &2508655247991362567
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3032446818087801695}
+    m_Modifications:
+    - target: {fileID: 4278082594970564872, guid: 2b7ae17a80f4ff745811a11373f09599, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278082594970564872, guid: 2b7ae17a80f4ff745811a11373f09599, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278082594970564872, guid: 2b7ae17a80f4ff745811a11373f09599, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278082594970564872, guid: 2b7ae17a80f4ff745811a11373f09599, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278082594970564872, guid: 2b7ae17a80f4ff745811a11373f09599, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278082594970564872, guid: 2b7ae17a80f4ff745811a11373f09599, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278082594970564872, guid: 2b7ae17a80f4ff745811a11373f09599, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278082594970564872, guid: 2b7ae17a80f4ff745811a11373f09599, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278082594970564872, guid: 2b7ae17a80f4ff745811a11373f09599, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278082594970564872, guid: 2b7ae17a80f4ff745811a11373f09599, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017838593915710251, guid: 2b7ae17a80f4ff745811a11373f09599, type: 3}
+      propertyPath: m_Name
+      value: EnergyDisplayer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2b7ae17a80f4ff745811a11373f09599, type: 3}
+--- !u!4 &1841486109531548943 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4278082594970564872, guid: 2b7ae17a80f4ff745811a11373f09599, type: 3}
+  m_PrefabInstance: {fileID: 2508655247991362567}
+  m_PrefabAsset: {fileID: 0}

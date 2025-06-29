@@ -1,36 +1,80 @@
 using System.Linq;
+using DG.Tweening;
 using UnityEngine;
+
 namespace BuildSystem.Structures
 {
-
     public class Pump : Structure
     {
         [SerializeField] private LayerMask _structureLayer;
         [SerializeField] private Vector2 _detectArea;
+
         [Header("Pump Setting")]
         [SerializeField] private float _fillEnergyAmount = 10f;
 
+        [Header("Visual Setting")]
+        [SerializeField] private Transform _rangeVisualTrm;
+        [SerializeField] private float _areaEnableDuration = 0.3f;
+
+        private SpriteRenderer _rangeRenderer;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            _rangeRenderer = _rangeVisualTrm.GetComponent<SpriteRenderer>();
+            _rangeRenderer.size = _detectArea;
+        }
+
         public void PumpEnergy()
         {
-            Collider2D[] targets = Physics2D.OverlapBoxAll(transform.position, _detectArea, 0, _structureLayer);
-            IEnergyRestorable[] energyOwners = targets
-                .Select(collider => collider.GetComponent<IEnergyRestorable>())
-                .Where(component => component != null)
-                .ToArray();
+            var energyOwners = GetEnergyOwnersInRange();
+            int targetCount = energyOwners.Length;
+            if (targetCount == 0) return;
 
-            int targetAmout = energyOwners.Length;
-            if (targetAmout == 0) return;
-            float distributedEnergy = _fillEnergyAmount / targetAmout;
-            for (int i = 0; i < targetAmout; i++)
+            float distributedEnergy = _fillEnergyAmount / targetCount;
+            foreach (var owner in energyOwners)
             {
-                energyOwners[i].RestoreEnergy(distributedEnergy);
+                owner.RestoreEnergy(distributedEnergy);
             }
         }
 
+        public override void HandleStructureSelected()
+        {
+            base.HandleStructureSelected();
+            SetEnergyOwnersHighlight(true);
+            _rangeVisualTrm.DOScale(1f, _areaEnableDuration);
+        }
+
+        public override void HandleStructureUnselected()
+        {
+            base.HandleStructureUnselected();
+            SetEnergyOwnersHighlight(false);
+            _rangeVisualTrm.DOScale(0f, _areaEnableDuration);
+        }
+
+        private IEnergyRestorable[] GetEnergyOwnersInRange()
+        {
+            return Physics2D.OverlapBoxAll(transform.position, _detectArea, 0, _structureLayer)
+                .Select(collider => collider.GetComponent<IEnergyRestorable>())
+                .Where(component => component != null)
+                .ToArray();
+        }
+
+        private void SetEnergyOwnersHighlight(bool highlight)
+        {
+            var energyOwners = GetEnergyOwnersInRange();
+            foreach (var owner in energyOwners)
+            {
+                owner.SetHighlight(highlight);
+            }
+        }
+#if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireCube(transform.position, _detectArea);
         }
+
+#endif
     }
 }
