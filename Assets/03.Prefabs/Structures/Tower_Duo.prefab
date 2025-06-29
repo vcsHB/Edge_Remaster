@@ -46,7 +46,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnFireEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4073666456664127077}
+        m_TargetAssemblyTypeName: BuildSystem.Structures.Turrets.GunBarrel, Assembly-CSharp
+        m_MethodName: PlayRecoil
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _projectilePoolType: 7
   _projectileData:
     direction: {x: 0, y: 0}
@@ -643,7 +655,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnFireEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4073666456664127077}
+        m_TargetAssemblyTypeName: BuildSystem.Structures.Turrets.GunBarrel, Assembly-CSharp
+        m_MethodName: PlayRecoil
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _projectilePoolType: 7
   _projectileData:
     direction: {x: 0, y: 0}
@@ -836,6 +860,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6594565297389409290}
   - component: {fileID: 197073843300429509}
+  - component: {fileID: 4073666456664127077}
   m_Layer: 13
   m_Name: Head
   m_TagString: Untagged
@@ -877,3 +902,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aimingSpeed: 130
   _launchAngle: 10
+--- !u!114 &4073666456664127077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8135667711736108099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0f2dcc86aeda5469f3e6d749b2be69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainVisual: {fileID: 565210563364014459}
+  _retractionDuration: 0.06
+  _advanceDuration: 0.5
+  _recoilDistance: 0.5
+  _retractionEase: 5
+  _advanceEase: 2

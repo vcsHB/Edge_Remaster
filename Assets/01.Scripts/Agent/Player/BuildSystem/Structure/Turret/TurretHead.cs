@@ -4,8 +4,11 @@ namespace BuildSystem.Structures.Turrets
 
     public class TurretHead : MonoBehaviour
     {
+        [Header("Aiming Setting")]
         [SerializeField] private float _aimingSpeed = 5f; // Head Rotation Speed
         [SerializeField, Range(0f, 180f)] private float _launchAngle = 10f;
+
+       
 
         public bool SetDirection(Vector2 direction)
         {

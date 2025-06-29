@@ -20,12 +20,14 @@ namespace Combat.CombatObjects.ProjectileManage
             Projectile projectile = PoolManager.Instance.Pop(_projectilePoolType) as Projectile;
             projectile.transform.position = transform.position;
             projectile.Shoot(_projectileData);
+            OnFireEvent?.Invoke();
         }
         public void FireProjectile(Vector2 direction)
         {
             Projectile projectile = PoolManager.Instance.Pop(_projectilePoolType) as Projectile;
             projectile.transform.position = transform.position;
             projectile.Shoot(direction);
+            OnFireEvent?.Invoke();
         }
     }
 }
