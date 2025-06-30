@@ -1,6 +1,7 @@
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Experimental.AI;
 using UnityEngine.UI;
 namespace BuildSystem.SelectorManage
 {
@@ -74,7 +75,6 @@ namespace BuildSystem.SelectorManage
         private void Align()
         {
             Vector2Int direction = ToVector2Int(_alignType);
-
             SelectionSlot prevTarget = this;
             int index = 0;
             foreach (Transform item in _alignElementParent)

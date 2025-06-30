@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5803e5047aca22544bcb614dd4622f4e, type: 3}
   m_Name: KeepDistanceMovement_Stable
   m_EditorClassIdentifier: 
-  _moveSpeed: 3
+  _moveSpeed: 1
   _chaseMinOffset: 10
   _chaseMaxOffset: 50
-  _ignoreDistance: 4
+  _ignoreDistance: 7
   _ignoreDistanceColor: {r: 1, g: 0.9013662, b: 0, a: 1}
   _detectGizmosColor: {r: 1, g: 0, b: 0, a: 1}

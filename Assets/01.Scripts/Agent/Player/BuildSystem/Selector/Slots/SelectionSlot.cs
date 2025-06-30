@@ -11,6 +11,10 @@ namespace BuildSystem.SelectorManage
 
         public UnityEvent OnSelectedEvent;
         [SerializeField] private Image _selectionImage;
+        public void ResetTransition()
+        {
+            _groupedSlots?.Clear();
+        }
 
         public void SetTransition(Vector2Int origin, SelectionSlot target)
         {
@@ -38,7 +42,7 @@ namespace BuildSystem.SelectorManage
             return false;
         }
 
-        
+
 
     }
 }

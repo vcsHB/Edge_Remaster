@@ -20,6 +20,7 @@ namespace BuildSystem.SelectorManage
         {
             foreach (var item in _groupedSlots)
             {
+                //item.Value.ResetTransition();
                 item.Value.SetTransition(item.Key, this);
             }
         }

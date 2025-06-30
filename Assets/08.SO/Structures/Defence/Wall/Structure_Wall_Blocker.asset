@@ -16,5 +16,7 @@ MonoBehaviour:
   structurePrefab: {fileID: 1692271298811501864, guid: cfa6cf3165948c24189434b75101073d, type: 3}
   structureName: "\uBE14\uB85C\uCEE4"
   description: 
-  previewImage: {fileID: 8907951495032731383, guid: b9d3560fcfd16bb44b38c041960de5c2, type: 3}
+  previewImage: {fileID: -4499503099449193857, guid: efa6f173c1a1cd24886672f193d94fe5, type: 3}
   maxHealth: 100
+  requireResources: []
+  upgradeList: []

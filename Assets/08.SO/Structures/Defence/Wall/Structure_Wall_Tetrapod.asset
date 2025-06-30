@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 0
   structurePrefab: {fileID: 5199692704208710706, guid: 46da4210c73a0504290379761c5cf868, type: 3}
-  structureName: "\uBC29\uD30C\uC81C"
-  description: 
-  previewImage: {fileID: 8907951495032731383, guid: b9d3560fcfd16bb44b38c041960de5c2, type: 3}
+  structureName: "\uD14C\uD2B8\uB77C\uD3EC\uB4DC"
+  description: "\uD45C\uC900 \uB370\uC774\uD130 \uD30C\uB3C4 \uBD84\uC0B0\uC7A5\uCE58"
+  previewImage: {fileID: 4466250264177481624, guid: 0dfbf34cae327d94eb597cf2e0b9656b, type: 3}
   maxHealth: 100
+  requireResources:
+  - type: 0
+    amount: 0
+  upgradeList: []
