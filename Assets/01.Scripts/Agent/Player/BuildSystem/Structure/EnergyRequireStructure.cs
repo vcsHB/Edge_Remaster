@@ -24,6 +24,12 @@ namespace BuildSystem.Structures
             }
         }
 
+        public override void SetStructureProperty(StructureProperties properties)
+        {
+            base.SetStructureProperty(properties);
+            _battery.SetCurrentEnergy(properties.energy);
+        }
+
         private void HandleEnergyValueChange(float currentEnergy)
         {
             OnEnergyEnoughEvent?.Invoke(currentEnergy >= _requireEnergy);

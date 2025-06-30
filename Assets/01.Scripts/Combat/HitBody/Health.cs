@@ -26,6 +26,11 @@ namespace Combat
             SetMaxHealth();
         }
 
+        public void SetCurrentHealth(float health)
+        {
+            _currentHealth = health;
+        }
+
         public void SetMaxHealth()
         {
             _currentHealth = MaxHealth;

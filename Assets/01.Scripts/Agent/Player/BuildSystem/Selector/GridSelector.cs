@@ -1,3 +1,4 @@
+using System.Resources;
 using BuildSystem.SelectorManage.FSM;
 using BuildSystem.Structures;
 using BuildSystem.UIManage;
@@ -11,7 +12,9 @@ namespace BuildSystem.SelectorManage
         [field: SerializeField] public PlayerInput SelectorInput { get; private set; }
         public SelectorMover MoverCompo { get; private set; }
         public OptionSelector OptionSelector { get; private set; }
+        [field: SerializeField] public BuildController BuildController { get; private set; }
         public StructureInfoPanel InfoPanel { get; private set; }
+
         [Header("Detect Setting")]
 
         [SerializeField] private LayerMask _structureLayer;

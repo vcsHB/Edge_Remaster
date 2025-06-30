@@ -55,5 +55,11 @@ namespace BuildSystem.Structures
         {
             _energyDisplayer.SetEnable(value);
         }
+
+        public void SetCurrentEnergy(float energy)
+        {
+            _currentEnergy = energy;
+            
+        }
     }
 }

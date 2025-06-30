@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: Structure_Tower_MONO
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 0
-  structurePrefab: {fileID: 0}
+  structurePrefab: {fileID: 5637814089818520197, guid: 8ab5651fa1612bd43b0dcee00391b475, type: 3}
   structureName: "\uBAA8\uB178"
   description: "\uB2E8\uC77C \uD0C0\uAC9F\uC744 \uACF5\uACA9\uD558\uB294 \uAE30\uCD08
     \uBCF4\uC548 \uBC29\uC5B4\uC218\uB2E8\uC785\uB2C8\uB2E4."
   previewImage: {fileID: -5555484317840180767, guid: 0dfbf34cae327d94eb597cf2e0b9656b, type: 3}
   maxHealth: 100
+  requireResources:
+  - type: 0
+    amount: 40
   upgradeList: []

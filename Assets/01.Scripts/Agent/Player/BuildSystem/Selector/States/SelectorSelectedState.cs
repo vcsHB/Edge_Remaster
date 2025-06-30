@@ -1,4 +1,6 @@
 using System;
+using BuildSystem.ResourceManage;
+using BuildSystem.Structures;
 using UnityEngine;
 namespace BuildSystem.SelectorManage.FSM
 {
@@ -13,6 +15,8 @@ namespace BuildSystem.SelectorManage.FSM
         public override void Enter()
         {
             base.Enter();
+            _isOptionSelecting = true;
+            _optionSelector.Open();
             _selector.SelectorInput.OnSelectMoveEvent += HandleMove;
             _selector.SelectorInput.OnSelectEvent += HandleSelect;
             _selector.SelectorInput.OnCancelEvent += HandleCancel;
@@ -37,10 +41,14 @@ namespace BuildSystem.SelectorManage.FSM
 
         private void HandleSelect()
         {
-            if (!_isOptionSelecting)
+            StructureDataSO data = _optionSelector.StructureData;
+            if (data != null)
             {
-                _isOptionSelecting = true;
-                _optionSelector.Open();
+                if (ResourceManager.Instance.TryUseResources(data.requireResources))
+                {
+                    HandleCancel();
+                    _selector.BuildController.BuildStructure(data, _selector.transform.position);
+                }
             }
         }
 

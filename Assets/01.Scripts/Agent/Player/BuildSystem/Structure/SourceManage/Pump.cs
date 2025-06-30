@@ -1,11 +1,13 @@
 using System.Linq;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace BuildSystem.Structures
 {
     public class Pump : Structure
     {
+        public UnityEvent OnPumpEnergyEvent;
         [SerializeField] private LayerMask _structureLayer;
         [SerializeField] private Vector2 _detectArea;
 
@@ -24,7 +26,7 @@ namespace BuildSystem.Structures
             _rangeRenderer = _rangeVisualTrm.GetComponent<SpriteRenderer>();
             _rangeRenderer.size = _detectArea;
         }
-
+        [ContextMenu("PumpEnergy")]
         public void PumpEnergy()
         {
             var energyOwners = GetEnergyOwnersInRange();
@@ -36,6 +38,7 @@ namespace BuildSystem.Structures
             {
                 owner.RestoreEnergy(distributedEnergy);
             }
+            OnPumpEnergyEvent?.Invoke();
         }
 
         public override void HandleStructureSelected()

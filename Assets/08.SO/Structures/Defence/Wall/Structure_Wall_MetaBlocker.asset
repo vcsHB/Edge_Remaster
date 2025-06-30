@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c5bb773811c7064991245f06106d840, type: 3}
-  m_Name: DerangementProtocal
+  m_Name: Structure_Wall_MetaBlocker
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 0
-  structurePrefab: {fileID: 0}
-  structureName: 
+  structurePrefab: {fileID: 5934457321170725732, guid: 15d1902abe6724947921d7850d68a09e, type: 3}
+  structureName: "\uBA54\uD0C0 \uBE14\uB85C\uCEE4"
   description: 
   previewImage: {fileID: 8907951495032731383, guid: b9d3560fcfd16bb44b38c041960de5c2, type: 3}
   maxHealth: 100

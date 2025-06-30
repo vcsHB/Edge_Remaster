@@ -1,7 +1,8 @@
 using UnityEngine;
 namespace BuildSystem.ResourceManage
 {
-    public struct ResourceData
+    [System.Serializable]
+    public class ResourceData
     {
         public ResourceType type;
         public int amount;

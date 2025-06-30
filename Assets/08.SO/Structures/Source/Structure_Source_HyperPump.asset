@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c5bb773811c7064991245f06106d840, type: 3}
-  m_Name: Blocker
+  m_Name: Structure_Source_HyperPump
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 0
-  structurePrefab: {fileID: 1692271298811501864, guid: cfa6cf3165948c24189434b75101073d, type: 3}
-  structureName: "\uBE14\uB85C\uCEE4"
+  structurePrefab: {fileID: 0}
+  structureName: 
   description: 
   previewImage: {fileID: 8907951495032731383, guid: b9d3560fcfd16bb44b38c041960de5c2, type: 3}
   maxHealth: 100
