@@ -17,6 +17,7 @@ namespace BuildSystem.SelectorManage
 
         [Header("Detect Setting")]
 
+        [SerializeField] private LayerMask _obstacleLayer;
         [SerializeField] private LayerMask _structureLayer;
         [SerializeField] private Vector2 _detectArea;
 
@@ -37,6 +38,11 @@ namespace BuildSystem.SelectorManage
         private void Update()
         {
             _stateMachine.UpdateCurrentState();
+        }
+
+        public bool DetectObstacle()
+        {
+            return Physics2D.OverlapBox(transform.position, _detectArea, 0f, _obstacleLayer) != null;
         }
 
         public Structure DetectStructure()

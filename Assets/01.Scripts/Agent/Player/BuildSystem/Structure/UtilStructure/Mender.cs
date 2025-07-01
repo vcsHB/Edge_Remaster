@@ -10,6 +10,7 @@ namespace BuildSystem.Structures
         [SerializeField] private LayerMask _detectLayer;
         [SerializeField] private int _healTargetAmount = 3;
         [SerializeField] private float _healAmount = 30f;
+        
 
         [ContextMenu("DebugMend")]
         public void Mend()

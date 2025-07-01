@@ -1,3 +1,4 @@
+using System;
 using BuildSystem.Structures;
 using UnityEngine;
 namespace BuildSystem.SelectorManage.FSM
@@ -13,9 +14,15 @@ namespace BuildSystem.SelectorManage.FSM
         {
             base.Enter();
             _currentStructure = _selector.DetectStructure();
-            _selector.SelectorInput.OnSelectMoveEvent += HandleMove;
+            //_selector.SelectorInput.OnSelectMoveEvent += HandleMove;
             _selector.SelectorInput.OnUpgradeEvent += HandleUpgrade;
+            _selector.SelectorInput.OnCancelEvent += HandleCancel;
             _selector.SelectorInput.OnBuildDestroyEvent += HandleDestroyStructure;
+        }
+
+        private void HandleCancel()
+        {
+            _stateMachine.ChangeState(SelectorStateEnum.Stay);
         }
 
         private void HandleDestroyStructure()
@@ -33,6 +40,7 @@ namespace BuildSystem.SelectorManage.FSM
             base.Exit();
             _infoPanel.Close();
             _selector.SelectorInput.OnCancelEvent -= HandleUpgrade;
+            _selector.SelectorInput.OnCancelEvent -= HandleCancel;
             _selector.SelectorInput.OnBuildDestroyEvent -= HandleDestroyStructure;
         }
 

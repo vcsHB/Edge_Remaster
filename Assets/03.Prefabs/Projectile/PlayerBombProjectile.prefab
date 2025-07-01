@@ -51,7 +51,7 @@ MonoBehaviour:
   OnCastSuccessEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3411281658232786330}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Combat.Casters.CircleCaster, Assembly-CSharp
         m_MethodName: Cast
         m_Mode: 1
@@ -166,7 +166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2126496851110621773}
-  - component: {fileID: 3411281658232786330}
+  - component: {fileID: 9117699832937459343}
   - component: {fileID: 2368967456916283410}
   - component: {fileID: 6683927040026622885}
   m_Layer: 11
@@ -191,7 +191,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8261673235093998555}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3411281658232786330
+--- !u!114 &9117699832937459343
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8689893062627901672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7c8df37b2355b64ca70555c9b0ded02, type: 3}
+  m_Script: {fileID: 11500000, guid: b20c7a26856609143baa009ca07a94a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnCastEvent:
@@ -215,6 +215,7 @@ MonoBehaviour:
     m_Bits: 128
   _targetMaxAmount: 10
   _gizmosColor: {r: 1, g: 0, b: 0, a: 1}
+  _rayPrecision: 15
   _detectRadius: 3.28
 --- !u!114 &2368967456916283410
 MonoBehaviour:
