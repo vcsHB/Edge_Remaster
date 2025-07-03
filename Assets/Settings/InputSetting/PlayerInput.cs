@@ -115,6 +115,11 @@ namespace InputManage
                 OnCancelEvent?.Invoke();
             }
         }
+
+        public void SetSelectPosition(Vector2Int position)
+        {
+            SelectPosition = position;
+        }
     }
 
 }

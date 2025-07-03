@@ -1,16 +1,24 @@
 using System.Linq;
 using Combat;
 using UnityEngine;
+using UnityEngine.Events;
 namespace BuildSystem.Structures
 {
 
     public class Mender : EnergyRequireStructure
     {
+        public UnityEvent OnMendEvent;
         [SerializeField] private Vector2 _detectRange;
         [SerializeField] private LayerMask _detectLayer;
         [SerializeField] private int _healTargetAmount = 3;
         [SerializeField] private float _healAmount = 30f;
-        
+
+
+        public override void HandleWaveStart()
+        {
+            base.HandleWaveStart();
+            Mend();
+        }
 
         [ContextMenu("DebugMend")]
         public void Mend()
@@ -31,6 +39,7 @@ namespace BuildSystem.Structures
                     target.Restore(_healAmount);
                 }
             }
+            OnMendEvent?.Invoke();
         }
 
     }

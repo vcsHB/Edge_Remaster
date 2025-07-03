@@ -22,10 +22,7 @@ namespace BuildSystem
             Structure structure = Instantiate(data.structurePrefab, position, Quaternion.identity);
             structure.OnDestroyEvent += HandleStructureDestroy;
             _structures.Add(structure);
-            if (structure is Pump pump)
-            {
-                _waveManager.OnWaveStartEvent.AddListener(pump.PumpEnergy);
-            }
+                _waveManager.OnWaveStartEvent.AddListener(structure.HandleWaveStart);
         }
 
         private void HandleStructureDestroy(Structure structure)

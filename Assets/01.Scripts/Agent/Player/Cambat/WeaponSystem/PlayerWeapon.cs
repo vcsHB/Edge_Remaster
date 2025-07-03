@@ -36,7 +36,7 @@ namespace Agents.Players.Combat
 
         protected virtual void Update()
         {
-            AimPosition = _playerInput.MousePosition;
+            AimPosition = _playerInput.SelectPosition;
             AimDirection = AimPosition - (Vector2)transform.position;
         }
 

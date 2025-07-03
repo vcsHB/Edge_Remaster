@@ -18,9 +18,9 @@ namespace BuildSystem.SelectorManage
             _canMove = value;
         }
 
-        public void HandleMove(Vector2 inputDirection)
+        public Vector2Int HandleMove(Vector2 inputDirection)
         {
-            if (_isMoving || !_canMove) return;
+            if (_isMoving || !_canMove) return SelectPosition;
             int x = Mathf.RoundToInt(inputDirection.x);
             int y = Mathf.RoundToInt(inputDirection.y);
 
@@ -33,6 +33,7 @@ namespace BuildSystem.SelectorManage
             SelectPosition = new Vector2Int(newX, newY);
             _isMoving = true;
             transform.DOMove((Vector2)SelectPosition, _selectMoveDuration).OnComplete(HandleMoveArrive);
+            return SelectPosition;
         }
         private void HandleMoveArrive()
         {

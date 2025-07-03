@@ -26,6 +26,12 @@ namespace BuildSystem.Structures
             _rangeRenderer = _rangeVisualTrm.GetComponent<SpriteRenderer>();
             _rangeRenderer.size = _detectArea;
         }
+
+        public override void HandleWaveStart()
+        {
+            base.HandleWaveStart();
+            PumpEnergy();
+        }
         [ContextMenu("PumpEnergy")]
         public void PumpEnergy()
         {

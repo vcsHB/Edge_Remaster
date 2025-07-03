@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using Combat;
+using Core.attribute;
 using ObjectManage;
 using UnityEngine;
 namespace BuildSystem.Structures
@@ -7,7 +9,7 @@ namespace BuildSystem.Structures
     public struct StructureProperties
     {
         public float health;
-        public float energy;       
+        public float energy;
     }
     [RequireComponent(typeof(Health))]
     public class Structure : MonoBehaviour
@@ -15,6 +17,26 @@ namespace BuildSystem.Structures
         [field: SerializeField] public StructureDataSO DataSO { get; private set; }
         public Health HealthCompo { get; private set; }
         public event Action<Structure> OnDestroyEvent;
+        [ReadOnly] public float baseSpeed = 1f;
+
+        public float WorkSpeed
+        {
+            get
+            {
+                if (_isSpeedValueChanged)
+                {
+                    _workSpeed = baseSpeed;
+                    for (int i = 0; i < _modifiers.Count; i++)
+                        _workSpeed += _modifiers[i];
+                    _isSpeedValueChanged = false;
+                }
+                return _workSpeed;
+            }
+        }
+        private float _workSpeed;
+        private bool _isSpeedValueChanged = true;
+
+        private List<float> _modifiers = new();
 
 
 
@@ -43,6 +65,11 @@ namespace BuildSystem.Structures
 
         }
 
+        public virtual void HandleWaveStart()
+        {
+
+        }
+
         public virtual void DestroyStructure()
         {
             OnDestroyEvent?.Invoke(this);
@@ -51,5 +78,25 @@ namespace BuildSystem.Structures
             vfx.Play();
             Destroy(gameObject);
         }
+
+        #region Speed modifers
+
+        public void AddSpeedModifier(float value)
+        {
+            _modifiers.Add(value);
+            _isSpeedValueChanged = true;
+
+        }
+
+        public void RemoveSpeedModifier(float value)
+        {
+            if (_modifiers.Contains(value))
+            {
+                _modifiers.Remove(value);
+                _isSpeedValueChanged = true;
+            }
+        }
+
+        #endregion
     }
 }

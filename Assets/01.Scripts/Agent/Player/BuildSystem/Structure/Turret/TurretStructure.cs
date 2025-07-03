@@ -9,8 +9,7 @@ namespace BuildSystem.Structures.Turrets
         [SerializeField] protected TargetDetector _targetDetector;
         [SerializeField] protected Collider2D _target;
         [SerializeField] protected float _fireTerm = 0.2f;
-
-        protected float _fireLimitTime;
+        private float _currentCooltime;           
         protected Vector2 _targetDirection;
         protected bool _isAimAligned;
 
@@ -19,14 +18,15 @@ namespace BuildSystem.Structures.Turrets
         {
             if (!_battery.IsEnough(_requireEnergy)) return;
 
+            _currentCooltime += Time.fixedDeltaTime * WorkSpeed;
             _target = _targetDetector.DetectClosestTarget();
             if (_target == null) return;
 
             _targetDirection = _target.transform.position - transform.position;
             _isAimAligned = _mainHead.SetDirection(_targetDirection);
-            if (_isAimAligned && _fireLimitTime < Time.time)
+            if (_isAimAligned && _fireTerm < _currentCooltime)
             {
-                _fireLimitTime = Time.time + _fireTerm;
+                _currentCooltime = 0f;
                 _battery.TryUseEnergy(_requireEnergy);
                 Fire();
             }

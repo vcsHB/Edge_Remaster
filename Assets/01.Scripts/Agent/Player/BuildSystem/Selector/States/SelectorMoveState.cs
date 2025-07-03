@@ -13,6 +13,7 @@ namespace BuildSystem.SelectorManage.FSM
 
         private void HandleMoveOver()
         {
+            
             _stateMachine.ChangeState(SelectorStateEnum.Stay);
         }
     }

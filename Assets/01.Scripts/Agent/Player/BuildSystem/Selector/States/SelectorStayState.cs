@@ -58,7 +58,7 @@ namespace BuildSystem.SelectorManage.FSM
         private void HandleMove(Vector2 inputDirection)
         {
             _stateMachine.ChangeState(SelectorStateEnum.Move);
-            _mover.HandleMove(inputDirection);
+            _selector.SelectorInput.SetSelectPosition(_mover.HandleMove(inputDirection));
         }
 
         private void HandleGridSelect()
