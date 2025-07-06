@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00cf0521927e03542984682712c91e3c, type: 3}
+  m_Name: ResourceData_Kether
+  m_EditorClassIdentifier: 
+  id: 0
+  dataIconSprite: {fileID: 4566739173651768325, guid: 13b58582ee31d9f449627ce26dc93c28, type: 3}
+  dataName: "\uCF00\uD14C\uB974"
+  dataDescription: "\uC778\uAC04\uC758 \uC774\uD574\uB825 \uBC14\uAE65\uC758 \uB370\uC774\uD130.
+    \uBB34\uD55C\uD55C \uC9C0\uC2DD \uC790\uC6D0\uC758 \uC6D0\uCC9C\uC774\uB2E4.
+    \uC544\uC9C1\uB3C4 \uC774 \uB370\uC774\uD130 \uAD6C\uC870\uC5D0 \uAD00\uD55C
+    \uC5F0\uAD6C\uAC00 \uC9C4\uD589\uC911\uC774\uBA70, \uC774\uC5D0 \uB2F4\uAE34
+    '\uAC70\uB8E9\uD55C' \uB0B4\uC6A9\uB4E4\uC758 \uC644\uC804\uD55C \uC774\uD574\uB294
+    \uC544\uC9C1\uAE4C\uC9C0 \uD604\uB300\uC758 \uAE30\uC220\uB825\uC73C\uB85C\uB294
+    \uBD88\uAC00\uB2A5\uD558\uB2E4. "
+  categorys: []
+  resourceType: 2

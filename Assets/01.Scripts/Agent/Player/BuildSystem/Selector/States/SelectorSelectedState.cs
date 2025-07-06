@@ -17,6 +17,7 @@ namespace BuildSystem.SelectorManage.FSM
             base.Enter();
             _isOptionSelecting = true;
             _optionSelector.Open();
+
             _selector.SelectorInput.OnSelectMoveEvent += HandleMove;
             _selector.SelectorInput.OnSelectEvent += HandleSelect;
             _selector.SelectorInput.OnCancelEvent += HandleCancel;
@@ -35,6 +36,7 @@ namespace BuildSystem.SelectorManage.FSM
         private void HandleCancel()
         {
             _optionSelector.Close();
+            _selector.RequireResourcePanel.Close();
             _stateMachine.ChangeState(SelectorStateEnum.Stay);
 
         }
@@ -55,6 +57,15 @@ namespace BuildSystem.SelectorManage.FSM
         private void HandleMove(Vector2 inputDirection)
         {
             _optionSelector.Move(inputDirection);
+            if (_optionSelector.StructureData != null)
+            {
+
+                _selector.RequireResourcePanel.Open();
+                _selector.RequireResourcePanel.SetRequireData(_optionSelector.StructureData.requireResources);
+            }
+            else
+                _selector.RequireResourcePanel.Close();
+
         }
     }
 }
