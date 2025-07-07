@@ -222,7 +222,6 @@ GameObject:
   - component: {fileID: 4487714481156227392}
   - component: {fileID: 8823350172205704763}
   - component: {fileID: 5004332198798280689}
-  - component: {fileID: 811798199577488196}
   m_Layer: 0
   m_Name: SelectionMark
   m_TagString: Untagged
@@ -289,18 +288,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!225 &811798199577488196
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3511828494262774669}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 0
-  m_BlocksRaycasts: 0
-  m_IgnoreParentGroups: 0
 --- !u!1 &5992856177206522935
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,6 +455,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _structureImage: {fileID: 9173610201019152483}
+  _selectImage: {fileID: 5004332198798280689}
+  _structureNameText: {fileID: 5577159035235931684}
 --- !u!1 &7016666578315636937
 GameObject:
   m_ObjectHideFlags: 0

@@ -49,7 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 519110042b81dba4cb41f5f48eeca28a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <DataSO>k__BackingField: {fileID: 11400000, guid: c0d2e23f8f23c854e976019deae8ab07, type: 2}
+  <DataSO>k__BackingField: {fileID: 11400000, guid: c2f266f79253f6241b7e13e9f7dc93c5, type: 2}
+  baseSpeed: 1
   OnPumpEnergyEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -73,6 +74,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnHealthChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealthIncreaseEvent:
     m_PersistentCalls:
       m_Calls: []
   OnDieEvent:

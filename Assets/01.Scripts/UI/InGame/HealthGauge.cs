@@ -32,6 +32,12 @@ namespace UIManage.InGame
             _owner.OnHealthChangedValueEvent += HandleGaugeRefresh;
         }
 
+        public void DisposeOwner()
+        {
+            if (_owner != null)
+                _owner.OnHealthChangedValueEvent -= HandleGaugeRefresh;
+        }
+
 
         private void HandleGaugeRefresh(float current, float max)
         {

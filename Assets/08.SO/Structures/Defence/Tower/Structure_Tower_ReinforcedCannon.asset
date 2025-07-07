@@ -15,6 +15,18 @@ MonoBehaviour:
   <Id>k__BackingField: 0
   structurePrefab: {fileID: 0}
   structureName: "\uAC15\uD654 \uCE90\uB17C"
-  description: "\uAC15\uD654\uB41C \uCE90\uB17C\uC785\uB2C8\uB2E4. "
+  description: "\uC758\uB3C4\uC801\uC73C\uB85C \uBD88\uC548\uC815\uD55C \uB370\uC774\uD130\uB97C
+    \uD22C\uC0AC\uD558\uB294 \uAC15\uD654\uB41C \uCE90\uB17C\uC785\uB2C8\uB2E4. \uBAA9\uD45C\uBB3C\uC758
+    \uCD5C\uB300\uCCB4\uB825\uC5D0 \uBE44\uB840\uD55C \uD53C\uD574\uB97C \uAC00\uD569\uB2C8\uB2E4.
+    (\uCF00\uD14C\uB974 \uC800\uD56D\uCCB4 \uD0C0\uC785\uC740 \uC774\uC5D0 \uB300\uD55C
+    \uBA74\uC5ED\uC744 \uAC00\uC9D1\uB2C8\uB2E4)"
   previewImage: {fileID: 21300000, guid: e16c2356ebb305b4281445fcf656929c, type: 3}
   maxHealth: 100
+  requireResources:
+  - type: 0
+    amount: 900
+  - type: 1
+    amount: 250
+  - type: 2
+    amount: 5
+  upgradeList: []

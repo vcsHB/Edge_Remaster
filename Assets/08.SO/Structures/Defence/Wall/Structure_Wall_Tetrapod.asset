@@ -20,5 +20,7 @@ MonoBehaviour:
   maxHealth: 100
   requireResources:
   - type: 0
-    amount: 0
+    amount: 125
+  - type: 1
+    amount: 35
   upgradeList: []

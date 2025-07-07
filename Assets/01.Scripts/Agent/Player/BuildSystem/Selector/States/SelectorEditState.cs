@@ -10,14 +10,38 @@ namespace BuildSystem.SelectorManage.FSM
         {
         }
         private Structure _currentStructure;
+        private int _currentSelectIndex;
+        private bool _canUpgradeStructure;
+
+
         public override void Enter()
         {
             base.Enter();
             _currentStructure = _selector.DetectStructure();
-            //_selector.SelectorInput.OnSelectMoveEvent += HandleMove;
-            _selector.SelectorInput.OnUpgradeEvent += HandleUpgrade;
+
             _selector.SelectorInput.OnCancelEvent += HandleCancel;
             _selector.SelectorInput.OnBuildDestroyEvent += HandleDestroyStructure;
+
+            _canUpgradeStructure = _currentStructure.DataSO.upgradeList.Length > 0;
+            if (_canUpgradeStructure)
+            {
+                _selector.SelectorInput.OnSelectMoveEvent += HandleMove;
+                _selector.SelectorInput.OnSelectEvent += HandleUpgrade;
+                _selector.UpgradePanel.Open();
+                _selector.UpgradePanel.SetUpgradeSlots(_currentStructure.DataSO.upgradeList);
+
+            }
+        }
+
+        private void HandleMove(Vector2 direction)
+        {// UpgradeSelect
+
+            _selector.UpgradePanel.SelectSlot(_currentSelectIndex + (int)direction.x);
+        }
+
+        private void SelectUpgradeIndex(int index)
+        {
+            _selector.UpgradePanel.SelectSlot(index);
         }
 
         private void HandleCancel()
@@ -27,29 +51,33 @@ namespace BuildSystem.SelectorManage.FSM
 
         private void HandleDestroyStructure()
         {
+            _infoPanel.Close();
+            _infoPanel.Dispose();
             _currentStructure.DestroyStructure();
+            _stateMachine.ChangeState(SelectorStateEnum.Stay);
         }
 
         private void HandleUpgrade()
         {
-            _stateMachine.ChangeState(SelectorStateEnum.Stay);
+
+            HandleDestroyStructure();
         }
 
         public override void Exit()
         {
             base.Exit();
             _infoPanel.Close();
-            _selector.SelectorInput.OnCancelEvent -= HandleUpgrade;
+            if (_canUpgradeStructure)
+            {
+                _selector.SelectorInput.OnSelectMoveEvent -= HandleMove;
+                _selector.SelectorInput.OnSelectEvent -= HandleUpgrade;
+                _selector.UpgradePanel.Close();
+                _selector.RequireResourcePanel.Close();
+            }
             _selector.SelectorInput.OnCancelEvent -= HandleCancel;
             _selector.SelectorInput.OnBuildDestroyEvent -= HandleDestroyStructure;
         }
 
-
-        private void HandleMove(Vector2 inputDirection)
-        {
-            _stateMachine.ChangeState(SelectorStateEnum.Move);
-            _mover.HandleMove(inputDirection);
-        }
 
     }
 }

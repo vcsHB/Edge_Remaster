@@ -30,11 +30,15 @@ namespace BuildSystem.SelectorManage.FSM
             else
             {
                 _currentStructure.HandleStructureSelected();
-                //_selector.SelectorInput.OnSelectEvent += HandleEditSelect;
+                _selector.SelectorInput.OnInteractEvent += HnadleEditSelect;
                 _infoPanel.SetStructure(_currentStructure);
             }
         }
 
+        private void HnadleEditSelect()
+        {
+            _stateMachine.ChangeState(SelectorStateEnum.Edit);
+        }
 
         public override void Exit()
         {
@@ -48,15 +52,16 @@ namespace BuildSystem.SelectorManage.FSM
             }
             if (_currentStructure != null)
             {
+                _selector.SelectorInput.OnInteractEvent -= HnadleEditSelect;
                 _currentStructure.HandleStructureUnselected();
             }
-            _infoPanel.Close();
             _optionSelector.Close();
         }
 
 
         private void HandleMove(Vector2 inputDirection)
         {
+            _infoPanel.Close();
             _stateMachine.ChangeState(SelectorStateEnum.Move);
             _selector.SelectorInput.SetSelectPosition(_mover.HandleMove(inputDirection));
         }

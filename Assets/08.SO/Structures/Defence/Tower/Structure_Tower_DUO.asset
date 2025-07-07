@@ -19,4 +19,11 @@ MonoBehaviour:
     \uBCF4\uC548 \uBC29\uC5B4\uC218\uB2E8\uC785\uB2C8\uB2E4."
   previewImage: {fileID: 2191972288709386524, guid: 0dfbf34cae327d94eb597cf2e0b9656b, type: 3}
   maxHealth: 100
-  upgradeList: []
+  requireResources:
+  - type: 0
+    amount: 125
+  - type: 1
+    amount: 10
+  upgradeList:
+  - {fileID: 11400000, guid: 4f1f3289b0db1bc4ea26bb7cc0555daf, type: 2}
+  - {fileID: 11400000, guid: 3f72f18f4dfb1f1498cdd796bc105fe2, type: 2}

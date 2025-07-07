@@ -16,8 +16,14 @@ namespace BuildSystem.UIManage
             Open();
             _structureNameText.text = structure.DataSO.structureName;
             _owner = structure;
+            _healthGauge.SetOwner(structure.HealthCompo);
 
-        } 
+        }
+
+        public void Dispose()
+        {
+            _healthGauge.DisposeOwner();
+        }
 
         
     }

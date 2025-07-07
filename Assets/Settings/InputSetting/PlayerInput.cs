@@ -8,14 +8,13 @@ namespace InputManage
     public class PlayerInput : ScriptableObject, Controls.IPlayerActions
     {
         public event Action OnAttackEvent;
-        public event Action OnInteractEvent;
+        public event Action OnInteractEvent; // F
         public event Action<Vector2> OnMoveEvent;
         public event Action<Vector2> OnSelectMoveEvent;
         public event Action OnUseSkill1Event;
         public event Action OnUseSkill2Event;
 
-        public event Action OnSelectEvent;
-        public event Action OnUpgradeEvent;
+        public event Action OnSelectEvent; // Enter
         public event Action OnBuildDestroyEvent;
         public event Action OnCancelEvent;
         public Vector2 InputDirection { get; private set; }

@@ -38,11 +38,11 @@ namespace BuildSystem.ResourceManage
         protected override void Awake()
         {
             base.Awake();
-            _resourceDictionary = new();
-            foreach (ResourceType type in Enum.GetValues(typeof(ResourceType)))
-            {
-                _resourceDictionary.Add(type, new()); // TODO/ SAVE LOAD
-            }
+            // _resourceDictionary = new();
+            // foreach (ResourceType type in Enum.GetValues(typeof(ResourceType)))
+            // {
+            //     _resourceDictionary.Add(type, new()); // TODO/ SAVE LOAD
+            // }
         }
 
         public ResourceDataTable GetDataTable(ResourceType type)

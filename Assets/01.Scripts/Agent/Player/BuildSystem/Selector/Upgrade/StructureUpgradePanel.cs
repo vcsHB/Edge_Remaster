@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using BuildSystem.Structures;
+using UIManage;
 using UnityEngine;
 
 using Slot = BuildSystem.StructureUpgradeSlot;
@@ -7,7 +8,7 @@ using Slot = BuildSystem.StructureUpgradeSlot;
 namespace BuildSystem.SelectorManage
 {
 
-    public class UpgradePanel : MonoBehaviour
+    public class StructureUpgradePanel : UIPanel
     {
         [SerializeField] private Slot _structureUpgradeSlotPrefab;
 
@@ -17,8 +18,10 @@ namespace BuildSystem.SelectorManage
         private int _currentSelectedSlotIndex;
 
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+            _enabledSlots = new();
             _pool = new();
 
         }
@@ -41,6 +44,7 @@ namespace BuildSystem.SelectorManage
                 _enabledSlots[i].SetSelect(false);
                 _pool.Enqueue(_enabledSlots[i]);
             }
+            _enabledSlots.Clear();
         }
         private Slot GetSlot()
         {

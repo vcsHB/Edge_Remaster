@@ -15,7 +15,15 @@ MonoBehaviour:
   <Id>k__BackingField: 0
   structurePrefab: {fileID: 7739239956009843966, guid: 5ca0e2e068590964cb99a490c5dae024, type: 3}
   structureName: "\uCE90\uB17C"
-  description: 
+  description: "\uB2E8\uC77C \uBAA9\uD45C\uBB3C\uC5D0\uAC8C \uAC15\uD55C \uD53C\uD574\uB97C
+    \uAC00\uD569\uB2C8\uB2E4. "
   previewImage: {fileID: 21300000, guid: e16c2356ebb305b4281445fcf656929c, type: 3}
   maxHealth: 100
-  upgradeList: []
+  requireResources:
+  - type: 0
+    amount: 450
+  - type: 1
+    amount: 10
+  upgradeList:
+  - {fileID: 11400000, guid: 7e5bd851c0cbd9643b3e86d2212706d0, type: 2}
+  - {fileID: 11400000, guid: 2b20029402cad0e42aac1a9aa29464ca, type: 2}

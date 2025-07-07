@@ -14,7 +14,9 @@ namespace BuildSystem.SelectorManage
         public OptionSelector OptionSelector { get; private set; }
         [field: SerializeField] public BuildController BuildController { get; private set; }
         public StructureInfoPanel InfoPanel { get; private set; }
-        public RequireResourcePanel RequireResourcePanel { get; private set;}
+        public RequireResourcePanel RequireResourcePanel { get; private set; }
+        public StructureUpgradePanel UpgradePanel { get; private set; }
+
 
 
         [Header("Detect Setting")]
@@ -33,6 +35,7 @@ namespace BuildSystem.SelectorManage
             OptionSelector = GetComponentInChildren<OptionSelector>();
             InfoPanel = GetComponentInChildren<StructureInfoPanel>();
             RequireResourcePanel = GetComponentInChildren<RequireResourcePanel>();
+            UpgradePanel = GetComponentInChildren<StructureUpgradePanel>();
 
             _stateMachine = new SelectorStateMachine(this);
             _stateMachine.Initialize(SelectorStateEnum.Stay);

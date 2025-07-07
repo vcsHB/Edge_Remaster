@@ -1,4 +1,5 @@
 using BuildSystem.Structures;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 namespace BuildSystem
@@ -10,6 +11,7 @@ namespace BuildSystem
         [SerializeField] private Image _structureImage;
         [SerializeField] private Image _selectImage;
         public StructureDataSO Data { get; private set; }
+        [SerializeField] private TextMeshProUGUI _structureNameText;
 
 
 
@@ -17,6 +19,7 @@ namespace BuildSystem
         {
             Data = data;
             _structureImage.sprite = data.previewImage;
+            _structureNameText.text = data.structureName;
         }
 
         public void SetEnable(bool value)
