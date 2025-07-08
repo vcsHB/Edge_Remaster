@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,11 +7,14 @@ using Core.MapConrtrolSystem;
 using ObjectManage;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 namespace Combat.WaveSystem
 {
     public class WaveManager : MonoBehaviour
     {
+        public event Action<int, float> OnWaveLeftTimeEvent; // leftTime, ratio
+        public event Action OnWaveCycleInitEvent;
         public UnityEvent OnWaveStartEvent;
         public UnityEvent OnWaveCompleteEvent;
         [SerializeField] private WaveListSO waveList;
@@ -43,6 +47,7 @@ namespace Combat.WaveSystem
         private IEnumerator WaveCoroutine()
         {
             yield return new WaitForSeconds(_waveStartDelay);
+            OnWaveCycleInitEvent?.Invoke();
 
             while (true)
             {
@@ -50,12 +55,22 @@ namespace Combat.WaveSystem
                 while (_currentWaveIndex < waveList.waves.Length)
                 {
                     WaveSO currentWave = waveList.waves[_currentWaveIndex]; // Wave Spawn Sycle
+
+
+                    float currentTime = 0;
+                    while (currentTime < currentWave.waveTerm)
+                    {
+                        OnWaveLeftTimeEvent?.Invoke((int)(currentWave.waveTerm - currentTime), currentTime / currentWave.waveTerm);
+                        currentTime += Time.deltaTime;
+                        yield return null;
+                    }
+                    OnWaveLeftTimeEvent?.Invoke(0, 1);
+
                     OnWaveStartEvent?.Invoke();
 
                     yield return SpawnEnemys(currentWave);
                     yield return new WaitUntil(() => _enemyList.Count == 0); // Wait for AllKill
                     OnWaveCompleteEvent?.Invoke();
-                    yield return new WaitForSeconds(currentWave.waveTerm);
 
                     _currentWaveIndex++;
                 }

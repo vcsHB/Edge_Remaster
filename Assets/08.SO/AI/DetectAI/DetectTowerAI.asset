@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _whatIsTarget:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 9216
   _detectRadius: 50
