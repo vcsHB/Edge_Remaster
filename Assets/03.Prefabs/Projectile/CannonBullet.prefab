@@ -205,9 +205,9 @@ MonoBehaviour:
   _caster: {fileID: 2535047829223914529}
   _projectileData:
     direction: {x: 0, y: 0}
-    speed: 15
+    speed: 40
     lifeTime: 10
-    canPenetrate: 0
+    canPenetrate: 1
     canDestroy: 0
     damage: 0
   <type>k__BackingField: 10

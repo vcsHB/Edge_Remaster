@@ -48,9 +48,9 @@ namespace Core.MapConrtrolSystem
             Debug.Log($"Bottom Right: {bottomRight}");
 
             _topClamper.position = new Vector2(0, topLeft.y + _offsets[0].y);
-            _leftClamper.position = new Vector2(topLeft.x + _offsets[2].x, 0);
-            _rightClamper.position = new Vector2(bottomRight.x, 0);
-            _bottomClamper.position = new Vector2(0, bottomLeft.y);
+            _leftClamper.position = new Vector2(topLeft.x + _offsets[0].x, 0);
+            _rightClamper.position = new Vector2(bottomRight.x + _offsets[2].x, 0);
+            _bottomClamper.position = new Vector2(0, bottomLeft.y + _offsets[2].y);
         }
 
         public void SetAnchor(int index, Vector2 position)

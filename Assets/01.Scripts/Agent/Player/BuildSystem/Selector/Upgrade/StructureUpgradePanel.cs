@@ -11,6 +11,7 @@ namespace BuildSystem.SelectorManage
     public class StructureUpgradePanel : UIPanel
     {
         [SerializeField] private Slot _structureUpgradeSlotPrefab;
+        [SerializeField] private Transform _contentTrm;
 
         private Queue<Slot> _pool;
         private List<Slot> _enabledSlots;
@@ -49,7 +50,7 @@ namespace BuildSystem.SelectorManage
         private Slot GetSlot()
         {
             Slot slot = _pool.Count > 0 ?
-            _pool.Dequeue() : Instantiate(_structureUpgradeSlotPrefab);
+            _pool.Dequeue() : Instantiate(_structureUpgradeSlotPrefab, _contentTrm);
             _enabledSlots.Add(slot);
             slot.SetEnable(true);
             return slot;

@@ -10,6 +10,7 @@ namespace BuildSystem.SelectorManage.FSM
         {
         }
         private Structure _currentStructure;
+        private StructureDataSO _structureData;
         private int _currentSelectIndex;
         private bool _canUpgradeStructure;
 
@@ -18,25 +19,34 @@ namespace BuildSystem.SelectorManage.FSM
         {
             base.Enter();
             _currentStructure = _selector.DetectStructure();
-
+            _structureData = _currentStructure.DataSO;
+            if (_structureData == null)
+            {
+                Debug.LogError("Not Contain StructureData SO in Structure Prefab");
+            }
             _selector.SelectorInput.OnCancelEvent += HandleCancel;
             _selector.SelectorInput.OnBuildDestroyEvent += HandleDestroyStructure;
-
-            _canUpgradeStructure = _currentStructure.DataSO.upgradeList.Length > 0;
+            _currentSelectIndex = 0;
+            _canUpgradeStructure = _structureData.upgradeList.Length > 0;
             if (_canUpgradeStructure)
             {
                 _selector.SelectorInput.OnSelectMoveEvent += HandleMove;
                 _selector.SelectorInput.OnSelectEvent += HandleUpgrade;
                 _selector.UpgradePanel.Open();
-                _selector.UpgradePanel.SetUpgradeSlots(_currentStructure.DataSO.upgradeList);
-
+                _selector.UpgradePanel.SetUpgradeSlots(_structureData.upgradeList);
+                SelectUpgradeIndex(_currentSelectIndex);
             }
         }
 
         private void HandleMove(Vector2 direction)
         {// UpgradeSelect
+            if (_canUpgradeStructure)
+            {
+                _currentSelectIndex = Mathf.Clamp((_currentSelectIndex + (int)direction.x) % _structureData.upgradeList.Length, 0, _structureData.upgradeList.Length - 1);
 
-            _selector.UpgradePanel.SelectSlot(_currentSelectIndex + (int)direction.x);
+                SelectUpgradeIndex(_currentSelectIndex);
+            }
+
         }
 
         private void SelectUpgradeIndex(int index)
@@ -59,8 +69,12 @@ namespace BuildSystem.SelectorManage.FSM
 
         private void HandleUpgrade()
         {
+            if (_canUpgradeStructure)
+            {
 
-            HandleDestroyStructure();
+                _selector.BuildController.BuildStructure(_structureData.upgradeList[_currentSelectIndex], _selector.transform.position);
+                HandleDestroyStructure();
+            }
         }
 
         public override void Exit()
