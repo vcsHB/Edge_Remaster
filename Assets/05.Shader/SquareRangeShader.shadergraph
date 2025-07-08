@@ -29,6 +29,9 @@
         },
         {
             "m_Id": "3b5f6af4d38f4fdaba92691a92e749b6"
+        },
+        {
+            "m_Id": "ff8ef862c28141918068535b31c9ed46"
         }
     ],
     "m_Keywords": [],
@@ -275,6 +278,9 @@
         },
         {
             "m_Id": "075acbf9158240ff854313dca5ddc906"
+        },
+        {
+            "m_Id": "2bf9031a69cf4a6696b62b7d866c5d08"
         }
     ],
     "m_GroupDatas": [
@@ -484,6 +490,20 @@
                     "m_Id": "a731b451874e4b52b5c640e53f61ea5e"
                 },
                 "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "2bf9031a69cf4a6696b62b7d866c5d08"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "67d91e53e53f44c58ed47b13de3d9207"
+                },
+                "m_SlotId": 2
             }
         },
         {
@@ -2832,6 +2852,42 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "2bf9031a69cf4a6696b62b7d866c5d08",
+    "m_Group": {
+        "m_Id": "325273f67a3e4d44993848ffc3a6d785"
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -1957.0,
+            "y": -65.99996948242188,
+            "width": 109.0001220703125,
+            "height": 33.99997329711914
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "541c54c57f84466ca4b9cb9f7526b549"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "ff8ef862c28141918068535b31c9ed46"
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "2eaa133114ef41bcb5ba9564dadec85a",
     "m_Id": 0,
@@ -3081,8 +3137,8 @@
     "m_ObjectId": "325273f67a3e4d44993848ffc3a6d785",
     "m_Title": "Grid",
     "m_Position": {
-        "x": -2079.199951171875,
-        "y": -300.79998779296877
+        "x": -2079.0,
+        "y": -299.9999694824219
     }
 }
 
@@ -3255,6 +3311,9 @@
         },
         {
             "m_Id": "8de72524797549889ef2d727cb71bde9"
+        },
+        {
+            "m_Id": "ff8ef862c28141918068535b31c9ed46"
         }
     ]
 }
@@ -4204,6 +4263,27 @@
         "x": 0.0,
         "y": 0.0,
         "z": 0.0
+    },
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector2MaterialSlot",
+    "m_ObjectId": "541c54c57f84466ca4b9cb9f7526b549",
+    "m_Id": 0,
+    "m_DisplayName": "Offset",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0
     },
     "m_Labels": []
 }
@@ -6771,8 +6851,8 @@
     "m_ObjectId": "a19e1138b2e2417bba4e3b9ef7886074",
     "m_Title": "Circle",
     "m_Position": {
-        "x": -1935.999755859375,
-        "y": 1726.3997802734375
+        "x": -1935.0,
+        "y": 1727.0
     }
 }
 
@@ -9377,8 +9457,8 @@
     "m_ObjectId": "eff72fe4e3c24f2d9113948db10b3a0c",
     "m_Title": "Rectangle",
     "m_Position": {
-        "x": -2028.0,
-        "y": 1020.0001220703125
+        "x": -2027.0,
+        "y": 1021.0
     }
 }
 
@@ -10112,6 +10192,34 @@
         "w": 0.0
     },
     "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    }
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector2ShaderProperty",
+    "m_ObjectId": "ff8ef862c28141918068535b31c9ed46",
+    "m_Guid": {
+        "m_GuidSerialized": "826c1b01-5e34-4af3-9a1d-efe968484cc4"
+    },
+    "m_Name": "Offset",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Offset",
+    "m_DefaultReferenceName": "_Offset",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": {
         "x": 0.0,
         "y": 0.0,
         "z": 0.0,

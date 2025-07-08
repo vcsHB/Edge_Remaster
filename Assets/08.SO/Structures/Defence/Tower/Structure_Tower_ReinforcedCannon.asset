@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Structure_Tower_ReinforcedCannon
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 0
-  structurePrefab: {fileID: 0}
+  structurePrefab: {fileID: 4913183644949281161, guid: 39d309216ca922948b21a00cb00129c3, type: 3}
   structureName: "\uAC15\uD654 \uCE90\uB17C"
   description: "\uC758\uB3C4\uC801\uC73C\uB85C \uBD88\uC548\uC815\uD55C \uB370\uC774\uD130\uB97C
     \uD22C\uC0AC\uD558\uB294 \uAC15\uD654\uB41C \uCE90\uB17C\uC785\uB2C8\uB2E4. \uBAA9\uD45C\uBB3C\uC758

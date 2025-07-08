@@ -30,6 +30,11 @@ namespace BuildSystem.Structures
             OnEnergyRestoreEvent += _energyDisplayer.SetEnergyAmount;
             OnEnergyUseEvent += _energyDisplayer.SetEnergyAmount;
         }
+        public void SetEnergy(float amount)
+        {
+            _currentEnergy = Mathf.Clamp(amount, 0f, _maxEnergy);
+            OnEnergyValueChangedEvent?.Invoke(_currentEnergy);
+        }
 
 
         public bool TryUseEnergy(float amount)
@@ -59,7 +64,7 @@ namespace BuildSystem.Structures
         public void SetCurrentEnergy(float energy)
         {
             _currentEnergy = energy;
-            
+
         }
     }
 }

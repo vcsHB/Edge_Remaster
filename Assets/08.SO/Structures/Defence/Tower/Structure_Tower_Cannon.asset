@@ -17,7 +17,7 @@ MonoBehaviour:
   structureName: "\uCE90\uB17C"
   description: "\uB2E8\uC77C \uBAA9\uD45C\uBB3C\uC5D0\uAC8C \uAC15\uD55C \uD53C\uD574\uB97C
     \uAC00\uD569\uB2C8\uB2E4. "
-  previewImage: {fileID: 21300000, guid: e16c2356ebb305b4281445fcf656929c, type: 3}
+  previewImage: {fileID: 5470824867142260687, guid: b0d50d7e47320814d9b614410ce740cf, type: 3}
   maxHealth: 100
   requireResources:
   - type: 0

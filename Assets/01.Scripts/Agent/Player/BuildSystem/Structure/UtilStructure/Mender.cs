@@ -1,5 +1,6 @@
 using System.Linq;
 using Combat;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 namespace BuildSystem.Structures
@@ -13,6 +14,9 @@ namespace BuildSystem.Structures
         [SerializeField] private int _healTargetAmount = 3;
         [SerializeField] private float _healAmount = 30f;
 
+        [Header("Visual Setting")]
+        [SerializeField] private Transform _rangeVisualTrm;
+        [SerializeField] private float _areaEnableDuration = 0.3f;
 
         public override void HandleWaveStart()
         {
@@ -40,6 +44,18 @@ namespace BuildSystem.Structures
                 }
             }
             OnMendEvent?.Invoke();
+        }
+
+        public override void HandleStructureSelected()
+        {
+            _rangeVisualTrm.DOScale(3f, _areaEnableDuration);
+            base.HandleStructureSelected();
+        }
+
+        public override void HandleStructureUnselected()
+        {
+            base.HandleStructureUnselected();
+            _rangeVisualTrm.DOScale(0f, _areaEnableDuration);
         }
 
     }

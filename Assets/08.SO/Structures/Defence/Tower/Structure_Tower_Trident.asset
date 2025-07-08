@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Structure_Tower_Trident
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 0
-  structurePrefab: {fileID: 0}
+  structurePrefab: {fileID: 3036332874439507553, guid: 8eed44d48ad42924eae4246c7cdc96ae, type: 3}
   structureName: "\uD2B8\uB77C\uC774\uB358\uD2B8"
   description: "3\uAC08\uB798\uC758 \uAC15\uB825\uD55C \uC815\uBCF4 \uC555\uB825
     \uD3EC\uB97C \uBC1C\uC0AC\uD569\uB2C8\uB2E4."
   previewImage: {fileID: 21300000, guid: e16c2356ebb305b4281445fcf656929c, type: 3}
-  maxHealth: 100
+  maxHealth: 120
   requireResources:
   - type: 0
     amount: 600

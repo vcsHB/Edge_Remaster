@@ -16,7 +16,7 @@ MonoBehaviour:
   structurePrefab: {fileID: 2204981796246969740, guid: 8dac068b51d7ee547b09844f0b15708e, type: 3}
   structureName: "\uB370\uC774\uD130 \uB9C8\uC774\uB108"
   description: 
-  previewImage: {fileID: 8907951495032731383, guid: b9d3560fcfd16bb44b38c041960de5c2, type: 3}
+  previewImage: {fileID: -4719890375108009553, guid: 7f1fede8fa15ba847b6e7e9a9a970fa4, type: 3}
   maxHealth: 130
   requireResources:
   - type: 0

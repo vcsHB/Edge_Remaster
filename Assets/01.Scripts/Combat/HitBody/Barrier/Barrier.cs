@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -35,6 +36,20 @@ namespace Combat.CombatObjects
         {
             OnBarrierDurabilityChangedEvent -= _barrierVisual.HandleBarrierDurabilityChange;
 
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="amount"></param>
+        /// <returns> remains </returns>
+        public float TryRepairBarrier(float amount)
+        {
+            float remain = amount - (_barrierMaxDurability - _currentDurability);
+            remain = remain < 0 ? 0f : remain;
+            _currentDurability += amount;
+
+            return remain;
         }
 
         public void SetMaxDurability()

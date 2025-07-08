@@ -46,15 +46,29 @@ namespace Combat.WaveSystem
 
         private IEnumerator WaveCoroutine()
         {
-            yield return new WaitForSeconds(_waveStartDelay);
             OnWaveCycleInitEvent?.Invoke();
+            // Init   ===========================
+            float initCurrentTime = 0f;
+            while (initCurrentTime < _waveStartDelay)
+            {
+                OnWaveLeftTimeEvent?.Invoke((int)(_waveStartDelay - initCurrentTime), initCurrentTime / _waveStartDelay);
+                initCurrentTime += Time.deltaTime;
+                yield return null;
+            }
+            OnWaveLeftTimeEvent?.Invoke(0, 1);
+            // Init   ===========================
 
             while (true)
             {
                 _currentWaveIndex = 0;  // Loop Control
                 while (_currentWaveIndex < waveList.waves.Length)
                 {
-                    WaveSO currentWave = waveList.waves[_currentWaveIndex]; // Wave Spawn Sycle
+                    WaveSO currentWave = waveList.waves[_currentWaveIndex]; // Wave Spawn Cycle
+                    OnWaveStartEvent?.Invoke();
+
+                    yield return SpawnEnemys(currentWave);
+                    yield return new WaitUntil(() => _enemyList.Count == 0); // Wait for AllKill
+                    OnWaveCompleteEvent?.Invoke();
 
 
                     float currentTime = 0;
@@ -65,12 +79,6 @@ namespace Combat.WaveSystem
                         yield return null;
                     }
                     OnWaveLeftTimeEvent?.Invoke(0, 1);
-
-                    OnWaveStartEvent?.Invoke();
-
-                    yield return SpawnEnemys(currentWave);
-                    yield return new WaitUntil(() => _enemyList.Count == 0); // Wait for AllKill
-                    OnWaveCompleteEvent?.Invoke();
 
                     _currentWaveIndex++;
                 }

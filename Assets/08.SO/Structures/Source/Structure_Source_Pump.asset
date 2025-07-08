@@ -17,7 +17,7 @@ MonoBehaviour:
   structureName: "\uD38C\uD504"
   description: "\uC8FC\uBCC0 5x5 \uAD6C\uC5ED\uC5D0 \uCD1D\uB7C9 1000 \uC5D0\uB108\uC9C0\uB97C
     \uBD84\uBC30 \uACF5\uAE09\uD569\uB2C8\uB2E4."
-  previewImage: {fileID: 8907951495032731383, guid: b9d3560fcfd16bb44b38c041960de5c2, type: 3}
+  previewImage: {fileID: 110815988407886999, guid: 0dfbf34cae327d94eb597cf2e0b9656b, type: 3}
   maxHealth: 100
   requireResources:
   - type: 0

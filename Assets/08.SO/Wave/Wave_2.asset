@@ -19,4 +19,4 @@ MonoBehaviour:
     spawnTerm: 0.02
     spawnRandomizeRadius: 5
     nextSpawnGroupTerm: 0
-  waveTerm: 10
+  waveTerm: 30
