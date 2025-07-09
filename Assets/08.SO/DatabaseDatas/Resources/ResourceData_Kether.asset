@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ResourceData_Kether
   m_EditorClassIdentifier: 
   id: 0
-  dataIconSprite: {fileID: 4566739173651768325, guid: 13b58582ee31d9f449627ce26dc93c28, type: 3}
+  dataIconSprite: {fileID: -7887067377449739014, guid: 46f4dff3f33553b4285800042fb84c1d, type: 3}
   dataName: "\uCF00\uD14C\uB974"
   dataDescription: "\uC778\uAC04\uC758 \uC774\uD574\uB825 \uBC14\uAE65\uC758 \uB370\uC774\uD130.
     \uBB34\uD55C\uD55C \uC9C0\uC2DD \uC790\uC6D0\uC758 \uC6D0\uCC9C\uC774\uB2E4.

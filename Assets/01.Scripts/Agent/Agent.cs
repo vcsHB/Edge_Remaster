@@ -21,7 +21,7 @@ namespace Agents
             AfterInit();
 
         }
-        protected virtual void HandleAgentDie()
+        public virtual void HandleAgentDie()
         {
             if (!IsDead)
             {

@@ -1,31 +1,57 @@
+using System;
+using Agents.Enemies.AI.Weapons;
 using Agnets.Enemies;
 using UnityEngine;
 namespace Agents.Enemies.AI
 {
-    
+
     public abstract class ComabtLogicSO : ScriptableObject
     {
-        protected Enemy _owner;
-        protected EnemyAttackController _attackController;
-        protected DetectData _targetData;
+        [SerializeField] private EnemyWeapon _enemyWeaponPrefab;
         [Header("Cooltime Setting")]
-        [SerializeField] private float _attackCooltime = 0.5f;
+        [SerializeField] protected float _attackCooltime = 0.5f;
+        
+        protected Enemy _owner;
+        protected EnemyAI _enemyAI;
+        protected DetectData _targetData;
+
+        protected EnemyWeapon _currentEnemyWeapon;
 
 
-        public void HandleDetect(DetectData detectData)
+        #region External Functions
+
+
+        public virtual void HandleDetect(DetectData detectData)
         {
             _targetData = detectData;
         }
-        public void SetOwner(Enemy owner)
+
+        #endregion
+
+
+        public virtual void Initialize(Enemy owner, EnemyAI enemyAI)
         {
             _owner = owner;
-            _attackController = _owner.GetCompo<EnemyAttackController>();
+            _currentEnemyWeapon = Instantiate(_enemyWeaponPrefab, _owner.transform);
+            _currentEnemyWeapon.SetLevel(owner.EnemyLevel);
+            owner.OnLevelSetEvent += HandleLevelSet;
+        }
+
+        private void HandleLevelSet(int newLevel)
+        {
+            if (_currentEnemyWeapon == null)
+            {
+                Debug.LogError("Not Exist Enemy own Weapon.");
+                return;
+            }
         }
 
         public virtual void UpdateLogic()
         {
-            
+
         }
+
+        protected abstract void Attack();
 
         public ComabtLogicSO Clone() => Instantiate(this);
     }

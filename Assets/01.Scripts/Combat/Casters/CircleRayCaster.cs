@@ -49,5 +49,14 @@ namespace Combat.Casters
 
             ForceCast(_hitBuffer.ToArray());
         }
+
+#if UNITY_EDITOR
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = _gizmosColor;
+            Gizmos.DrawWireSphere(transform.position, _detectRadius);
+        }
+#endif
     }
 }
