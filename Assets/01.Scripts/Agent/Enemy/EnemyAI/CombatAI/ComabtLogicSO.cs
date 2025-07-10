@@ -9,8 +9,7 @@ namespace Agents.Enemies.AI
     {
         [SerializeField] private EnemyWeapon _enemyWeaponPrefab;
         [Header("Cooltime Setting")]
-        [SerializeField] protected float _attackCooltime = 0.5f;
-        
+
         protected Enemy _owner;
         protected EnemyAI _enemyAI;
         protected DetectData _targetData;
@@ -24,6 +23,7 @@ namespace Agents.Enemies.AI
         public virtual void HandleDetect(DetectData detectData)
         {
             _targetData = detectData;
+            _currentEnemyWeapon.SetTarget(detectData.targetCollider);
         }
 
         #endregion
@@ -37,6 +37,7 @@ namespace Agents.Enemies.AI
             _currentEnemyWeapon.SetOwner(owner);
             _currentEnemyWeapon.SetLevel(owner.EnemyLevel);
             owner.OnLevelSetEvent += HandleLevelSet;
+            _enemyAI.DetectLogic.OnDetectEvent += HandleDetect;
         }
 
         private void HandleLevelSet(int newLevel)

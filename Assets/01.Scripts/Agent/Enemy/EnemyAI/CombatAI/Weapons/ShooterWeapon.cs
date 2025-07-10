@@ -3,12 +3,25 @@ using UnityEngine;
 namespace Agents.Enemies.AI.Weapons
 {
 
-    public class MoveShooterWeapon : EnemyWeapon
+    public class ShooterWeapon : EnemyWeapon
     {
         [SerializeField] private ProjectileShooter _shooter;
+        [SerializeField] private float _attackCooltime = 1f;
+        private float _nextAttackTime;
+
+        private void Update()
+        {
+            if (Time.time >= _nextAttackTime)
+            {
+                _nextAttackTime = Time.time + _attackCooltime;
+                Attack();
+                Debug.Log("LLLLL");
+            }
+        }
         protected override void Attack()
         {
             if (_targetCollider == null) return;
+            Debug.Log("Asdasdasd");
             Vector2 direction = _targetCollider.transform.position - _owner.transform.position;
             _shooter.FireProjectile(direction.normalized);
         }

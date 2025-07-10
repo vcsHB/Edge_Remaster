@@ -50,6 +50,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _shooter: {fileID: 4224791766158751103}
+  _attackCooltime: 1
 --- !u!1 &1293470950438714373
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,7 +62,7 @@ GameObject:
   - component: {fileID: 2329680800091387888}
   - component: {fileID: 4224791766158751103}
   m_Layer: 0
-  m_Name: Shoorer
+  m_Name: Shooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,7 +98,7 @@ MonoBehaviour:
   OnFireEvent:
     m_PersistentCalls:
       m_Calls: []
-  _projectilePoolType: 13
+  _projectilePoolType: 14
   _projectileData:
     direction: {x: 0, y: 0}
     speed: 40

@@ -416,8 +416,8 @@ MonoBehaviour:
   OnReviveEvent:
     m_PersistentCalls:
       m_Calls: []
-  _maxHealth: 60
-  _currentHealth: 60
+  _maxHealth: 30
+  _currentHealth: 30
   _hitResistanceCooltime: 0.15
 --- !u!114 &4392428091767692290
 MonoBehaviour:

@@ -163,7 +163,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _caster: {fileID: 0}
+  _caster: {fileID: 436514953281238230}
   _projectileData:
     direction: {x: 0, y: 0}
     speed: 0

@@ -115,16 +115,16 @@ MonoBehaviour:
   OnShotSerializedEvent:
     m_PersistentCalls:
       m_Calls: []
-  _caster: {fileID: 0}
+  _caster: {fileID: 1523531388423012030}
   _projectileData:
     direction: {x: 0, y: 0}
     speed: 40
     lifeTime: 10
     canPenetrate: 0
     canDestroy: 1
-    damage: 0
+    damage: 10
   <type>k__BackingField: 14
-  _destroyVFXType: 0
+  _destroyVFXType: 9
   _canDamagedReflect: 0
   _defaultTargetLayer:
     serializedVersion: 2
@@ -376,6 +376,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85a0be73c02b55e42aa26e86ba184cd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 0
+  _damage: 6
   _attackType: 0
   _invalidityResistance: 0

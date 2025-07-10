@@ -8,6 +8,7 @@ namespace Agents.Enemies.AI
         public Vector2 targetPos;
         public Vector2 targetDirection;
         public float distanceToTarget;
+        public Collider2D targetCollider;
     }
     public abstract class DetectLogicSO : ScriptableObject
     {

@@ -122,7 +122,6 @@ namespace Combat.WaveSystem
             int amount = group.amount + _waveLevel;
             for (int i = 0; i < amount; i++)
             {
-                print("Parallel");
                 Vector2 position = (Vector2)_defaultSpawnPoint.position + (Random.insideUnitCircle * group.spawnRandomizeRadius);
                 GenerateEnemy(group.enemy, position);
 
@@ -132,7 +131,8 @@ namespace Combat.WaveSystem
         private IEnumerator SpawnSerialType(SpawnGroup group)
         {
             WaitForSeconds wait = new WaitForSeconds(group.spawnTerm);
-            for (int i = 0; i < group.amount; i++)
+            int amount = group.amount + _waveLevel;
+            for (int i = 0; i < amount; i++)
             {
                 Vector2 position = (Vector2)_defaultSpawnPoint.position + (Random.insideUnitCircle * group.spawnRandomizeRadius);
                 GenerateEnemy(group.enemy, position);

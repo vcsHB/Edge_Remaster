@@ -20,6 +20,7 @@ namespace Agents.Enemies.AI
 
         protected override void Attack()
         {
+            Debug.Log("MMM");
             _currentEnemyWeapon.HandleAttack();
         }
     }
