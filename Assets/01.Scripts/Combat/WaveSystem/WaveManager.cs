@@ -145,7 +145,7 @@ namespace Combat.WaveSystem
             PoolableEnemy enemy = _enemyManager.Pop(enemyType, position, Quaternion.identity) as PoolableEnemy;
             enemy.OnEnemyReturnToPoolEvent += HandleEnemyDie;
             _enemyList.Add(enemy);
-
+            enemy.SetLevel(_waveLevel);
             VFXPlayer vfxPlayer = PoolManager.Instance.Pop(ObjectPooling.PoolingType.EnemyGenerateVFX) as VFXPlayer;
             vfxPlayer.transform.position = position;
             vfxPlayer.Play();

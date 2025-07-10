@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ca0c73e66220c841bdba840bb5757ad, type: 3}
-  m_Name: Enemy_Waver
+  m_Name: Enemy_CRAB
   m_EditorClassIdentifier: 
-  prefabObject: {fileID: 0}
-  type: 1
-  poolCount: 4
+  prefabObject: {fileID: 5181601375486620592, guid: 1552e315c4ec2674eba7b06049fc3332, type: 3}
+  type: 4
+  poolCount: 20

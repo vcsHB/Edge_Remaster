@@ -9,14 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d694e120f886c14a810657bbfd7f73d, type: 3}
-  m_Name: Wave_2
+  m_Script: {fileID: 11500000, guid: 284c7aa829c96064fa83c29bbee665cf, type: 3}
+  m_Name: MoveShootProjectileLogic
   m_EditorClassIdentifier: 
-  spawnGroups:
-  - spawnType: 1
-    enemy: 4
-    amount: 5
-    spawnTerm: 0.02
-    spawnRandomizeRadius: 5
-    nextSpawnGroupTerm: 0
-  waveTerm: 5
+  _enemyWeaponPrefab: {fileID: 5881755407344203786, guid: 427e510b4bae3f5448fe7433a1cfcdc7, type: 3}
+  _attackCooltime: 0.5

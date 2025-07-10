@@ -11,6 +11,7 @@ namespace Agents.Enemies.FSM
         public override void Enter()
         {
             base.Enter();
+            _mover.StopImmediately();
             _renderer.StartDissolve(HandleDissolveOver);
         }
 

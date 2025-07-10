@@ -24,7 +24,7 @@ namespace Agents.Enemies
             base.Awake();
             HealthCompo = GetComponent<Health>();
             _collider = GetComponent<Collider2D>();
-            HealthCompo.OnDieEvent.AddListener(HandleEnemyDie);
+            HealthCompo.OnDieEvent.AddListener(HandleAgentDie);
             _enemyRenderer = GetCompo<EnemyRenderer>();
             InitState();
         }
@@ -42,16 +42,19 @@ namespace Agents.Enemies
         }
 
 
-        protected virtual void HandleEnemyDie()
+        public override void HandleAgentDie()
         {
-            _enemyRenderer.SetDeadColor(true);
-            VFXPlayer vfx = PoolManager.Instance.Pop(_destroyVFXType) as VFXPlayer;
-            _collider.enabled = false;
-            vfx.transform.position = transform.position;
-            _stateMachine.ChangeState("Dead");
-            IsDead = true;
-            vfx.Play();
-            OnDieEvent?.Invoke(this);
+            if (!IsDead)
+            {
+                _enemyRenderer.SetDeadColor(true);
+                VFXPlayer vfx = PoolManager.Instance.Pop(_destroyVFXType) as VFXPlayer;
+                _collider.enabled = false;
+                vfx.transform.position = transform.position;
+                _stateMachine.ChangeState("Dead");
+                IsDead = true;
+                vfx.Play();
+                OnDieEvent?.Invoke(this);
+            }
         }
 
         public virtual void SetLevel(int level)

@@ -9,22 +9,26 @@ namespace Agents.Enemies.AI.Weapons
 
         public UnityEvent OnAttackEvent;
         protected Enemy _owner;
-
+        protected Collider2D _targetCollider;
         public virtual void SetLevel(int newLevel)
         {
-            _level = newLevel;
+            _level = Mathf.Clamp(newLevel, 1, 100);
         }
 
 
-        public void SetOwner(Enemy owner)
+        public virtual void SetOwner(Enemy owner)
         {
             _owner = owner;
 
         }
+
+        public void SetTarget(Collider2D targetCollider)
+        {
+            _targetCollider = targetCollider;
+        }
         public void HandleAttack()
         {
             // 
-            OnAttackEvent?.Invoke();
             Attack();
         }
         protected abstract void Attack();

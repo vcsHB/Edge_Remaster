@@ -42,10 +42,9 @@ namespace Agents.Enemies
             _detectLogic = _detectLogic.Clone();
             _moveLogic = _moveLogic.Clone();
 
-            _combatLogic.Initialize(_owner, this);
-
-            _detectLogic.InitializeOwner(_owner.transform);
             _moveLogic.Initialize(_owner, this);
+            _detectLogic.InitializeOwner(_owner.transform);
+            _combatLogic.Initialize(_owner, this);
 
             //_enemyMovement = agent.GetCompo<EnemyMovement>();
         }
@@ -72,6 +71,8 @@ namespace Agents.Enemies
             // Dev After
         }
 
+        #region External Movement Functions
+
         public void StartMove()
         {
             _moveLogic.StartMove();
@@ -84,10 +85,8 @@ namespace Agents.Enemies
         {
             _moveLogic.EndMove();
         }
-        public void UpdateAttack()
-        {
-            _combatLogic.UpdateLogic();
-        }
+
+        #endregion
 
 #if UNITY_EDITOR
 

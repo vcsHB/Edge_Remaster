@@ -11,7 +11,9 @@ namespace Agents.Enemies.FSM
         public override void Update()
         {
             base.Update();
-            _enemyAI.UpdateAttack();
+
+            // thinking of this strategy Pattern...//
+            //_enemyAI.UpdateAttack();
         }
     }
 }

@@ -2,14 +2,13 @@ using System;
 using UnityEngine;
 namespace Agents.Enemies.AI.Combat
 {
-
-    public class SelfExplosionLogicSO : ComabtLogicSO
+    [CreateAssetMenu(menuName = "SO/EnemyAI/Combat/ArriveAttackLogic")]
+    public class ArriveAttackLogicSO : ComabtLogicSO
     {
         /*
         *  # Properties in parent
         *  protected EnemyWeapon _currentEnemyWeapon;
         */
-
 
         public override void Initialize(Enemy owner, EnemyAI enemyAI)
         {
@@ -20,6 +19,7 @@ namespace Agents.Enemies.AI.Combat
 
         private void HandleLocationArrived()
         {
+            Debug.Log("Arrive");
             Attack();
         }
 

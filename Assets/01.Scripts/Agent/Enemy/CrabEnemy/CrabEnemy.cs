@@ -7,7 +7,6 @@ namespace Agents.Enemies
     {
         public override void InitState()
         {
-            base.InitState();
             _stateMachine = new EnemyStateMachine(this);
             _stateMachine.AddState("Idle", "EnemyIdle", 1);
             _stateMachine.AddState("Move", "EnemyMoveToTarget", 1);

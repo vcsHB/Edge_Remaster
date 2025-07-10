@@ -1,3 +1,4 @@
+using System;
 using Combat.Casters;
 using UnityEngine;
 namespace Agents.Enemies.AI.Weapons
@@ -8,20 +9,34 @@ namespace Agents.Enemies.AI.Weapons
         [SerializeField] private Caster _explosionCaster;
         private DamageCaster[] _damageCasters;
         [SerializeField] private float[] _damageMultiplierList;
-
+        private bool _isAttacked;
         private void Awake()
         {
             _damageCasters = GetComponentsInChildren<DamageCaster>();
-
             SetDamageMultiplier(_level);
 
         }
 
+        public override void SetOwner(Enemy owner)
+        {
+            base.SetOwner(owner);
+            owner.OnGeneratedEvent += HandleEnemyGenerated;
+        }
+
+        private void HandleEnemyGenerated()
+        {
+            _isAttacked = false;
+        }
+
         protected override void Attack()
         {
-            _explosionCaster.Cast();
-
-            _owner.HandleAgentDie();
+            if (!_isAttacked)
+            {
+                _explosionCaster.Cast();
+                _owner.HandleAgentDie();
+                OnAttackEvent?.Invoke();
+                _isAttacked = true;
+            }
         }
 
         public override void SetLevel(int newLevel)

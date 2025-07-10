@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnGroups:
   - spawnType: 1
-    enemy: 0
+    enemy: 4
     amount: 3
     spawnTerm: 0.02
     spawnRandomizeRadius: 5
     nextSpawnGroupTerm: 0
-  waveTerm: 30
+  waveTerm: 5

@@ -32,7 +32,9 @@ namespace Agents.Enemies.AI
         public virtual void Initialize(Enemy owner, EnemyAI enemyAI)
         {
             _owner = owner;
+            _enemyAI = enemyAI;
             _currentEnemyWeapon = Instantiate(_enemyWeaponPrefab, _owner.transform);
+            _currentEnemyWeapon.SetOwner(owner);
             _currentEnemyWeapon.SetLevel(owner.EnemyLevel);
             owner.OnLevelSetEvent += HandleLevelSet;
         }
@@ -44,6 +46,7 @@ namespace Agents.Enemies.AI
                 Debug.LogError("Not Exist Enemy own Weapon.");
                 return;
             }
+            _currentEnemyWeapon.SetLevel(newLevel);
         }
 
         public virtual void UpdateLogic()

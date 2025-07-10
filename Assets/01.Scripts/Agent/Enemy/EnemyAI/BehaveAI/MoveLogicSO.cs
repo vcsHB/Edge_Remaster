@@ -14,6 +14,7 @@ namespace Agents.Enemies.AI
     public abstract class MoveLogicSO : ScriptableObject
     {
         public event Action OnArriveEvent;
+        public event Action OnMovementEvent;
         [SerializeField] protected float _moveSpeed;
 
         protected Enemy _owner;
@@ -46,12 +47,17 @@ namespace Agents.Enemies.AI
         public abstract void UpdateMove();
         public abstract void EndMove();
 
-
-        public MoveLogicSO Clone() => Instantiate(this);
-        public virtual void DrawGizmos() { }
+        protected void InvokeMovementEvent()
+        {
+            OnMovementEvent?.Invoke();
+        }
         protected virtual void Arrive()
         {
             OnArriveEvent?.Invoke();
         }
+
+        public MoveLogicSO Clone() => Instantiate(this);
+        public virtual void DrawGizmos() { }
+
     }
 }
