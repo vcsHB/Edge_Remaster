@@ -17,6 +17,7 @@ namespace BuildSystem.Structures
         [Header("Visual Setting")]
         [SerializeField] private Transform _rangeVisualTrm;
         [SerializeField] private float _areaEnableDuration = 0.3f;
+        [SerializeField] private float _visualScale = 3f;
 
         public override void HandleWaveStart()
         {
@@ -48,7 +49,7 @@ namespace BuildSystem.Structures
 
         public override void HandleStructureSelected()
         {
-            _rangeVisualTrm.DOScale(3f, _areaEnableDuration);
+            _rangeVisualTrm.DOScale(_visualScale, _areaEnableDuration);
             base.HandleStructureSelected();
         }
 

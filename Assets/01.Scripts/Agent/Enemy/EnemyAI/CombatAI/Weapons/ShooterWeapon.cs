@@ -15,13 +15,11 @@ namespace Agents.Enemies.AI.Weapons
             {
                 _nextAttackTime = Time.time + _attackCooltime;
                 Attack();
-                Debug.Log("LLLLL");
             }
         }
         protected override void Attack()
         {
             if (_targetCollider == null) return;
-            Debug.Log("Asdasdasd");
             Vector2 direction = _targetCollider.transform.position - _owner.transform.position;
             _shooter.FireProjectile(direction.normalized);
         }

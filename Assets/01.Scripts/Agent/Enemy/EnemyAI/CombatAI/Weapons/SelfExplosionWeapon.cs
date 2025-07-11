@@ -1,20 +1,32 @@
-using System;
 using Combat.Casters;
 using UnityEngine;
+
 namespace Agents.Enemies.AI.Weapons
 {
+    [System.Serializable]
+    public struct DamageScalingData
+    {
+        public DamageCaster caster;
+        public float baseDamage;
+        public AnimationCurve levelMultiplierCurve;
+
+        public void Apply(int level)
+        {
+            if (caster == null) return;
+            float multiplier = levelMultiplierCurve.Evaluate(level);
+            caster.SetDamage(baseDamage * multiplier);
+        }
+    }
 
     public class SelfExplosionWeapon : EnemyWeapon
     {
         [SerializeField] private Caster _explosionCaster;
-        private DamageCaster[] _damageCasters;
-        [SerializeField] private float[] _damageMultiplierList;
+        [SerializeField] private DamageScalingData[] _damageScalingDataList;
         private bool _isAttacked;
+
         private void Awake()
         {
-            _damageCasters = GetComponentsInChildren<DamageCaster>();
             SetDamageMultiplier(_level);
-
         }
 
         public override void SetOwner(Enemy owner)
@@ -43,16 +55,14 @@ namespace Agents.Enemies.AI.Weapons
         {
             base.SetLevel(newLevel);
             SetDamageMultiplier(newLevel);
-
         }
 
-        private void SetDamageMultiplier(int newLevel)
+        private void SetDamageMultiplier(int level)
         {
-            for (int i = 0; i < _damageCasters.Length; i++)
+            foreach (var data in _damageScalingDataList)
             {
-                _damageCasters[i].SetDamage(_damageMultiplierList[i] * newLevel);
+                data.Apply(level);
             }
-
         }
     }
 }

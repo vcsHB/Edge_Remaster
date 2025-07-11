@@ -26,7 +26,7 @@ namespace ObjectManage
         {
             _collider = GetComponent<Collider2D>();
             _healthCompo = GetComponent<Health>();
-            _renderer = transform.Find("Visual").GetComponent<MovePointRenderer>();
+            _renderer = transform.Find("Visual").GetComponentInChildren<MovePointRenderer>();
 
             _healthCompo.OnDieEvent.AddListener(HandleDestroyEvent);
             _healthCompo.Initialize(_maxHealth);
@@ -46,7 +46,7 @@ namespace ObjectManage
         private void HandleRevive()
         {
             _isActive = true;
-            _renderer.SetActive(false);
+            _renderer.SetActive(true);
             _collider.enabled = true;
             _healthCompo.SetMaxHealth();
             _leftTimeText.gameObject.SetActive(false);

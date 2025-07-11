@@ -19,7 +19,6 @@ namespace Agents.Enemies.AI.Combat
 
         private void HandleLocationArrived()
         {
-            Debug.Log("Arrive");
             Attack();
         }
 

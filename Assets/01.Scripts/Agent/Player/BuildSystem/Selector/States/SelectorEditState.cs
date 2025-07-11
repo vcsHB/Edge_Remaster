@@ -19,6 +19,7 @@ namespace BuildSystem.SelectorManage.FSM
         {
             base.Enter();
             _currentStructure = _selector.DetectStructure();
+            _currentStructure.OnDestroyEvent += HandleDestroyUnSelect;
             _structureData = _currentStructure.DataSO;
             if (_structureData == null)
             {
@@ -36,6 +37,13 @@ namespace BuildSystem.SelectorManage.FSM
                 _selector.UpgradePanel.SetUpgradeSlots(_structureData.upgradeList);
                 SelectUpgradeIndex(_currentSelectIndex);
             }
+        }
+
+        private void HandleDestroyUnSelect(Structure structure)
+        {
+            _currentStructure.OnDestroyEvent -= HandleDestroyUnSelect;
+            _infoPanel.Close();
+            _infoPanel.Dispose();
         }
 
         private void HandleMove(Vector2 direction)
@@ -56,6 +64,7 @@ namespace BuildSystem.SelectorManage.FSM
 
         private void HandleCancel()
         {
+            _currentStructure.OnDestroyEvent -= HandleDestroyUnSelect;
             _stateMachine.ChangeState(SelectorStateEnum.Stay);
         }
 
@@ -63,6 +72,7 @@ namespace BuildSystem.SelectorManage.FSM
         {
             _infoPanel.Close();
             _infoPanel.Dispose();
+            _currentStructure.OnDestroyEvent -= HandleDestroyUnSelect;
             _currentStructure.DestroyStructure();
             _stateMachine.ChangeState(SelectorStateEnum.Stay);
         }

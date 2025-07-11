@@ -10,20 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c5bb773811c7064991245f06106d840, type: 3}
-  m_Name: Structure_Util_Mender
+  m_Name: Structure_Util_Mender _Gamma
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 0
-  structurePrefab: {fileID: 6632878839962781020, guid: e85eed624affc294da8386acdc3589e4, type: 3}
+  structurePrefab: {fileID: 8802776819355845550, guid: 973042a732a3c394bbabf9004b0f5c62, type: 3}
   structureName: "\uBA58\uB354"
   description: "\uC8FC\uBCC0 5x5 \uAD6C\uC5ED\uC758 \uAC00\uC7A5 \uCDE8\uC57D\uD55C
-    \uCD5C\uB300 \uD0C0\uC6CC 3\uAC1C\uB97C 50\uB9CC\uD07C \uC218\uB9AC\uD569\uB2C8\uB2E4.
+    \uCD5C\uB300 \uD0C0\uC6CC 5\uAC1C\uB97C 90\uB9CC\uD07C \uC218\uB9AC\uD569\uB2C8\uB2E4.
     \uB9E4 \uC6E8\uC774\uBE0C\uB9C8\uB2E4 \uC2E4\uD589\uB429\uB2C8\uB2E4."
   previewImage: {fileID: -2221387007318408190, guid: 0dfbf34cae327d94eb597cf2e0b9656b, type: 3}
   maxHealth: 350
   requireResources:
   - type: 0
-    amount: 600
+    amount: 1200
   - type: 1
-    amount: 50
-  upgradeList:
-  - {fileID: 11400000, guid: 0c6e5b19b49432046ba8cc588e042cbb, type: 2}
+    amount: 450
+  upgradeList: []

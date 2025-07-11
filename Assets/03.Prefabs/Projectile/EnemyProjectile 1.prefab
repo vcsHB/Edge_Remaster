@@ -128,7 +128,7 @@ MonoBehaviour:
   _canDamagedReflect: 0
   _defaultTargetLayer:
     serializedVersion: 2
-    m_Bits: 8256
+    m_Bits: 9280
   _reflectTargetLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -360,7 +360,7 @@ MonoBehaviour:
   _offset: {x: 0, y: 0}
   _targetLayer:
     serializedVersion: 2
-    m_Bits: 8256
+    m_Bits: 9280
   _targetMaxAmount: 3
   _gizmosColor: {r: 1, g: 0, b: 0, a: 1}
   _detectRadius: 0.7
