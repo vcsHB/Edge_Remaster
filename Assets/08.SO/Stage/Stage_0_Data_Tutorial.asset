@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e278f90b7f038f449e352994e3dbd9d, type: 3}
+  m_Name: Stage_0_Data_Tutorial
+  m_EditorClassIdentifier: 
+  id: 0
+  stageName: "\uBCF4\uC548 \uAD50\uC721 \uD398\uC774\uC9C0"
+  difficulty: {fileID: 11400000, guid: 06fa979508135584bb5d489d611fdaac, type: 2}
+  details:
+  - {fileID: 11400000, guid: 6d15ff590d87f4242ab799026e9cf9e2, type: 2}
+  - {fileID: 11400000, guid: ac45d872f5f32a4439a62591f6000cc0, type: 2}
+  stageDescription: 
