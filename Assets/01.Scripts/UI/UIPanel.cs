@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 namespace UIManage
 {
-
+    [RequireComponent(typeof(CanvasGroup))]
     public class UIPanel : MonoBehaviour, IWindowPanel
     {
         public UnityEvent OnOpenEvent;
