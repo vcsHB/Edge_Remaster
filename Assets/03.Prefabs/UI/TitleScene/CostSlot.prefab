@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 1464079872092611804}
   - component: {fileID: 3051353439027913602}
   - component: {fileID: 2739725868219851249}
+  - component: {fileID: 7583992716871032189}
   m_Layer: 5
   m_Name: CostSlot
   m_TagString: Untagged
@@ -288,3 +289,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7583992716871032189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435985878383977668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8881ee3c174718746869350d3771ed16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _costAmountText: {fileID: 6443657778566881095}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f824b292148b0d64985da876e8948615, type: 3}
+  m_Name: Upgrade_MemoryScale
+  m_EditorClassIdentifier: 
+  id: 1
+  upgradeIcon: {fileID: 875013408368763520, guid: 9829976ce4c5c3b4ca5ef20a7600417f, type: 3}
+  upgradeName: "\uBA54\uBAA8\uB9AC \uD655\uC7A5"
+  upgradeDescription: "\uB354 \uB113\uC740 \uBA54\uBAA8\uB9AC \uACF5\uAC04\uC744
+    \uD65C\uC6A9\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+  requireVertexCost: 500
+  requireMetaCost: 10
+  unlockList: []
