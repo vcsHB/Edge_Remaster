@@ -1,4 +1,21 @@
 {
     "isTutorialCleared": false,
-    "enterStageId": 1
+    "enterStageId": 0,
+    "datas": [
+        {
+            "id": 0,
+            "isUnlocked": true,
+            "isCleared": false
+        },
+        {
+            "id": 1,
+            "isUnlocked": false,
+            "isCleared": false
+        },
+        {
+            "id": 2,
+            "isUnlocked": false,
+            "isCleared": false
+        }
+    ]
 }
