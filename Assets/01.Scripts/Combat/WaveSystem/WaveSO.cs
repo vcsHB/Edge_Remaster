@@ -19,6 +19,7 @@ namespace Combat.WaveSystem
         public float spawnRandomizeRadius;
         public float nextSpawnGroupTerm;
     }
+    
     [CreateAssetMenu(menuName = "SO/WaveSystem/WaveSO")]
     public class WaveSO : ScriptableObject
     {

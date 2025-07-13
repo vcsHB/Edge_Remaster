@@ -1,7 +1,9 @@
 {
-    "vertexCrystal": 7300,
+    "vertexCrystal": 6700,
     "metaCrystal": 499940,
     "unlockDatas": [
-        0
+        0,
+        2,
+        3
     ]
 }

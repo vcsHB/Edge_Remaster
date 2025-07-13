@@ -39,6 +39,16 @@ namespace InputManage
             _controls.Player.Disable();
         }
 
+        public void ResetInputEvents()
+        {
+            OnInteractEvent = null;
+            OnMoveEvent = null;
+            OnSelectEvent = null;
+            OnBuildDestroyEvent = null;
+            OnCancelEvent = null;
+            SelectPosition = Vector2Int.one;   
+        }
+
         public void OnAttack(InputAction.CallbackContext context)
         {
             if (context.performed)

@@ -30,7 +30,8 @@ namespace Combat.WaveSystem
         private List<IPoolingEnemy> _enemyList = new();
 
         [SerializeField] private int _currentWaveIndex;
-        [SerializeField] private int _waveLevel = 0;
+        [SerializeField] private int _waveSequenceIndex = 0;
+        [SerializeField] private int _waveLevel;
         private Coroutine _waveCoroutine;
 
         private void Awake()
@@ -41,7 +42,6 @@ namespace Combat.WaveSystem
 
         private void Start()
         {
-            _waveCoroutine = StartCoroutine(WaveCoroutine());
         }
 
         private IEnumerator WaveCoroutine()
@@ -82,7 +82,8 @@ namespace Combat.WaveSystem
 
                     _currentWaveIndex++;
                 }
-                _waveLevel++;
+                _waveSequenceIndex++;
+                _waveLevel = (int)waveList.levelFormula.Evaluate(_waveSequenceIndex);
             }
         }
 
@@ -145,7 +146,7 @@ namespace Combat.WaveSystem
             PoolableEnemy enemy = _enemyManager.Pop(enemyType, position, Quaternion.identity) as PoolableEnemy;
             enemy.OnEnemyReturnToPoolEvent += HandleEnemyDie;
             _enemyList.Add(enemy);
-            enemy.SetLevel(_waveLevel);
+            enemy.SetLevel(_waveSequenceIndex);
             VFXPlayer vfxPlayer = PoolManager.Instance.Pop(ObjectPooling.PoolingType.EnemyGenerateVFX) as VFXPlayer;
             vfxPlayer.transform.position = position;
             vfxPlayer.Play();
@@ -166,7 +167,12 @@ namespace Combat.WaveSystem
 
         }
 
-
+        public void SetWaveData(WaveListSO waveList)
+        {
+            this.waveList = waveList;
+            if (this.waveList != null)
+                _waveCoroutine = StartCoroutine(WaveCoroutine());
+        }
     }
 
 }
