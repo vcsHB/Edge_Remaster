@@ -1,6 +1,6 @@
 {
     "isTutorialCleared": false,
-    "enterStageId": 0,
+    "enterStageId": 1,
     "datas": [
         {
             "id": 0,
@@ -9,7 +9,7 @@
         },
         {
             "id": 1,
-            "isUnlocked": false,
+            "isUnlocked": true,
             "isCleared": false
         },
         {

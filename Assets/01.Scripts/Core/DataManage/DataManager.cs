@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using UnityEngine;
 
@@ -5,6 +6,7 @@ namespace Core.DataManage
 {
     public static class DataManager
     {
+        public static event Action OnSaveEvent;
         public static StageDataGroup stageDataGroup;
         public static UpgradeData upgradeData;
         public static GameSetting settingData;

@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using Agents.Enemies;
 using Core.MapConrtrolSystem;
 using ObjectManage;
@@ -80,10 +79,10 @@ namespace Combat.WaveSystem
                     }
                     OnWaveLeftTimeEvent?.Invoke(0, 1);
 
+                    _waveSequenceIndex++;
                     _currentWaveIndex++;
+                    _waveLevel = (int)waveList.levelFormula.Evaluate(_waveSequenceIndex);
                 }
-                _waveSequenceIndex++;
-                _waveLevel = (int)waveList.levelFormula.Evaluate(_waveSequenceIndex);
             }
         }
 

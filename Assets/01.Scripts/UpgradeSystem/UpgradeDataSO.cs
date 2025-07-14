@@ -9,6 +9,7 @@ namespace UpgradeSystem
         public Sprite upgradeIcon;
         public string upgradeName;
         public string upgradeDescription;
+        public UpgradeEffect[] effects;
         
         [Space(10f)]
         [Header("Unlock Settings")]

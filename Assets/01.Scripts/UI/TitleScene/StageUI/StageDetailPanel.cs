@@ -1,3 +1,4 @@
+using Core.DataManage;
 using StageSystem;
 using TMPro;
 using UnityEngine;
@@ -16,6 +17,8 @@ namespace UIManage.TitleScene
             _stageNameText.text = stageData.stageName;
             _difficultyDisplayer.SetDifficulty(stageData.difficulty);
             _waveInfoPanel.SetWaveInfoData(stageData.details);
+            DataManager.stageDataGroup.enterStageId = stageData.id;
+            DataManager.Save();
         }
     }
 }
