@@ -10,6 +10,7 @@ using UIManage.Core;
 using UIManage.InGame;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 namespace Core
 {
     public class GameManager : MonoBehaviour
@@ -25,6 +26,8 @@ namespace Core
         private VolumeManager _volumeManager;
         [SerializeField] private float _cutSceneDelay = 0.3f;
         [SerializeField] private float _playerForceMoveDuration = 0.6f;
+        [SerializeField] private PlayerDiePanel _clearPanel; // Reuse. must refactor
+        private StageDataSO _currentStageData;
 
         private void Awake()
         {
@@ -35,11 +38,12 @@ namespace Core
             _volumeManager = FindFirstObjectByType<VolumeManager>();
             _stageManager = FindFirstObjectByType<StageManager>();
 
-            StageDataSO stageData = _stageManager.InitializeStage(DataManager.stageDataGroup.enterStageId);
+            _currentStageData = _stageManager.InitializeStage(DataManager.stageDataGroup.enterStageId);
             _stageManager.OnWaveStartEvent += () =>
             {
-                _waveManager.SetWaveData(stageData.waveSet);
+                _waveManager.SetWaveData(_currentStageData.waveSet);
             };
+            _waveManager.OnWaveAllClearEvent.AddListener(ClearGame);
 
         }
 
@@ -67,6 +71,21 @@ namespace Core
             _uiManager.OpenUIGroup(CanvasType.Game);
             OnPlayerArriveEvent?.Invoke();
 
+        }
+
+        public void ClearGame()
+        {
+            TimeManager.AddTimeScaleRecord(0.2f);
+            _clearPanel.Open();
+            DataManager.stageDataGroup.datas[_currentStageData.id].isCleared = true;
+            DataManager.stageDataGroup.datas[_currentStageData.id +1].isUnlocked = true;
+        }
+
+        public void ExitGame()
+        {
+            DataManager.Save();
+            TimeManager.ResetTimeScale();
+            SceneManager.LoadScene("TitleScene");
         }
     }
 }

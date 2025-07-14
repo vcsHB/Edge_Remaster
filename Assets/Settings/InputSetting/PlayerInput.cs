@@ -17,6 +17,7 @@ namespace InputManage
         public event Action OnSelectEvent; // Enter
         public event Action OnBuildDestroyEvent;
         public event Action OnCancelEvent;
+        public event Action OnSpaceEvent;
         public Vector2 InputDirection { get; private set; }
         public Vector2 MousePosition { get; private set; }
         public Vector2Int SelectPosition { get; private set; }
@@ -46,7 +47,7 @@ namespace InputManage
             OnSelectEvent = null;
             OnBuildDestroyEvent = null;
             OnCancelEvent = null;
-            SelectPosition = Vector2Int.one;   
+            SelectPosition = Vector2Int.one;
         }
 
         public void OnAttack(InputAction.CallbackContext context)
@@ -128,6 +129,12 @@ namespace InputManage
         public void SetSelectPosition(Vector2Int position)
         {
             SelectPosition = position;
+        }
+
+        public void OnNext(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+                OnSpaceEvent?.Invoke();
         }
     }
 

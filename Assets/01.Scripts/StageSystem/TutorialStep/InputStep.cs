@@ -1,4 +1,5 @@
 using InputManage;
+using UnityEditor;
 using UnityEngine;
 namespace StageSystem.TutorialManage
 {
@@ -7,7 +8,8 @@ namespace StageSystem.TutorialManage
         Enter,
         C,
         X,
-        F
+        F,
+        Space
 
     }
     public class InputStep : TutorialStep
@@ -32,6 +34,9 @@ namespace StageSystem.TutorialManage
                 case InputType.F:
                     _playerInput.OnInteractEvent += Exit;
                     break;
+                case InputType.Space:
+                    _playerInput.OnSpaceEvent += Exit;
+                    break;
             }
         }
 
@@ -52,6 +57,9 @@ namespace StageSystem.TutorialManage
                     break;
                 case InputType.F:
                     _playerInput.OnInteractEvent -= Exit;
+                    break;
+                case InputType.Space:
+                    _playerInput.OnSpaceEvent -= Exit;
                     break;
             }
         }

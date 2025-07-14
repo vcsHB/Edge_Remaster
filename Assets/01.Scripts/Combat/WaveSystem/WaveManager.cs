@@ -16,6 +16,7 @@ namespace Combat.WaveSystem
         public event Action OnWaveCycleInitEvent;
         public UnityEvent OnWaveStartEvent;
         public UnityEvent OnWaveCompleteEvent;
+        public UnityEvent OnWaveAllClearEvent;
         [SerializeField] private WaveListSO waveList;
         [SerializeField] private Transform _defaultSpawnPoint;
 
@@ -57,33 +58,35 @@ namespace Combat.WaveSystem
             OnWaveLeftTimeEvent?.Invoke(0, 1);
             // Init   ===========================
 
-            while (true)
+            _currentWaveIndex = 0;  // Loop Control
+            while (_currentWaveIndex < waveList.waves.Length)
             {
-                _currentWaveIndex = 0;  // Loop Control
-                while (_currentWaveIndex < waveList.waves.Length)
+                WaveSO currentWave = waveList.waves[_currentWaveIndex]; // Wave Spawn Cycle
+                OnWaveStartEvent?.Invoke();
+
+                yield return SpawnEnemys(currentWave);
+                yield return new WaitUntil(() => _enemyList.Count == 0); // Wait for AllKill
+                OnWaveCompleteEvent?.Invoke();
+
+                if (_currentWaveIndex >= waveList.waves.Length - 1)
+                    break;
+
+                float currentTime = 0;
+                while (currentTime < currentWave.waveTerm)
                 {
-                    WaveSO currentWave = waveList.waves[_currentWaveIndex]; // Wave Spawn Cycle
-                    OnWaveStartEvent?.Invoke();
-
-                    yield return SpawnEnemys(currentWave);
-                    yield return new WaitUntil(() => _enemyList.Count == 0); // Wait for AllKill
-                    OnWaveCompleteEvent?.Invoke();
-
-
-                    float currentTime = 0;
-                    while (currentTime < currentWave.waveTerm)
-                    {
-                        OnWaveLeftTimeEvent?.Invoke((int)(currentWave.waveTerm - currentTime), currentTime / currentWave.waveTerm);
-                        currentTime += Time.deltaTime;
-                        yield return null;
-                    }
-                    OnWaveLeftTimeEvent?.Invoke(0, 1);
-
-                    _waveSequenceIndex++;
-                    _currentWaveIndex++;
-                    _waveLevel = (int)waveList.levelFormula.Evaluate(_waveSequenceIndex);
+                    OnWaveLeftTimeEvent?.Invoke((int)(currentWave.waveTerm - currentTime), currentTime / currentWave.waveTerm);
+                    currentTime += Time.deltaTime;
+                    yield return null;
                 }
+                OnWaveLeftTimeEvent?.Invoke(0, 1);
+
+                _waveSequenceIndex++;
+                _currentWaveIndex++;
+                _waveLevel = (int)waveList.levelFormula.Evaluate(_waveSequenceIndex);
             }
+
+            Debug.Log("Clear");
+            OnWaveAllClearEvent?.Invoke();
         }
 
 
