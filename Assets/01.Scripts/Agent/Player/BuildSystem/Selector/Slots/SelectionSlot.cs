@@ -6,6 +6,7 @@ namespace BuildSystem.SelectorManage
 
     public class SelectionSlot : MonoBehaviour
     {
+        public string selectionName;
         public SerializeDictionary<Vector2Int, SelectionSlot> _groupedSlots;
 
 

@@ -1,4 +1,5 @@
 using BuildSystem.Structures;
+using TMPro;
 using UIManage;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace BuildSystem.SelectorManage
         [SerializeField] private StartSelectionGroup _root;
         [SerializeField] private SelectionSlot _currentSlot;
         public StructureDataSO StructureData { get; private set; }
+        [SerializeField] private TextMeshProUGUI _buildNameText;
 
 
         private void Start()
@@ -22,6 +24,7 @@ namespace BuildSystem.SelectorManage
             base.Open();
             _currentSlot.OnDeselect(Vector2Int.zero);
             _currentSlot = _root;
+            _buildNameText.text = "";
             _currentSlot.OnSelect(Vector2Int.zero);
         }
 
@@ -34,6 +37,7 @@ namespace BuildSystem.SelectorManage
             {
                 _currentSlot.OnDeselect(dir);
                 _currentSlot = slot;
+                _buildNameText.text = slot.selectionName;
                 _currentSlot.OnSelect(dir);
                 if (slot is StructureSelectionSlot buildSelection)
                 {

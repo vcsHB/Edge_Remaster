@@ -24,7 +24,8 @@ namespace StageSystem.TutorialManage
         }
         public override void Close()
         {
-            StartCoroutine(DisableDescriptionCoroutine());
+            if (gameObject.activeInHierarchy)
+                StartCoroutine(DisableDescriptionCoroutine());
 
         }
 
