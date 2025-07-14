@@ -19,3 +19,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6d15ff590d87f4242ab799026e9cf9e2, type: 2}
   - {fileID: 11400000, guid: ac45d872f5f32a4439a62591f6000cc0, type: 2}
   stageDescription: 
+  stageLevelPrefab: {fileID: 4078050310262591966, guid: 7ee5a6c62284ab94e916e642613e0427, type: 3}
+  waveSet: {fileID: 11400000, guid: fb937a46c883d974e9f73f91607d73b9, type: 2}

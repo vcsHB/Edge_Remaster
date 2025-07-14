@@ -36,7 +36,10 @@ namespace Core
             _stageManager = FindFirstObjectByType<StageManager>();
 
             StageDataSO stageData = _stageManager.InitializeStage(DataManager.stageDataGroup.enterStageId);
-            _waveManager.SetWaveData(stageData.waveSet);
+            _stageManager.OnWaveStartEvent += () =>
+            {
+                _waveManager.SetWaveData(stageData.waveSet);
+            };
 
         }
 
