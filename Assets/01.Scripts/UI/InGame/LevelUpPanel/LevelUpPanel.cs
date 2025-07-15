@@ -6,7 +6,7 @@ using DG.Tweening;
 using UnityEngine.Rendering;
 using Core;
 
-namespace UI.InGame
+namespace UIManage.InGame
 {
 
     public class LevelUpPanel : MonoBehaviour, IWindowPanel

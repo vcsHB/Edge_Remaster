@@ -1,4 +1,4 @@
-namespace UI{
+namespace UIManage{
 
     public interface IWindowTogglable
     {

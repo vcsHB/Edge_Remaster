@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-namespace UI.Common
+namespace UIManage.Common
 {
 
     public class HoverHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler

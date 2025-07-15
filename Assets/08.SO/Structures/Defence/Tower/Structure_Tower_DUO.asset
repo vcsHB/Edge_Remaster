@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5bb773811c7064991245f06106d840, type: 3}
+  m_Name: Structure_Tower_DUO
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 0
+  structurePrefab: {fileID: 2261170990682832168, guid: 845398701b207c44b82e2a9db043b4ed, type: 3}
+  structureName: "\uB4C0\uC624"
+  description: "\uB2E4\uC911 \uD0C0\uAC9F\uC744 \uACF5\uACA9\uD558\uB294 \uAE30\uCD08
+    \uBCF4\uC548 \uBC29\uC5B4\uC218\uB2E8\uC785\uB2C8\uB2E4."
+  previewImage: {fileID: 2191972288709386524, guid: 0dfbf34cae327d94eb597cf2e0b9656b, type: 3}
+  maxHealth: 100
+  requireResources:
+  - type: 0
+    amount: 125
+  - type: 1
+    amount: 10
+  upgradeList:
+  - {fileID: 11400000, guid: 4f1f3289b0db1bc4ea26bb7cc0555daf, type: 2}

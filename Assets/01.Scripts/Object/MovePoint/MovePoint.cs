@@ -1,11 +1,14 @@
 using Combat;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 namespace ObjectManage
 {
 
     public class MovePoint : MonoBehaviour
     {
+        public UnityEvent OnEnterEvent;
+        public UnityEvent OnExitEvent;
         private Collider2D _collider;
         [SerializeField] private bool _isActive = true;
         [SerializeField] private TextMeshPro _leftTimeText;
@@ -23,7 +26,7 @@ namespace ObjectManage
         {
             _collider = GetComponent<Collider2D>();
             _healthCompo = GetComponent<Health>();
-            _renderer = transform.Find("Visual").GetComponent<MovePointRenderer>();
+            _renderer = transform.Find("Visual").GetComponentInChildren<MovePointRenderer>();
 
             _healthCompo.OnDieEvent.AddListener(HandleDestroyEvent);
             _healthCompo.Initialize(_maxHealth);
@@ -31,10 +34,10 @@ namespace ObjectManage
 
         private void Update()
         {
-            if(_isActive) return;
-            _currentTime += Time.deltaTime; 
+            if (_isActive) return;
+            _currentTime += Time.deltaTime;
             UpdateText();
-            if(_currentTime >= _reviveCooltime)
+            if (_currentTime >= _reviveCooltime)
             {
                 HandleRevive();
             }
@@ -43,7 +46,7 @@ namespace ObjectManage
         private void HandleRevive()
         {
             _isActive = true;
-            _renderer.SetActive(false);
+            _renderer.SetActive(true);
             _collider.enabled = true;
             _healthCompo.SetMaxHealth();
             _leftTimeText.gameObject.SetActive(false);
@@ -67,12 +70,14 @@ namespace ObjectManage
         {
             //_collider.enabled = false;
             //_healthCompo.isResist = false;
+            OnEnterEvent?.Invoke();
         }
 
         public void Exit()
         {
             //_collider.enabled = true;
             //_healthCompo.isResist = true;
+            OnExitEvent?.Invoke();
         }
 
 

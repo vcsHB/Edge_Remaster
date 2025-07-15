@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d237c83955b72d4a97cfd3ef01c9f2e, type: 3}
+  m_Name: WaveList
+  m_EditorClassIdentifier: 
+  waves:
+  - {fileID: 11400000, guid: bbae0d945813aaa4cb5657bdb88de69f, type: 2}
+  - {fileID: 11400000, guid: 89e0caab91081024fbea9b0306467b58, type: 2}
+  - {fileID: 11400000, guid: 8dbf20059bb986f43a688d04d2a913ff, type: 2}
+  - {fileID: 11400000, guid: 781db163117e83442be789102dc87f42, type: 2}
+  - {fileID: 11400000, guid: d13098943ecf9be4db424556b9181c77, type: 2}
+  - {fileID: 11400000, guid: 90b3719074fc671419a6f2f5369d4a12, type: 2}
+  - {fileID: 11400000, guid: 785101343a3fdaa43b3b17cf122e9a48, type: 2}
+  - {fileID: 11400000, guid: 90b3719074fc671419a6f2f5369d4a12, type: 2}
+  - {fileID: 11400000, guid: 90b3719074fc671419a6f2f5369d4a12, type: 2}
+  - {fileID: 11400000, guid: 781db163117e83442be789102dc87f42, type: 2}
+  - {fileID: 11400000, guid: 785101343a3fdaa43b3b17cf122e9a48, type: 2}
+  levelFormula:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 230
+      value: 43.15525
+      inSlope: 0.3153507
+      outSlope: 0.3153507
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.09299731
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

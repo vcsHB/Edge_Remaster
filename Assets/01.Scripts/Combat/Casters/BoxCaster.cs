@@ -5,12 +5,13 @@ namespace Combat.Casters
     public class BoxCaster : Caster
     {
         [SerializeField] private Vector2 _boxSize;
+        [SerializeField] private float _angle;
 
         [ContextMenu("DebugCast")]
         public override void Cast()
         {
             base.Cast();
-            _hits = Physics2D.OverlapBoxAll(CenterPosition, _boxSize, 0, _targetLayer);
+            _hits = Physics2D.OverlapBoxAll(CenterPosition, _boxSize, _angle, _targetLayer);
             ForceCast(_hits);
         }
 

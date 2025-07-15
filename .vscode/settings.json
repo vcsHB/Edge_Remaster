@@ -56,5 +56,7 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Edge_Remaster.sln"
+    "dotnet.defaultSolution": "Edge_Remaster.sln",
+    "doki.background.enabled": true,
+    "doki.wallpaper.enabled": true
 }

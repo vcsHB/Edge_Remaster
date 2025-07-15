@@ -8,12 +8,19 @@ namespace InputManage
     public class PlayerInput : ScriptableObject, Controls.IPlayerActions
     {
         public event Action OnAttackEvent;
-        public event Action OnInteractEvent;
+        public event Action OnInteractEvent; // F
         public event Action<Vector2> OnMoveEvent;
+        public event Action<Vector2> OnSelectMoveEvent;
         public event Action OnUseSkill1Event;
         public event Action OnUseSkill2Event;
+
+        public event Action OnSelectEvent; // Enter
+        public event Action OnBuildDestroyEvent;
+        public event Action OnCancelEvent;
+        public event Action OnSpaceEvent;
         public Vector2 InputDirection { get; private set; }
         public Vector2 MousePosition { get; private set; }
+        public Vector2Int SelectPosition { get; private set; }
 
 
         private Controls _controls;
@@ -31,6 +38,16 @@ namespace InputManage
         private void OnDisable()
         {
             _controls.Player.Disable();
+        }
+
+        public void ResetInputEvents()
+        {
+            OnInteractEvent = null;
+            OnMoveEvent = null;
+            OnSelectEvent = null;
+            OnBuildDestroyEvent = null;
+            OnCancelEvent = null;
+            SelectPosition = Vector2Int.one;
         }
 
         public void OnAttack(InputAction.CallbackContext context)
@@ -61,18 +78,63 @@ namespace InputManage
         public void OnMouse(InputAction.CallbackContext context)
         {
             MousePosition = Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>());
+
         }
 
         public void OnUseSkill1(InputAction.CallbackContext context)
         {
-            if(context.performed)
+            if (context.performed)
                 OnUseSkill1Event?.Invoke();
         }
 
         public void OnUseSkill2(InputAction.CallbackContext context)
         {
-             if(context.performed)
+            if (context.performed)
                 OnUseSkill2Event?.Invoke();
+        }
+
+        public void OnSelectMove(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                Vector2 inputDirection = context.ReadValue<Vector2>();
+                OnSelectMoveEvent?.Invoke(inputDirection);
+            }
+        }
+
+        public void OnSelect(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                OnSelectEvent?.Invoke();
+            }
+        }
+
+        public void OnBuildDestroy(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                OnBuildDestroyEvent?.Invoke();
+            }
+        }
+
+        public void OnCancel(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                OnCancelEvent?.Invoke();
+            }
+        }
+
+        public void SetSelectPosition(Vector2Int position)
+        {
+            SelectPosition = position;
+        }
+
+        public void OnNext(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+                OnSpaceEvent?.Invoke();
         }
     }
 

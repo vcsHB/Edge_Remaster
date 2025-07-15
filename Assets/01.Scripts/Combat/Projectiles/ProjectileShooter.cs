@@ -1,10 +1,12 @@
 using ObjectPooling;
 using UnityEngine;
+using UnityEngine.Events;
 namespace Combat.CombatObjects.ProjectileManage
 {
 
     public class ProjectileShooter : MonoBehaviour
     {
+        public UnityEvent OnFireEvent;
         [SerializeField] private PoolingType _projectilePoolType;
         [SerializeField] private ProjectileData _projectileData;
 
@@ -18,12 +20,14 @@ namespace Combat.CombatObjects.ProjectileManage
             Projectile projectile = PoolManager.Instance.Pop(_projectilePoolType) as Projectile;
             projectile.transform.position = transform.position;
             projectile.Shoot(_projectileData);
+            OnFireEvent?.Invoke();
         }
         public void FireProjectile(Vector2 direction)
         {
             Projectile projectile = PoolManager.Instance.Pop(_projectilePoolType) as Projectile;
             projectile.transform.position = transform.position;
             projectile.Shoot(direction);
+            OnFireEvent?.Invoke();
         }
     }
 }

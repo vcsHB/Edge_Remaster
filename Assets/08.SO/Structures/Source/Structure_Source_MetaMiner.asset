@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5bb773811c7064991245f06106d840, type: 3}
+  m_Name: Structure_Source_MetaMiner
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 0
+  structurePrefab: {fileID: 2204981796246969740, guid: 8dac068b51d7ee547b09844f0b15708e, type: 3}
+  structureName: "\uBA54\uD0C0 \uB9C8\uC774\uB108"
+  description: 
+  previewImage: {fileID: 8907951495032731383, guid: b9d3560fcfd16bb44b38c041960de5c2, type: 3}
+  maxHealth: 160
+  requireResources:
+  - type: 0
+    amount: 500
+  - type: 1
+    amount: 10
+  upgradeList: []

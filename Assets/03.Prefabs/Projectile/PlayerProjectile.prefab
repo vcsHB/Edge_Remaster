@@ -404,6 +404,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _caster: {fileID: 0}
   _projectileData:
     direction: {x: 0, y: 0}
     speed: 0
@@ -419,7 +420,7 @@ MonoBehaviour:
     m_Bits: 128
   _reflectTargetLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8256
 --- !u!114 &8136975039552687883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,7 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8956fd02f13bea64db8c15a22199371c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _reflectAmount: 1
+  _reflectAmount: 0
   _wallLayer:
     serializedVersion: 2
     m_Bits: 512

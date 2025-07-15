@@ -1,6 +1,6 @@
 using InputManage;
 using UnityEngine;
-namespace UI.Common
+namespace UIManage.Common
 {
 
     public abstract class KeyBindPanelController : MonoBehaviour

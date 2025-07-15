@@ -2,9 +2,9 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace UI
+namespace UIManage
 {
-
+    [RequireComponent(typeof(CanvasGroup))]
     public class UIPanel : MonoBehaviour, IWindowPanel
     {
         public UnityEvent OnOpenEvent;

@@ -12,7 +12,16 @@ namespace Agents.Enemies
 
         }
 
-        
+        public override void InitState()
+        {
+            _stateMachine = new EnemyStateMachine(this);
+            _stateMachine.AddState("Idle", "EnemyIdle", 1);
+            _stateMachine.AddState("Move", "EnemyMoveToTarget", 1);
+            _stateMachine.AddState("Dead", "EnemyDead", 1);
+            _stateMachine.Initialize("Idle");
+        }
+
+
 
     }
 

@@ -1,5 +1,5 @@
 using System;
-using UI.InGame;
+using UIManage.InGame;
 using UnityEngine;
 
 namespace LevelSystem

@@ -1,7 +1,7 @@
 using UnityEngine;
 namespace Agents.Enemies.AI
 {
-    [CreateAssetMenu(menuName ="SO/EnemyAI/Movement/MoveCloseLogic")]
+    [CreateAssetMenu(menuName = "SO/EnemyAI/Movement/MoveCloseLogic")]
     public class MoveCloseLogicSO : MoveLogicSO
     { // Can't Arrive. get closer without stopping
         [SerializeField] private Color _gizmosColor = Color.red;
@@ -26,6 +26,6 @@ namespace Agents.Enemies.AI
         }
 
 
-        
+
     }
 }

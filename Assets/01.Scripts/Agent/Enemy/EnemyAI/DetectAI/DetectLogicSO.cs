@@ -8,6 +8,7 @@ namespace Agents.Enemies.AI
         public Vector2 targetPos;
         public Vector2 targetDirection;
         public float distanceToTarget;
+        public Collider2D targetCollider;
     }
     public abstract class DetectLogicSO : ScriptableObject
     {
@@ -15,7 +16,7 @@ namespace Agents.Enemies.AI
 
         public event Action<DetectData> OnDetectEvent;
         protected Transform _ownerTrm;
-        public void InitializeOwner(Transform transform)
+        public virtual void  InitializeOwner(Transform transform)
         {
             _ownerTrm = transform;
         }

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ca0c73e66220c841bdba840bb5757ad, type: 3}
   m_Name: Enemy_TimeBreaker
   m_EditorClassIdentifier: 
-  prefabObject: {fileID: 0}
+  prefabObject: {fileID: 5623146320396212070, guid: c36eb475829b07046ac35efa71a58f4f, type: 3}
   type: 3
   poolCount: 4

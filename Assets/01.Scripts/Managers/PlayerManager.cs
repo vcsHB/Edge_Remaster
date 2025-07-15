@@ -7,9 +7,9 @@ namespace Core
     public class PlayerManager : MonoSingleton<PlayerManager>
     {
 
-        [field:SerializeField] public Player Player {get; private set;}
+        [field: SerializeField] public Player Player { get; private set; }
 
-        
+
         public void ForceMovePlayer(MovePoint movePoint, float duration)
         {
             Player.ForceMoveToPoint(movePoint, duration);

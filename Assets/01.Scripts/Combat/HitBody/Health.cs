@@ -7,6 +7,7 @@ namespace Combat
     public class Health : MonoBehaviour, IDamageable, IHealable
     {
         public UnityEvent OnHealthChangedEvent;
+        public UnityEvent OnHealthIncreaseEvent;
         public UnityEvent OnDieEvent;
         public UnityEvent OnReviveEvent;
         public event Action<float, float> OnHealthChangedValueEvent;
@@ -24,6 +25,11 @@ namespace Combat
         {
             _maxHealth = health;
             SetMaxHealth();
+        }
+
+        public void SetCurrentHealth(float health)
+        {
+            _currentHealth = health;
         }
 
         public void SetMaxHealth()
@@ -49,7 +55,7 @@ namespace Combat
         {
             _currentHealth += amount;
             HandleHealthChanged();
-
+            OnHealthIncreaseEvent?.Invoke();
         }
 
         public void Revive()
@@ -66,7 +72,7 @@ namespace Combat
 
         private void CheckDie()
         {
-            if(_isDie) return;
+            if (_isDie) return;
             if (_currentHealth <= 0)
             {
                 _isDie = true;

@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.InputSystem.Interactions;
 namespace Agents.Enemies.FSM
 {
 
@@ -17,9 +15,6 @@ namespace Agents.Enemies.FSM
 
         public virtual void Initialize(string startState)
         {
-            AddState("Idle", "EnemyIdle", 1);
-            AddState("Move", "EnemyMoveToTarget", 1);
-            AddState("Dead", "EnemyDead", 1);
             CurrentState = _stateDictionary[startState];
 
         }

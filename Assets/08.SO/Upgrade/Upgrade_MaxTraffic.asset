@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f824b292148b0d64985da876e8948615, type: 3}
+  m_Name: Upgrade_MaxTraffic
+  m_EditorClassIdentifier: 
+  id: 5
+  upgradeIcon: {fileID: 875013408368763520, guid: 9829976ce4c5c3b4ca5ef20a7600417f, type: 3}
+  upgradeName: "\uD2B8\uB798\uD53D \uAD00\uB9AC\uC790 I"
+  upgradeDescription: "\uB370\uC774\uD130 \uCC44\uAD74 \uCD5C\uB300 \uD2B8\uB798\uD53D\uC744
+    \uC99D\uAC00\uC2DC\uD0B5\uB2C8\uB2E4."
+  requireVertexCost: 600
+  requireMetaCost: 0
+  unlockList: []

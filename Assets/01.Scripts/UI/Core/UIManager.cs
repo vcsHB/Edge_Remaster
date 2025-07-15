@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-namespace UI.Core
+namespace UIManage.Core
 {
     public enum CanvasType
     {

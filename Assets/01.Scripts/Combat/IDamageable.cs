@@ -5,8 +5,9 @@ namespace Combat
 {
     public enum AttackType
     {
-        Blunt = 0,
-        Sharp
+        Normal = 0,
+        Fatal,
+        True
     }
     public struct CombatData
     {

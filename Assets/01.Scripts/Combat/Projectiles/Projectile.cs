@@ -11,7 +11,7 @@ namespace Combat.CombatObjects.ProjectileManage
     {
         public UnityEvent OnShotSerializedEvent;
         protected Collider2D _collider;
-        protected Caster _caster;
+        [SerializeField] protected Caster _caster;
         protected Transform _visualTrm;
         protected Rigidbody2D _rigidCompo;
         private bool _isActive;
@@ -47,7 +47,8 @@ namespace Combat.CombatObjects.ProjectileManage
             _rigidCompo = GetComponent<Rigidbody2D>();
             _defaultGravityScale = _rigidCompo.gravityScale;
             _collider = GetComponent<Collider2D>();
-            _caster = GetComponentInChildren<Caster>();
+            if (_caster == null)
+                _caster = GetComponentInChildren<Caster>();
             _visualTrm = transform.Find("Visual");
             _caster.OnCastSuccessEvent.AddListener(HandleCastSuccessed);
 
@@ -188,7 +189,7 @@ namespace Combat.CombatObjects.ProjectileManage
             Gizmos.DrawLine(transform.position, transform.position + (Vector3)Velocity);
         }
 
-        
+
 #endif
     }
 

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UI.InGame
+namespace UIManage.InGame
 {
 
     public class TowerGaugePanel : UIMovePanel

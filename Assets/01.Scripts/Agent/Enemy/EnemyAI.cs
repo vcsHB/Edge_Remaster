@@ -7,9 +7,14 @@ namespace Agents.Enemies
 
     public class EnemyAI : MonoBehaviour, IAgentComponent
     {
+        [SerializeField] protected ComabtLogicSO _combatLogic;
         [SerializeField] protected DetectLogicSO _detectLogic;
         [SerializeField] protected MoveLogicSO _moveLogic;
+
+        // External Properties
         public MoveLogicSO MoveLogic => _moveLogic;
+        public DetectLogicSO DetectLogic => _detectLogic;
+        public ComabtLogicSO CombatLogic => _combatLogic;
 
         // Detect Properties
         public bool IsTargeted => _detectData.isTargeted;
@@ -26,19 +31,25 @@ namespace Agents.Enemies
         protected MoveData _moveData;
 
         protected Enemy _owner;
-        public void Initialize(Agent agent)
+        public virtual void Initialize(Agent agent)
         {
             _owner = agent as Enemy;
+            if (_combatLogic == null) Debug.LogWarning("[CombatLogic] AI ScriptableObject is not allocated");
+            if (_detectLogic == null) Debug.LogWarning("[DetectLogic] AI ScriptableObject is not allocated");
+            if (_moveLogic == null) Debug.LogWarning("[MoveLogic] AI ScriptableObject is not allocated");
+
+            _combatLogic = _combatLogic.Clone();
             _detectLogic = _detectLogic.Clone();
             _moveLogic = _moveLogic.Clone();
-            _detectLogic.InitializeOwner(_owner.transform);
-            _moveLogic.SetOwner(_owner);
 
-            _detectLogic.OnDetectEvent += _moveLogic.HandleDetect;
+            _moveLogic.Initialize(_owner, this);
+            _detectLogic.InitializeOwner(_owner.transform);
+            _combatLogic.Initialize(_owner, this);
+
             //_enemyMovement = agent.GetCompo<EnemyMovement>();
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             _detectData = _detectLogic.DetectTarget();
         }
@@ -48,11 +59,19 @@ namespace Agents.Enemies
             _detectLogic.OnDetectEvent -= _moveLogic.HandleDetect;
             Destroy(_detectLogic);
             Destroy(_moveLogic);
+            Destroy(_combatLogic);
 
 
         }
         public void AfterInit() { }
         public void Dispose() { }
+
+        public void ChangeDetectLogic(MoveLogicSO newMoveLogic)
+        {
+            // Dev After
+        }
+
+        #region External Movement Functions
 
         public void StartMove()
         {
@@ -62,11 +81,12 @@ namespace Agents.Enemies
         {
             _moveLogic.UpdateMove();
         }
-
         public void EndMove()
         {
             _moveLogic.EndMove();
         }
+
+        #endregion
 
 #if UNITY_EDITOR
 
@@ -75,6 +95,8 @@ namespace Agents.Enemies
             if (_moveLogic != null)
                 _moveLogic.DrawGizmos();
         }
+
+
 
 #endif
     }

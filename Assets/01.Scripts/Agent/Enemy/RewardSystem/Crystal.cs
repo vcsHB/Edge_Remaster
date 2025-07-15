@@ -3,6 +3,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Events;
 using LevelSystem;
+using BuildSystem.ResourceManage;
 
 namespace RewardSystem
 {
@@ -94,7 +95,7 @@ namespace RewardSystem
         {
             OnCollectedEvent?.Invoke();
             PoolManager.Instance.Push(this);
-            LevelManager.Instance.AddCrystal(_collectAmount);
+            ResourceManager.Instance.GainResource(ResourceType.MetaData, _collectAmount);
         }
 
         public void ResetItem()

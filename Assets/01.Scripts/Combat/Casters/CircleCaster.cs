@@ -21,7 +21,7 @@ namespace Combat.Casters
             Gizmos.color = _gizmosColor;
             Gizmos.DrawWireSphere(CenterPosition, _detectRadius);
         }
-
 #endif
+
     }
 }
