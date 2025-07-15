@@ -15656,28 +15656,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7575430551608064152, guid: 7ee5a6c62284ab94e916e642613e0427, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 2609303707757173358, guid: 7ee5a6c62284ab94e916e642613e0427, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 5782327766725541888, guid: 7ee5a6c62284ab94e916e642613e0427, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 8502950966707474051, guid: 7ee5a6c62284ab94e916e642613e0427, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 4622575866772123694, guid: 7ee5a6c62284ab94e916e642613e0427, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 2717687617501184894, guid: 7ee5a6c62284ab94e916e642613e0427, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 6531784968988492803, guid: 7ee5a6c62284ab94e916e642613e0427, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ee5a6c62284ab94e916e642613e0427, type: 3}
 --- !u!1 &1160852744
 GameObject:
@@ -17015,8 +16994,8 @@ CanvasGroup:
   m_GameObject: {fileID: 1262949380}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &1262949383
 MonoBehaviour:
@@ -17702,7 +17681,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1303396473}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 961997044}
+        m_TargetAssemblyTypeName: Core.GameManager, Assembly-CSharp
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1303471751
 GameObject:
   m_ObjectHideFlags: 0
@@ -26922,7 +26913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5145f7a3ee4aefc4787274767788ce9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soundSO: {fileID: 0}
+  _soundSO: {fileID: 11400000, guid: 0c1212f533dc89142897946ab16cee1c, type: 2}
 --- !u!114 &4484805477554537040
 MonoBehaviour:
   m_ObjectHideFlags: 0

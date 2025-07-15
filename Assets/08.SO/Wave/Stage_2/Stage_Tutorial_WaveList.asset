@@ -15,6 +15,14 @@ MonoBehaviour:
   waves:
   - {fileID: 11400000, guid: e76cfaf7d2c8d5a4fb75a2fa25cd4794, type: 2}
   - {fileID: 11400000, guid: a685ceb24a4bddc48aaef1f55ad136e3, type: 2}
+  - {fileID: 11400000, guid: 6b858c43dec20c04eb21daef04086b54, type: 2}
+  - {fileID: 11400000, guid: 70e430dda4c485c4493afc590100f44d, type: 2}
+  - {fileID: 11400000, guid: d3dc4221f239c2f4daa6537d6d6a2a64, type: 2}
+  - {fileID: 11400000, guid: f08a6b8afb65fae448da6525d014a3d0, type: 2}
+  - {fileID: 11400000, guid: 6656d67d48a6919439bdbe56860302d9, type: 2}
+  - {fileID: 11400000, guid: c03f32093947778439d31e7d5107151e, type: 2}
+  - {fileID: 11400000, guid: edaf8b6dca888a047a498db6567b48d2, type: 2}
+  - {fileID: 11400000, guid: 5fa4706ae7d5ef342ab85890b485aa71, type: 2}
   levelFormula:
     serializedVersion: 2
     m_Curve:

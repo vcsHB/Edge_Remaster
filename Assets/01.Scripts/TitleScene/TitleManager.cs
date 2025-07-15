@@ -14,7 +14,7 @@ namespace TitleScene
 
         public void SelectStage()
         {
-            
+
         }
 
         public void MoveToGameScene()
@@ -28,6 +28,11 @@ namespace TitleScene
         {
             SceneManager.LoadScene(_inGameSceneName);
 
+        }
+
+        public void QuitGame()
+        {
+            Application.Quit();
         }
     }
 }

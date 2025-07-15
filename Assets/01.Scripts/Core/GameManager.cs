@@ -84,6 +84,7 @@ namespace Core
         public void ExitGame()
         {
             DataManager.Save();
+            _playerInput.ResetInputEvents();
             TimeManager.ResetTimeScale();
             SceneManager.LoadScene("TitleScene");
         }

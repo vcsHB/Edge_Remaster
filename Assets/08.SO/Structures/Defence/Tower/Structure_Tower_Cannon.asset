@@ -25,5 +25,4 @@ MonoBehaviour:
   - type: 1
     amount: 10
   upgradeList:
-  - {fileID: 11400000, guid: 7e5bd851c0cbd9643b3e86d2212706d0, type: 2}
   - {fileID: 11400000, guid: 2b20029402cad0e42aac1a9aa29464ca, type: 2}

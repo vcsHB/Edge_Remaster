@@ -39,6 +39,8 @@ namespace UIManage.InGame
             _leftBarTrm.DOAnchorPosX(-_sideBarDisablePosition, _sideBarMoveDuration).SetUpdate(_useUnscaledTime);
             _rightBarTrm.DOAnchorPosX(_sideBarDisablePosition, _sideBarMoveDuration).SetUpdate(_useUnscaledTime);
             _canvasGroup.DOFade(0f, _fadeDuration + 1f).SetUpdate(_useUnscaledTime);
+            _canvasGroup.interactable = false;
+            _canvasGroup.blocksRaycasts = false;
 
         }
 
@@ -55,6 +57,8 @@ namespace UIManage.InGame
             _rightBarTrm.anchoredPosition = new Vector2(_sideBarDisablePosition, 0f);
             _leftBarTrm.DOAnchorPosX(-_sideBarEnablePosition, _sideBarMoveDuration).SetUpdate(_useUnscaledTime);
             _rightBarTrm.DOAnchorPosX(_sideBarEnablePosition, _sideBarMoveDuration).SetUpdate(_useUnscaledTime);
+            _canvasGroup.interactable = true;
+            _canvasGroup.blocksRaycasts = true;
         }
     }
 }
