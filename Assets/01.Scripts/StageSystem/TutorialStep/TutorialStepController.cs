@@ -23,7 +23,7 @@ namespace StageSystem.TutorialManage
         {
             currentEndStep.OnStepExitEvent -= HandleStepEnd;
 
-            StartCoroutine(StepChangeCoroutine());
+            StartCoroutine(StepChangeCoroutine());           
 
         }
 
@@ -31,7 +31,7 @@ namespace StageSystem.TutorialManage
         {
             yield return new WaitForSeconds(_stepTerm);
             _currentPregressIndex++;
-            if (_currentPregressIndex >= _steps.Length)
+            if (_currentPregressIndex >= _steps.Length) 
             {
                 OnAllStepOverEvent?.Invoke();
                 yield break;
