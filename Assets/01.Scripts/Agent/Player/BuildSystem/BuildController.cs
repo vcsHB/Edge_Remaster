@@ -17,6 +17,12 @@ namespace BuildSystem
         public StructureDataSO data;
     } // BuildEventChannelData
 
+    public class UpgradeData : GameEvent
+    {
+        public StructureDataSO previousStructure;
+        public StructureDataSO newStructure;
+    }
+
 
     public class BuildController : MonoBehaviour
     {
@@ -27,11 +33,19 @@ namespace BuildSystem
         [SerializeField] WaveManager _waveManager;
         private BuildData _buildData = new();
         private DestroyData _destroyData = new();
+        private UpgradeData _upgradeData = new();
 
         private void Awake()
         {
             // Load
 
+        }
+
+        public void UpgradeSturcture(StructureDataSO previousStructure, StructureDataSO newStructure)
+        {
+            _upgradeData.previousStructure = previousStructure;
+            _upgradeData.newStructure = newStructure;
+            BuildEventChannel.RaiseEvent(_upgradeData);
         }
 
         public void BuildStructure(StructureDataSO data, Vector2 position)
