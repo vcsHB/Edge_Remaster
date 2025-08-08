@@ -8,7 +8,7 @@ namespace TitleScene
         [SerializeField] private float _angle;
         [SerializeField] private float _rotationDuration = 0.5f;
         private CameraRotationController _rotationController;
-        private void Awake()
+        private void Start()
         {
             _rotationController = CameraManager.Instance.GetCompo<CameraRotationController>();
         }
