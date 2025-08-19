@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 namespace StageSystem.TutorialManage
@@ -11,8 +12,8 @@ namespace StageSystem.TutorialManage
         public event Action<TutorialStep> OnStepEnterEvent;
         public event Action<TutorialStep> OnStepExitEvent;
         [SerializeField] private DescriptionObject[] _descriptionObjects;
-
-
+        private bool _isStepOver;
+        public bool IsStepOver => _isStepOver;
 
         public virtual void Enter()
         {
@@ -28,6 +29,7 @@ namespace StageSystem.TutorialManage
         {
             OnStepExitUnityEvent?.Invoke();
             OnStepExitEvent?.Invoke(this);
+            _isStepOver = true;
             for (int i = 0; i < _descriptionObjects.Length; i++)
             {
                 _descriptionObjects[i].Close();

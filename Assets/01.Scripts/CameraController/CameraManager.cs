@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CameraControllers
@@ -13,15 +14,19 @@ namespace CameraControllers
         private Dictionary<Type, ICameraControlable> _controllers = new Dictionary<Type, ICameraControlable>();
         public Transform CurrentFollowTarget => _camera.Follow;
         [SerializeField] private Transform _defaultFollowTarget;
-        private CinemachineFollow _followCam;
+        private CinemachinePositionComposer _positionComposer;
         private Vector3 _defaultFollowOffset;
 
         protected override void Awake()
         {
             base.Awake();
 
-            _followCam = _camera.GetComponent<CinemachineFollow>();
-            _defaultFollowOffset = _followCam.FollowOffset;
+            _positionComposer = _camera.GetComponent<CinemachinePositionComposer>();
+            if (_positionComposer != null)
+            {
+                Debug.Log("Test");
+                _defaultFollowOffset = _positionComposer.TargetOffset;
+            }
             GetComponentsInChildren<ICameraControlable>(true)
                .ToList().ForEach(controller => _controllers.Add(controller.GetType(), controller));
             foreach (ICameraControlable controller in _controllers.Values)
@@ -62,11 +67,11 @@ namespace CameraControllers
         {
             Vector3 offset = (Vector3)newOffset;
             offset.z = -10f;
-            _followCam.FollowOffset = offset;
+            _positionComposer.TargetOffset = offset;
         }
         public void ResetFollowOffset()
         {
-            _followCam.FollowOffset = _defaultFollowOffset;
+            _positionComposer.TargetOffset = _defaultFollowOffset;
         }
 
 

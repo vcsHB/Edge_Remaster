@@ -1,18 +1,15 @@
+using System;
 using System.Collections;
-using ObjectPooling;
 using UnityEngine;
 using UnityEngine.Audio;
 
 namespace SoundManage
 {
 
-    public class SoundPlayer : MonoBehaviour, IPoolable
+    public class SoundPlayer : MonoBehaviour
     {
-        [field: SerializeField] public PoolingType type { get; set; }
-
-        public GameObject ObjectPrefab => gameObject;
-
         [SerializeField] private AudioMixerGroup _sfxGroup, _musicGroup;
+        public event Action<SoundPlayer> OnSoundPlayCompleteEvent;
 
         private AudioSource _audioSource;
 
@@ -38,13 +35,14 @@ namespace SoundManage
             _audioSource.pitch = data.pitch;
             if (data.randomizePitch)
             {
-                _audioSource.pitch += Random.Range(-data.randomPitchModifier, data.randomPitchModifier);
+                _audioSource.pitch += UnityEngine.Random.Range(-data.randomPitchModifier, data.randomPitchModifier);
             }
             _audioSource.clip = data.clip;
 
             _audioSource.loop = data.loop;
 
-            _audioSource.PlayOneShot(data.clip);
+            //_audioSource.PlayOneShot(data.clip);
+            _audioSource.Play();
             if (!data.loop)
             {
                 float time = _audioSource.clip.length + 1.0f;
@@ -55,8 +53,13 @@ namespace SoundManage
         private IEnumerator DisableSoundTimer(float time)
         {
             yield return new WaitForSeconds(time);
-            //this.Push();
-            PoolManager.Instance.Push(this);
+            OnSoundPlayCompleteEvent?.Invoke(this);
+        }
+
+        public void SetForceOverSound()
+        {
+            _audioSource.Stop();
+            OnSoundPlayCompleteEvent?.Invoke(this);
         }
 
         public void ResetItem()
